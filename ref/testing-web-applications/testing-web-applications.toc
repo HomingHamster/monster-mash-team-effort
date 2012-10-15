@@ -1,0 +1,11 @@
+\beamer@endinputifotherversion {3.10pt}
+\beamer@sectionintoc {1}{Different types of testing.}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Overview}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{List of types}{4}{0}{1}
+\beamer@sectionintoc {2}{Suggested Tests}{5}{0}{2}
+\beamer@subsectionintoc {2}{1}{Functionality Testing}{5}{0}{2}
+\beamer@subsectionintoc {2}{2}{Useablity Testing}{6}{0}{2}
+\beamer@subsectionintoc {2}{3}{Interface Testing}{7}{0}{2}
+\beamer@subsectionintoc {2}{4}{Compatability Testing}{8}{0}{2}
+\beamer@subsectionintoc {2}{5}{security and performance testing}{9}{0}{2}
+\beamer@sectionintoc {3}{Questions.}{10}{0}{3}
