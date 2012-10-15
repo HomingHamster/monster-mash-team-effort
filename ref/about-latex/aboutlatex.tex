@@ -1,0 +1,115 @@
+\documentclass{beamer}
+
+\ifx\themename\undefined
+  \def\themename{Berlin}
+\fi
+
+\usetheme{\themename}
+
+\beamertemplatetransparentcovered
+
+\usepackage{times}
+\usepackage[T1]{fontenc}
+
+\title{A quick intro to \LaTeX}
+\subtitle{These slides are made using \LaTeX\
+		and I'll show you the source later :)}
+
+\author{Felix Farquharson}
+\institute{Group Project\\ CS2SOMETHING}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+  \frametitle{Outline}
+  \tableofcontents
+\end{frame}
+
+\section{What is \LaTeX{} then?}
+\subsection{Removing the design from the data...}
+
+\begin{frame}<1>
+  \frametitle{Good practice?}
+
+  \begin{block}{the theory}
+    It is good structure to split the design from the content because they 
+	are two seperate things.
+  \end{block}
+
+\
+\
+
+\LaTeX{} is a typesetting program, you heard about it brefly in CS101
+last year. It helps to ensure a document is consistant.
+
+\end{frame}
+
+\subsection{Why it's better.}
+
+\begin{frame}<2>
+\frametitle{But why is this better?}
+
+\begin{itemize}
+\item \LaTeX{} allows us to define just the information as it is relavant.
+\item In some cases the design is part of the information. \LaTeX{}
+allows us some control over the look and feel of the information.
+But it makes sure everything is consistent and keeps references
+up to date for us.
+\item it allows easier version controll in our situation,
+because it is based on text files.
+\end{itemize}
+\end{frame}
+
+\begin{frame}<3>
+\frametitle{\emph{Is} this better?}
+
+\begin{block}{Questions?}
+Are there any questions on why we would want to use \LaTeX{} before we
+move on to how to use it?
+\end{block}
+\end{frame}
+
+\section{And how?}
+\subsection{Intro to commands.}
+
+\begin{frame}<4>[fragile, plain]
+\frametitle{how do i use it?}
+
+\begin{block}{example document}
+\begin{verbatim}\documentclass[12pt]{article}	
+	^^ set the class (article is basic)
+\begin{document}	<< begin the code for 
+			   the document
+\title{sample doc}	<< sets the title
+\maketitle		<< makes a title page
+\section{introduction}
+\subsection{first}
+This			<< ignores the whitespace
+is the first part.\\	<< explicit newline.
+This is the second line.
+\end{document}		<< end the document
+\end{verbatim}
+\end{block}
+
+\end{frame}
+
+\subsection{Resources}
+
+\begin{frame}<5>[fragile]
+\frametitle{Useful resources}
+
+\begin{verbatim}
+http://www.maths.tcd.ie/~dwilkins/LaTeXPrimer/
+
+http://www.uncg.edu/cmp/reu/presentations/
+	Charles%20Batts%20-%20Beamer%20Tutorial.pdf
+\end{verbatim}
+\
+\
+I couldn't find the template, please let me know if you find it.
+\end{frame}
+\end{document}
