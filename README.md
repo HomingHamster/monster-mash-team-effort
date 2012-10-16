@@ -15,8 +15,13 @@ the final project.
 This readme is also not part of the project, just an easy way to
 leave everyone notes.
 
-Using Git
----------
+At some point we are going to begin using the netbeans module for 
+dealing with git, so treat the instructions below as a sort of 
+failsafe. (I don't know anything about the module yet, I will be
+researching it this week.)
+
+Using Git from the command line
+-------------------------------
 
 A few of the most useful functions are included below.
 
@@ -47,10 +52,16 @@ To begin using git for our project... (the command line way)
 
 6) When you have achieved any small goal. Open a terminal and change directory into the
    monster-mash-team-effort directory.
-   If you have ADDED FILES you need to add them to git (so it can manage them). use the 
-   "git add <file>" command. (you may find "git add ." useful to add all of them.
-   Then type "git commit" this will take a snapshot and save it to your personal repository.
-   You will then have to type a commit message. These changes will only affect you!
+   You then need to tell git what you want to commit to your repository.
+   If you want to add the changes from a particular file you need to add them to 
+   git. To do this you use the 
+   "git add <file>" command. (you may find "git add ." useful to add all of the changes.
+   The changes that are added are called "staged". The changes that are not added are called
+   "unstaged".
+   Then type "git commit" this will take a snapshot of the staged changes in the repository 
+   and save it to your personal repository.
+   You will then have to type a commit message. These changes will only affect you at the
+   moment!
 
 7) When you are ready to share your code with the rest of the group. (ie. it is working 
    with something new added.)
