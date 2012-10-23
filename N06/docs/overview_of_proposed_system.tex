@@ -1,0 +1,92 @@
+\documentclass{article}
+
+\usepackage[hmargin=2cm,vmargin=2.5cm]{geometry}
+
+\begin{document}
+\section{Overview of Proposed System}
+
+\subsection{Choice of platform}
+We have decided to use the Glassfish Open Source version as our platform. 
+We did not consider the Oricle Glassfish Server because it would cost to
+use it for the project.
+
+We considered the following:
+\begin{itemize}
+	\item{Glassfish Open Source Server}
+	\item{Google App Engine}
+	\item{Apache Tomcat}
+\end{itemize}
+
+\subsubsection{Glassfish Open Source Server}
+There are a number of benifits to this software above the other options.
+The main two reasons for using this server are because it is open source
+and because some members of our group have previous experience with it.
+Another reason is because we expect there will be support for this
+enviroment available. Both from the university and from the contributers
+to the glassfish project. Glassfish has many more features than Tomcat,
+the other open source option.
+
+Spike testing was carried out and it was found that this peice of software
+was easy to use and appropriate for the nature of our project.
+
+\subsubsection{Google App Engine}
+The main reason we didn't choose this software is because it prooved
+unreliable in tests. This software is also closed source and using it
+would mean that you rely upon google when the application is released.
+
+\subsubsection{Apache Tomcat}
+Tomcat was not as fully featured as Glassfish, and no one in the group 
+has ever used it before, so there would be a steeper learning curve for
+them and there would be no "in-group" support for using it.
+
+
+\subsection{High Level Archetecture}
+
+\subsubsection{Version Control}
+For version control we are using Git. Git is a distributed version control
+system, which some members of the group already have experience with.
+Distributed version control systems give a slightly different development
+pattern which suited the qualities of a group better than SVN.
+
+Version control systems we considered:
+\begin{itemize}
+	\item{Git}
+	\item{Bazaar}
+	\item{Subversion}
+\end{itemize}
+
+\subsubsection{Integrated Development Enviroment}
+We have decided to use the NetBeans IDE, because it is available free
+and it is the preference of the majority of the group. Modules are
+available for NetBeans to help with Version Control (Git) and JUnit.
+
+IDEs considered:
+\begin{itemize}
+	\item{Eclipse}
+	\item{NetBeans}
+\end{itemize}
+
+\subsubsection{Documentation Tool}
+We decided to use \LaTeX{} because it is widely supported, there is a
+template provided, and because it was prefered by the majority of the.
+
+Methods of documentation we considered:
+\begin{itemize}
+	\item{\LaTeX{}}
+	\item{Open Office/Libre Office}
+	\item{Microsoft Word}
+\end{itemize}
+
+
+\subsection{Description of Target User}
+The target user will be young people. Typically aged between 11 and 16.
+We will have to make sure that no complicated language is used without good
+reason and we will have to make sure that all content is appropriate. Other
+things to consider, are:
+\begin{itemize}
+	\item{Make sure that there are no really lengty tasks to do}
+	\item{Make sure that it will fit around the lifestyle of a young
+		person of that age. ie. Around school, limited access
+		to a computer.}
+\end{itemize}
+\end{document}
