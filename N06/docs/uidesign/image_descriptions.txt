@@ -1,0 +1,33 @@
+[mm_registerlogin.png]
+
+This screen is the first thing a user will see when visiting the Monster Mash website.
+
+The user will be provided with text boxes to input their username, password and optionally a server location to be connected to.
+
+Depending on which button a user presses will either Log them in if they already have an account, or register them if they do not. This makes the login and registration processes much easier than having two seperate pages for each process.
+
+[mm_home.png]
+
+On the home page, the user has a friends list down the right hand side. They can right click on any of the friend's names and a popup menu will appear to give them various options such as 'remove friend', 'start a battle', 'breed' or 'trade'.
+
+Along the top of the screen there is a banner which will be displayed on all of the pages. It will probably contain a graphical logo and text. Below that there is a menu which has links to other pages such as 'shop', 'farm' and 'edit user account'.
+
+Below the menu there will be a list of the users mosnters, containing their stats such as 'aggression', their win/loss count etc.
+
+[mm_shop.png]
+
+In the shop the user has the option of buying or selling mosters (and possibly items). Down the left hand side there is a list of monsters avalible to buy. This lists the monster's stats, cost and rating.
+
+On the right hand side is similar, except it contains lists of the users mosters which they can sell for money.
+
+[mm_battle.png]
+
+During a battle, the user is displayed with stats of each monster partaking in the battle. This includes 'agression', 'rating', 'win/loss count' and 'total money earned'.
+
+When the user presses the 'Start the fight!' button, they are taken to a page with the results as seen below.
+
+[mm_postbattle.png]
+
+This screen shows which monster won the battle. It displays how much money it earned for winning, and also the monster's stats.
+
+From here you can either click 'Go Back' to return to the homepage, or click 'Start another battle' to initiate another.
