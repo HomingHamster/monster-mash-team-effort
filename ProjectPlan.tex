@@ -1,0 +1,215 @@
+\documentclass[titlepage]{article}
+\usepackage[hmargin=2cm,vmargin=2.5cm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\fancyhf{}
+\pagestyle{fancy}
+\fancyhead[R]{\textit{Group 06 Risk Analysis/1.0(Draft)}}
+\renewcommand{\headrulewidth}{0mm}
+\fancyfoot[L]{\textit{UW Aberystwyth/Computer Science}}
+\renewcommand{\footrulewidth}{0mm}
+\usepackage{lastpage}
+\fancyfoot[R]{\textit{page \thepage\  of  \pageref{LastPage}}}
+\title{\textbf{Group 06 - Project Plan}}
+\date{\textbf{23rd October 2012 \linebreak Amy Rebecca James, James Slater, Dan Mcguckin, Samuel Mills, Felix Farquharson, \linebreak Ben Brooks, Aiman Arafat, Chris Arom \linebreak Project Coordinator: Nigel Hardy \linebreak Version: 1.1 \linebreak Status: Release \linebreak Computer Science Department, University of Wales, Aberystwyth \linebreak The following document is copyright of CS22120 Group 06 Aberystwyth University}}
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+\section{Introduction}
+\subsection{Purpose of the Document}
+This document describes the outline design for the Software Development Life Cycle Group Project 2012. It should be read in the context of the Group Project, taking into account the details of the group project assignment and the group project Quality Assurance (QA) plan [1].
+\subsection{Scope}
+The design specification splits the project into individual implementable parts and describes the interfaces and interaction between those components. The design specification refers to the Requirements Specification for the group project. It is important that this document is read by all members of the project group, especially the implementation team.
+\subsection{Objectives}
+The objectives of this document are:
+\begin{itemize}
+\item{To identify and describe the main features of the Monster Mash game.}
+\item{To note the details of the criteria that the group project product must achieve.}
+\item{ To administer interface details for each of the central classes in the Monster
+Mash game.}
+\end{itemize}
+\newpage
+\section{Overview of Proposed System}
+\subsection{Choice of platform}
+We have decided to use the Glassfish Open Source version as our platform. We did not consider the Oracle Glassfish Server because it would cost to use it for the project.
+We considered the following:
+\begin{itemize}
+\item{Glassfish Open Source Server}
+\item{Google App Engine}
+\item{Apache Tomcat}
+\end{itemize}
+\subsubsection{Glassfish Open Source Server}
+There are a number of benefits to this software above the other options. The main two reasons for using this server are because it is open source and because some members of our group have previous experience with it. Another reason is because we expect there will be support for this environment available. Both from the university and from the contributers to the glassfish project. Glassfish has many more features than Tomcat, the other open source option. Spike testing was carried out and it was found that this peice of software was easy to use and appropriate for the nature of our project.
+\subsubsection{Google App Engine}
+The main reason we didn't choose this software is because it proved unreliable in tests. This software is also closed source and using it would mean that you rely upon Google when the application is released.
+\subsubsection{Apache Tomcat}
+Tomcat was not as fully featured as Glassfish, and no one in the group has ever used it before, so there would be a steeper learning curve for them and there would be no "in-group" support for using it.
+\subsection{High Level Architecture}
+\subsubsection{Version Control}
+For version control we are using Git. Git is a distributed version control system, which some members of the group already have experience with. Distributed version control systems give a slightly different development pattern which suited the qualities of a group better than SVN. Version control systems we considered:
+\begin{itemize}
+\item{Git}
+\item{Bazaar}
+\item{Subversion}
+\end{itemize}
+\subsubsection{Integrated Development Environment}
+We have decided to use the NetBeans IDE, because it is available free and it is the preference of the majority of the group. Modules are available for NetBeans to help with Version Control (Git) and JUnit.
+IDEs considered:
+\begin{itemize}
+\item{Eclipse}
+\item{NetBeans}
+\end{itemize}
+\subsubsection{Documentation Tool}
+We decided to use \LaTeX{} because it is widely supported, there is a template provided, and because it was preferred by the majority of the group. Methods of documentation we considered:
+\begin{itemize}
+\item{\LaTeX{}}
+\item{Open Office/Libre Office}
+\item{Microsoft Word}
+\end{itemize}
+\subsection{Description of Target User}
+The target user will be young people. Typically aged between 11 and 16. We will have to make sure that no complicated language is used without good reason and we will have to make sure that all content is appropriate. Other things to consider are:
+\begin{itemize}
+\item{Make sure that there are no really lengthy tasks to do.}
+\item{Make sure that it will fit around the lifestyle of a young person of that age. ie. Around school, limited access  to a computer.}
+\end{itemize}
+\newpage
+\section{Use-case Diagram}
+\begin{figure*}[h]
+\centering
+\includegraphics[width=1.00\textwidth]{M:/Second Year/Group Project/Group-P Use Case.pdf}
+\label{fig:Group-P Use Case}
+\end{figure*}
+\newpage
+\section{User Interface Design}
+\subsection{Register/Login}
+This screen is the first thing a user will see when visiting the Monster Mash website. The user will be provided with text boxes to input their username, password and optionally a server location to be connected to. Depending on which button a user presses will either Log them in if they already have an account, or register them if they do not. This makes the login and registration processes much easier than having two separate pages for each process.
+\begin{figure*}[h]
+\centering
+\includegraphics[width=1.00\textwidth]{M:/Second Year/Group Project/mmregisterlogin.jpg}
+\label{fig:mmregisterlogin}
+\end{figure*}
+\newpage
+\subsection{Home}
+On the home page, the user has a friends list down the right hand side. They can right click on any of the friend's names and a popup menu will appear to give them various options such as 'remove friend', 'start a battle', 'breed' or 'trade'. Along the top of the screen there is a banner which will be displayed on all of the pages. It will probably contain a graphical logo and text. Below that there is a menu which has links to other pages such as 'shop', 'farm' and 'edit user account'. Below the menu there will be a list of the users mosnters, containing their stats such as 'aggression', their win/loss count etc.
+\begin{figure*}[h]
+\centering
+\includegraphics[width=1.00\textwidth]{M:/Second Year/Group Project/mmhome.jpg}
+\label{fig:mmhome}
+\end{figure*}
+\newpage
+\subsection{Shop}
+In the shop the user has the option of buying or selling monsters (and possibly items). Down the left hand side there is a list of monsters available to buy. This lists the monster's stats, cost and rating. On the right hand side is similar, except it contains lists of the users monsters which they can sell for money.
+\begin{figure*}[h]
+\centering
+\includegraphics[width=1.00\textwidth]{M:/Second Year/Group Project/mmshop.jpg}
+\label{fig:mmshop}
+\end{figure*}
+\newpage
+\subsection{Battle}
+During a battle, the user is displayed with stats of each monster partaking in the battle. This includes 'agression', 'rating', 'win/loss count' and 'total money earned'. When the user presses the 'Start the fight!' button, they are taken to a page with the results as seen below.
+\begin{figure*}[h]
+\centering
+\includegraphics[width=1.00\textwidth]{M:/Second Year/Group Project/mmbattle.jpg}
+\label{fig:mmbattle}
+\end{figure*}
+\newpage
+\subsection{Post Battle}
+This screen shows which monster won the battle. It displays how much money it earned for winning, and also the monster's stats. From here you can either click 'Go Back' to return to the homepage, or click 'Start another battle' to initiate another
+\begin{figure*}[h]
+\centering
+\includegraphics[width=1.00\textwidth]{M:/Second Year/Group Project/mmpostbattle.jpg}
+\label{fig:mmpostbattle}
+\end{figure*}
+\newpage
+\section{Aiman's Designs}
+\subsection{Main Screen}
+Main screen to be displayed  (before or after log in) if to be displayed before log in shows an image as front  and welcome the player, after login the box could be used to inform the players of any news, updates, etc.
+\begin{figure*}[h]
+\centering
+\includegraphics[width=1.00\textwidth]{M:/Second Year/Group Project/Main (before login).jpg}
+\label{fig:Main (before login)}
+\end{figure*}
+\newpage
+\subsection{Main (After Login)}
+\begin{figure*}[h]
+\centering
+\includegraphics[width=1.00\textwidth]{M:/Second Year/Group Project/Main alternative (after login).jpg}
+\label{fig:Main alternative (after login)}
+\end{figure*}
+\newpage
+\subsection{Monster Shop}
+Shop screen includes two buttons on the top (buy/sell), underneath it there is a box that will display either the monsters available to buy from the sop or the monsters owned to be sold, depending which of the buttons is pressed  will display what corresponds (shop monsters or inventory monsters). At the bottom of the box there also will be a button (buy/sell, depending on what the box displays) to perform the action. At the shop screen always at the bottom will be a box showing the virtual money available.
+\begin{figure*}[h]
+\centering
+\includegraphics[width=1.00\textwidth]{M:/Second Year/Group Project/Shop.jpg}
+\label{fig:Shop}
+\end{figure*}
+\newpage
+\subsection{Monster Farm}
+Monster farm screen displays two top buttons to perform the actions (obtain monster stats and to choose a monster to battle) followed by two combo box that once clicked on it should show the monsters owned, once a monster is selected and pressed the correspondent button on top  either the stats or the chosen monster to fight should be displayed.
+\begin{figure*}[h]
+\centering
+\includegraphics[width=1.00\textwidth]{M:/Second Year/Group Project/Monster Farm.jpg}
+\label{fig:Monster Farm}
+\end{figure*}
+\paragraph{} Title banner on top and menu buttons on the right hand side stays in all of them.
+\paragraph{} The above designs were created by two separate group members, as a group we have decided that for the final GUI design we will take different aspects from both.
+\newpage
+\section{Gantt Chart}
+\subsection{Introduction}
+This Document is the plan this Group project, for each member to see what he/she has to do and when to finish by. Each member has their own colour in the Gantt Chart so its easy to follow.
+\section{Purpose of this document}
+\subsection{Objectives}
+The main objective of a Gantt chart is for everyone to be able to follow what's being done by who and when.
+\section{Gantt Chart}
+\subsection{Key for Gantt Chart}
+\begin{figure*}[h]
+\centering
+\includegraphics[width=1.00\textwidth]{M:/Second Year/Group Project/GanntKey.jpg}
+\label{fig:GanntKey}
+\end{figure*}
+\newpage
+\subsection{Gantt Chart}
+\begin{figure*}[h]
+\centering
+\includegraphics[width=1.00\textwidth]{M:/Second Year/Group Project/GanttChart.jpg}
+\label{fig:GanttChart}
+\end{figure*}
+\newpage
+\section{Risks}
+\paragraph{}When planning and developing a piece of Software, there are many different aspects of the development process. This is why Software Engineers need to try and predict and possibility and minimise the chances of the problem having any serious effect on the process e.g. - losing time, unable to make a deadline or even to the extent of a particular part of the project being left incomplete.
+\paragraph{}Primarily it is the job of the Project Group to identify these risks and to remain committed so that they can be avoided or at least minimised.
+\paragraph{}When planning a project, all members would like the Software completed and available to the customer as soon as possible; this may result in time allocation becoming to hasty, and certain members being left unable to finish their task on time or to the best of their ability. This can lead to problems further down the development process. 
+\paragraph{}The communication of all group members is key. All members need to have some idea of what other members are doing. Some tasks run closely alongside one another which make it even more vital that these group members communicate so that decisions remain consistent. Lack of communication can lead to the major problems as tasks may not be completed on time or at all. Also putting the different parts of the project together can prove extremely difficult without sufficient communication. For these reasons it is vital that Group Members attend all meetings and check their email so that they are up to date with all decisions made by the Project Manager. 
+\paragraph{}Sudden illness of a key Group Member (Project Manager) can cause all sorts of problems. For this reason it is key that other Group Members (Deputy Project Manager) knows what the Manager's intended plan was so that the group can continue without any loss of time and achieve their goals.
+\paragraph{}Getting to grips with new programs etc. can be difficult and time consuming. The use of GitHub and Latex may cause some team members to fall behind with their tasks if they have not used them before. Documents may take longer to be produced in Latex, and it may cause confusion getting used to the push pull system with the GitHub repository. The use of books and advice from other group members will help them get used to them faster.
+\paragraph{}As there are a few different coders in the team this may cause difficulty when integrating all the code together as everybody codes differently, it may be hard to put all the code together and also it could be difficult to integrate with the GUI. Once again this is down to good planning and communication. The coders should work closely side-by-side and keep checking the repository for changes. It is a good idea to do small parts of the coding but often so that if that piece of code causes any issues with other people's work it is easier to correct.
+\paragraph{}As the Project Team may want to refer back to the Project Coordinator (Nigel Hardy) when unsure of what a task is, there may be a risk of set backs if he was absent for some reason, tasks then may not be completed correctly or may not even be able to be completed without his input. If this was to happen the group would have to make themselves aware of other members of staff that can help so that the situation doesn't hold them back too drastically.
+\paragraph{}It may also be the case that the group repository is inaccessible due to technical issues or due to the fact that it is under attack. This can cause setbacks that lead to missed deadlines. As these systems can be down for hours at a time the group should make sure that the work is completed well in advance so there is no last minute rushing. All members should back up their own work as well.
+\paragraph{}The use of complex algorithms in the projects can cause problems as they may cause bugs that the coders cannot correct. This can be prevented by completing small pieces of codes at a time so that bugs may be easier to correct. There may also be issues with memory and speed. There is a difference between an application working and it being usable so all these things must be verified.
+\section{Conclusion}These are all important issues that if taken into account at the beginning of the project can prevent loss of time. If taken into consideration then, if one of these risks were to happen, it would be of no major significance to the project and the group would be able to carry on without panicking.
+\newline
+\section{References}
+[1] Software Engineering Group Project Plan Specification Standards.  Bernard Tiddeman. SE.QA.05B. 1.1 Release
+\newline
+\section{Document History}
+\begin{table*}[h]
+\caption{Document History}
+\centering
+\begin{tabular}{c|c|c|c|c}
+\hline\hline
+Version & CCF No.\ & Date \ & Changes made to document\ & Changed by: \\ [0.5ex]
+\hline
+1.0 & N/A & 25/10/2012 & Creating Project Plan & arj18 \\
+\hline
+1.1 & N/A  & 29/10/2012 & Making changes from review & arj18 \\
+\hline
+1.2 & N/A  & 30/10/2012  & Adding fianl GUI designs & arj18 \\
+\hline
+ &  &  &  \\ [1ex]	
+\hline 
+\end{tabular}
+\label{table:nonlin}
+\end{table*}
+\end{document}
