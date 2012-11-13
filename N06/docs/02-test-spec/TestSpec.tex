@@ -2,11 +2,11 @@
 \begin{document}
 \title{Software Engineering Group Project}
 \subtitle{Test Specification}
-\author{Ben Brooks (beb12)}
+\author{Group N06}
 \shorttitle{Test Spec}
-\version{1.0}
+\version{0.2}
 \status{Draft}
-\date{2012-11-12}
+\date{2012-11-13}
 \configref{SE-N06-TEST}
 \maketitle
 \tableofcontents
@@ -15,8 +15,7 @@
 
 \addcontentsline{toc}{section}{INTRODUCTION}
 \section*{INTRODUCTION}
-[An introduction to describe this testing specification]
-
+[Add an introduction here - maybe take ideas from QA.06?]
 
 \clearpage
 \addcontentsline{toc}{section}{TEST TABLES}
@@ -28,7 +27,7 @@
 
 \begin{tabular}{| p{2cm} | p{1cm} | p{2cm} | p{3cm} | p{3cm} | p{3cm} |}
 \hline
-Test Ref & Req being tested & Test Content & Input & Output & Pass Criteria \\
+Test Ref. & Req. & Test Content & Input & Output & Pass Criteria \\
 \hline
  &  &  &  &  &  \\
 \hline
@@ -40,7 +39,7 @@ Test Ref & Req being tested & Test Content & Input & Output & Pass Criteria \\
 
 \begin{tabular}{| p{2cm} | p{1cm} | p{2cm} | p{3cm} | p{3cm} | p{3cm} |}
 \hline
-Test Ref & Req being tested & Test Content & Input & Output & Pass Criteria \\
+Test Ref & Req. & Test Content & Input & Output & Pass Criteria \\
 \hline
  &  &  &  &  &  \\
 \hline
@@ -52,7 +51,7 @@ Test Ref & Req being tested & Test Content & Input & Output & Pass Criteria \\
 
 \begin{tabular}{| p{2cm} | p{1cm} | p{2cm} | p{3cm} | p{3cm} | p{3cm} |}
 \hline
-Test Ref & Req being tested & Test Content & Input & Output & Pass Criteria \\
+Test Ref & Req. & Test Content & Input & Output & Pass Criteria \\
 \hline
  &  &  &  &  &  \\
 \hline
@@ -60,17 +59,19 @@ Test Ref & Req being tested & Test Content & Input & Output & Pass Criteria \\
 
 \addcontentsline{toc}{subsection}{FARM TESTS}
 \subsection*{FARM TESTS}
-These tests are designed to test the Monster Farm of the Monter Mash game. They test various aspects such as viewing your monsters, their stats and picking a primary battle monster.
+These tests are designed to test the Monster Farm of the Monter Mash game. They test various aspects such as viewing your monsters, their stats and picking a primary battle monster. The data used will be automatically populated with a database of known state. This ensures that the tests can be run consistently and repeatedly.
 
 \begin{tabular}{| p{2cm} | p{1cm} | p{2cm} | p{3cm} | p{3cm} | p{3cm} |}
 \hline
-Test Ref & Req being tested & Test Content & Input & Output & Pass Criteria \\
+Test Ref & Req. & Test Content & Input & Output & Pass Criteria \\
 \hline
 SE-N06-001 & FR1 & Obtain your monster's stats & Go to the "Monster Farm" page" & A list of your monsters with associated stats should be displayed & The page correctly dispalys your monsters and their stats \\
 \hline
-SE-N06-002 & FR2 & Choose your primary battle monster (i.e. the monster you use to fight) & Click on the checkbox/button next to the monster you wish to make primary battle monster & That monster should now be selected to be your primary battle monster& The chosen monster is now your primary battle monster \\
+SE-N06-002 & FR1 & Choose your primary battle monster (i.e. the monster you use to fight) & Click on the checkbox/button next to the monster you wish to make primary battle monster & That monster should now be selected to be your primary battle monster& The chosen monster is now your primary battle monster \\
 \hline
-SE-N06-003 & FR3 & Exit the Monster Farm & Click on a link that returns you back to a previous screen & You should exit the Monster Farm and be taken to the location you chose & The page changes to the location your chosen location \\
+SE-N06-003 & FR1 & View farm with no monsters & Go to the "Monster Farm" page when the user has no monsters & A message telling the user they currently have no monsters & The page correctly displays a message telling the user they have no monsters \\
+\hline
+SE-N06-004 & FR1 & Exit the Monster Farm & Click on a link that returns you back to a previous screen & You should exit the Monster Farm and be taken to the location you chose & The page changes to the location your chosen location \\
 \hline
 \end{tabular}
 
@@ -80,7 +81,7 @@ SE-N06-003 & FR3 & Exit the Monster Farm & Click on a link that returns you back
 
 \begin{tabular}{| p{2cm} | p{1cm} | p{2cm} | p{3cm} | p{3cm} | p{3cm} |}
 \hline
-Test Ref & Req being tested & Test Content & Input & Output & Pass Criteria \\
+Test Ref & Req. & Test Content & Input & Output & Pass Criteria \\
 \hline
  &  &  &  &  &  \\
 \hline
@@ -94,7 +95,9 @@ Test Ref & Req being tested & Test Content & Input & Output & Pass Criteria \\
 \hline
 Version & CCF No. & Date & Changes made to Document & Changed by \\
 \hline
-1.0 & N/A & 2012-11-12 & Initial creation & beb12 \\
+0.2 & N/A & 2012-11-13 & Added Introduction and Farm Tests & beb12 \\
+\hline
+0.1 & N/A & 2012-11-12 & Initial creation & beb12 \\
 \hline
 \end{tabular}
 \label{thelastpage}
