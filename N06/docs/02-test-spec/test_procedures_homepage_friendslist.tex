@@ -1,0 +1,146 @@
+
+%% LyX 2.0.2 created this file.  For more info, see 
+http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[english]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage[a4paper]{geometry}
+\geometry{verbose,tmargin=1.5cm,bmargin=1.5cm,lmargin=1.5cm,rmargin=1.
+5cm}
+\usepackage{array}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+
+\makeatother
+
+\usepackage{babel}
+\begin{document}
+\begin{table}
+For the tests below, it is assumed there is a database of users 
+already
+programmed that are available for testing.
+
+\begin{tabular}{|>{\centering}p{1.5cm}|>{\centering}p{1.5cm}|>
+{\centering}p{3cm}|>{\centering}p{3cm}|>{\centering}p{3cm}|>
+{\centering}p{3cm}|}
+\hline 
+\multicolumn{6}{|c|}{Test}\tabularnewline
+\hline 
+Ref. & Req. & Contents & Input & Output & Pass Criteria\tabularnewline
+\hline 
+\hline 
+ &  & Find all link locations on page. & All of the link locations. & 
+The page the link goes to. & If the link is linking to the correct 
+location and the page is active.\tabularnewline
+\hline 
+ &  & Test if correctly accepting login. & Username/email and 
+password. & The page template/source. & The template should change to 
+allow for the fact the user is logged
+in.\tabularnewline
+\hline 
+ &  & Test if correctly logging out. & Select the logout link. & The 
+page template/source. & The template should change to allow for the 
+fact the user is logged
+out.\tabularnewline
+\hline 
+ &  & Test the user information is correct. & The user should log in. 
+& The information should be displayed on the homepage. & The 
+information for the user should match that in the 
+database.\tabularnewline
+\hline 
+ &  & Test that the design and graphics show correctly. & 
+\multicolumn{2}{>{\centering}p{6cm}|}{The homepage display should be 
+visually inspected.} & The images should be consistent with the 
+original design.\tabularnewline
+\hline 
+\end{tabular}
+
+\caption{Testing the Homepage}
+\end{table}
+\begin{table}
+\begin{tabular}{|>{\centering}p{1.5cm}|>{\centering}p{1.5cm}|>
+{\centering}p{3cm}|>{\centering}p{3cm}|>{\centering}p{3cm}|>
+{\centering}p{3.5cm}|}
+\hline 
+\multicolumn{6}{|c|}{Test}\tabularnewline
+\hline 
+Ref. & Req. & Contents & Input & Output & Pass Criteria\tabularnewline
+\hline 
+\hline 
+ &  & Test that the design and graphics show correctly. & 
+\multicolumn{2}{>{\centering}p{6cm}|}{The homepage display should be 
+visually inspected.} & The images should be consistent with the 
+original design.\tabularnewline
+\hline 
+ &  & Check the friends list displays correctly when it is not sorted 
+by
+any custom sorts. & The page containing the friends list should be 
+loaded and there should
+be no specific sorts or filters specified. & The output page source 
+for this page with no friends, lots of friends,
+and with the maximum amount of friends. & The pages should return 
+standards compliant HTML with no errors encountered.
+The sorts should be correct and a visual inspection should also be
+carried out.\tabularnewline
+\hline 
+ &  & Check the friends list displays correctly when it is sorted 
+Alphabetically. & The page containing the friends list should be loaded 
+and there should
+be only an alphabetical sort applied. & The output page source for 
+this page with no friends, lots of friends,
+and with the maximum amount of friends. & The pages should return 
+standards compliant HTML with no errors encountered.
+The sorts should be correct and a visual inspection should also be
+carried out.\tabularnewline
+\hline 
+ &  & Check the friends list displays correctly when it is sorted by 
+recent
+activity. & The page containing the friends list should be loaded and 
+there should
+be only a recent activity sort applied. & The output page source for 
+this page with no friends, lots of friends,
+and with the maximum amount of friends. & The pages should return 
+standards compliant HTML with no errors encountered.
+The sorts should be correct and a visual inspection should also be
+carried out.\tabularnewline
+\hline 
+ &  & Check the friends list displays correctly when there are filters 
+applied. & Apply each filter available and reload the page. & The 
+source of the friends list with no friends, some friends and the
+max amount of friends for each of the sorts available. & Each returned 
+page should be standards compliant HTML with no errors
+encountered. The filters should be correctly applied and the pages
+should be visually inspected.\tabularnewline
+\hline 
+ &  & Check add new friend. & A friends should be added using the 
+friends list form. & The updated friends list containing all the 
+friends, or the database. & The list of friends after the friend has 
+been added should contain
+the new friend.\tabularnewline
+\hline 
+ &  & Check edit friend. & An existing friend should be edited through 
+the friends list edit
+function. & The information about the friend in the database or 
+information page. & The friend's information should have changed and 
+will match the new
+inputted data.\tabularnewline
+\hline 
+ &  & Check delete function. & On of the predefined friends should be 
+deleted using the friends list
+delete function. & The new friends list. & The new friends list should 
+not contain the deleted friend.\tabularnewline
+\hline 
+\end{tabular}
+
+\caption{Testing the Friends List}
+
+
+\end{table}
+
+\end{document}
+
