@@ -32,15 +32,15 @@
         <void method="set">
          <object idref="Point2D$Double0">
           <void method="setLocation">
-           <double>572.6817928305074</double>
-           <double>126.08964152537143</double>
+           <double>537.6817928305074</double>
+           <double>211.08964152537143</double>
           </void>
          </object>
-         <double>126.08964152537143</double>
+         <double>211.08964152537143</double>
         </void>
        </void>
       </object>
-      <double>572.6817928305074</double>
+      <double>537.6817928305074</double>
      </void>
     </void>
    </object>
@@ -196,15 +196,15 @@
         <void method="set">
          <object idref="Point2D$Double4">
           <void method="setLocation">
-           <double>276.63195250829244</double>
-           <double>582.545099627104</double>
+           <double>305.63195250829244</double>
+           <double>603.545099627104</double>
           </void>
          </object>
-         <double>582.545099627104</double>
+         <double>603.545099627104</double>
         </void>
        </void>
       </object>
-      <double>276.63195250829244</double>
+      <double>305.63195250829244</double>
      </void>
     </void>
    </object>
@@ -270,15 +270,15 @@
         <void method="set">
          <object idref="Point2D$Double6">
           <void method="setLocation">
-           <double>665.0</double>
-           <double>593.0</double>
+           <double>837.0</double>
+           <double>632.0</double>
           </void>
          </object>
-         <double>593.0</double>
+         <double>632.0</double>
         </void>
        </void>
       </object>
-      <double>665.0</double>
+      <double>837.0</double>
      </void>
     </void>
    </object>
@@ -517,15 +517,15 @@ checkUserName(): boolean</string>
         <void method="set">
          <object idref="Point2D$Double13">
           <void method="setLocation">
-           <double>692.5445418982674</double>
-           <double>61.36414338985142</double>
+           <double>880.5445418982674</double>
+           <double>44.36414338985142</double>
           </void>
          </object>
-         <double>61.36414338985142</double>
+         <double>44.36414338985142</double>
         </void>
        </void>
       </object>
-      <double>692.5445418982674</double>
+      <double>880.5445418982674</double>
      </void>
     </void>
    </object>
@@ -545,6 +545,8 @@ checkUserName(): boolean</string>
       <string>+ init()
 + create(monster: Monster)
 + create(user: User)
++ update(user: User)
++ update(monster: Monster)
 + search(user: User): Monster[]
 + search(): User[]
 + delete(user: User)
@@ -570,15 +572,15 @@ checkUserName(): boolean</string>
         <void method="set">
          <object idref="Point2D$Double14">
           <void method="setLocation">
-           <double>282.0</double>
-           <double>36.0</double>
+           <double>278.0</double>
+           <double>29.0</double>
           </void>
          </object>
-         <double>36.0</double>
+         <double>29.0</double>
         </void>
        </void>
       </object>
-      <double>282.0</double>
+      <double>278.0</double>
      </void>
     </void>
    </object>
