@@ -39,7 +39,7 @@ public class TestPersistance {
             persistIt.create(monster);
             persistIt.create(user);
             /*
-             * loops through both list, fairly obvious, but am putting it anyway hehe.
+             * loops through both lists, fairly obvious, but am putting it anyway hehe.
              */
             for (User u : persistIt.search()) {
                 System.out.println(u.getName());
