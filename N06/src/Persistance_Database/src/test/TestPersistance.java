@@ -29,7 +29,7 @@ public class TestPersistance {
         /*
          * Makes a new user and monster using the MakeUser.makeIt() static method, this is just a shortcut so I don't have to keep writing out setters.
          */
-        User user = MakeUser.makeIt("Enzo", "hi", 0);
+        User user = MakeUser.makeIt("Dan", "hi", 0);
         Monster monster = MakeMonster.makeIt("Rawr", 100, 1, 100, 100, user.getName());
         try {
             /*
