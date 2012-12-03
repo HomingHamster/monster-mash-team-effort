@@ -12,7 +12,9 @@
 -strength: int
 -health: int
 -sex: boolean
--aggression: int</string>
+-aggression: int
+-dob: int
+-battleMonster: boolean</string>
      </void>
     </void>
     <void property="name">
@@ -32,15 +34,15 @@
         <void method="set">
          <object idref="Point2D$Double0">
           <void method="setLocation">
-           <double>319.68179283050745</double>
-           <double>242.08964152537146</double>
+           <double>294.68179283050745</double>
+           <double>210.08964152537146</double>
           </void>
          </object>
-         <double>242.08964152537146</double>
+         <double>210.08964152537146</double>
         </void>
        </void>
       </object>
-      <double>319.68179283050745</double>
+      <double>294.68179283050745</double>
      </void>
     </void>
    </object>
@@ -52,7 +54,6 @@
       <string>-name: String 
 -password: String
 -userType: Type
--battleMonster: Monster
 -virtualMoney: int
 </string>
      </void>
@@ -95,6 +96,11 @@
   </void>
   <void method="addNode">
    <object class="com.horstmann.violet.ClassNode" id="ClassNode2">
+    <void property="attributes">
+     <void property="text">
+      <string>-prize: int</string>
+     </void>
+    </void>
     <void property="methods">
      <void property="text">
       <string>+calcWinner(monster1: Monster, monster2: Monster): Monster
@@ -178,6 +184,11 @@
   </void>
   <void method="addNode">
    <object class="com.horstmann.violet.ClassNode" id="ClassNode4">
+    <void property="attributes">
+     <void property="text">
+      <string>-cost: int</string>
+     </void>
+    </void>
     <void property="methods">
      <void property="text">
       <string>+isSameSex(parent1: Monster, parent2: Monster): boolean
@@ -316,15 +327,15 @@
         <void method="set">
          <object idref="Point2D$Double7">
           <void method="setLocation">
-           <double>771.4095218813736</double>
-           <double>494.45266945754975</double>
+           <double>770.4095218813736</double>
+           <double>474.45266945754975</double>
           </void>
          </object>
-         <double>494.45266945754975</double>
+         <double>474.45266945754975</double>
         </void>
        </void>
       </object>
-      <double>771.4095218813736</double>
+      <double>770.4095218813736</double>
      </void>
     </void>
    </object>
@@ -347,7 +358,7 @@
         <void method="set">
          <object idref="Point2D$Double8">
           <void method="setLocation">
-           <double>215.40952188137368</double>
+           <double>475.4095218813737</double>
            <double>77.22689245761143</double>
           </void>
          </object>
@@ -355,7 +366,7 @@
         </void>
        </void>
       </object>
-      <double>215.40952188137368</double>
+      <double>475.4095218813737</double>
      </void>
     </void>
    </object>
@@ -378,15 +389,15 @@
         <void method="set">
          <object idref="Point2D$Double9">
           <void method="setLocation">
-           <double>240.22633472877487</double>
-           <double>181.40896415253718</double>
+           <double>500.2263347287749</double>
+           <double>197.40896415253718</double>
           </void>
          </object>
-         <double>181.40896415253718</double>
+         <double>197.40896415253718</double>
         </void>
        </void>
       </object>
-      <double>240.22633472877487</double>
+      <double>500.2263347287749</double>
      </void>
     </void>
    </object>
@@ -409,7 +420,7 @@
         <void method="set">
          <object idref="Point2D$Double10">
           <void method="setLocation">
-           <double>178.35912383032223</double>
+           <double>438.35912383032223</double>
            <double>130.1820716949257</double>
           </void>
          </object>
@@ -417,7 +428,7 @@
         </void>
        </void>
       </object>
-      <double>178.35912383032223</double>
+      <double>438.35912383032223</double>
      </void>
     </void>
    </object>
@@ -538,7 +549,7 @@ checkUserName(): boolean</string>
     <void property="attributes">
      <void property="text">
       <string>- managerMonster: EntityManager
--  factorMonster: EntityManagerFactory
+-  factoryMonster: EntityManagerFactory
 - managerUser: EntityManager
 - factoryUser: EntityManagerFactory</string>
      </void>
@@ -606,15 +617,15 @@ checkUserName(): boolean</string>
         <void method="set">
          <object idref="Point2D$Double15">
           <void method="setLocation">
-           <double>200.0</double>
-           <double>25.0</double>
+           <double>455.0</double>
+           <double>18.0</double>
           </void>
          </object>
-         <double>25.0</double>
+         <double>18.0</double>
         </void>
        </void>
       </object>
-      <double>200.0</double>
+      <double>455.0</double>
      </void>
     </void>
    </object>
@@ -623,7 +634,7 @@ checkUserName(): boolean</string>
    <object class="com.horstmann.violet.ClassNode" id="ClassNode12">
     <void property="methods">
      <void property="text">
-      <string>+createMonster()</string>
+      <string>+createMonster(): Monster</string>
      </void>
     </void>
     <void property="name">
@@ -651,6 +662,79 @@ checkUserName(): boolean</string>
        </void>
       </object>
       <double>709.0</double>
+     </void>
+    </void>
+   </object>
+  </void>
+  <void method="addNode">
+   <object class="com.horstmann.violet.ClassNode" id="ClassNode13">
+    <void property="methods">
+     <void property="text">
+      <string>makeIt(name, password, vMoney, type): User</string>
+     </void>
+    </void>
+    <void property="name">
+     <void property="text">
+      <string>UserFactory</string>
+     </void>
+    </void>
+   </object>
+   <object class="java.awt.geom.Point2D$Double" id="Point2D$Double17">
+    <void class="java.awt.geom.Point2D$Double" method="getField">
+     <string>x</string>
+     <void method="set">
+      <object idref="Point2D$Double17">
+       <void class="java.awt.geom.Point2D$Double" method="getField">
+        <string>y</string>
+        <void method="set">
+         <object idref="Point2D$Double17">
+          <void method="setLocation">
+           <double>69.0</double>
+           <double>451.0</double>
+          </void>
+         </object>
+         <double>451.0</double>
+        </void>
+       </void>
+      </object>
+      <double>69.0</double>
+     </void>
+    </void>
+   </object>
+  </void>
+  <void method="addNode">
+   <object class="com.horstmann.violet.ClassNode" id="ClassNode14">
+    <void property="methods">
+     <void property="text">
+      <string>mateIt(name, height, age, strength, health,
+ sex, aggression, dob, battleMonster): Monster</string>
+     </void>
+    </void>
+    <void property="name">
+     <void property="text">
+      <string>MonsterFactory</string>
+     </void>
+    </void>
+   </object>
+   <object class="java.awt.geom.Point2D$Double" id="Point2D$Double18">
+    <void class="java.awt.geom.Point2D$Double" method="getField">
+     <string>x</string>
+     <void method="set">
+      <object idref="Point2D$Double18">
+       <void class="java.awt.geom.Point2D$Double" method="getField">
+        <string>y</string>
+        <void method="set">
+         <object idref="Point2D$Double18">
+          <void method="setLocation">
+           <double>30.0</double>
+           <double>62.0</double>
+          </void>
+         </object>
+         <double>62.0</double>
+        </void>
+       </void>
+      </object>
+      <double>30.0</double>
      </void>
     </void>
    </object>
@@ -984,6 +1068,30 @@ checkUserName(): boolean</string>
    </object>
    <object idref="ClassNode8"/>
    <object idref="ClassNode7"/>
+  </void>
+  <void method="connect">
+   <object class="com.horstmann.violet.ClassRelationshipEdge">
+    <void property="bentStyle">
+     <object class="com.horstmann.violet.BentStyle" field="HVH"/>
+    </void>
+    <void property="endArrowHead">
+     <object class="com.horstmann.violet.ArrowHead" field="V"/>
+    </void>
+   </object>
+   <object idref="ClassNode1"/>
+   <object idref="ClassNode13"/>
+  </void>
+  <void method="connect">
+   <object class="com.horstmann.violet.ClassRelationshipEdge">
+    <void property="bentStyle">
+     <object class="com.horstmann.violet.BentStyle" field="HVH"/>
+    </void>
+    <void property="endArrowHead">
+     <object class="com.horstmann.violet.ArrowHead" field="V"/>
+    </void>
+   </object>
+   <object idref="ClassNode0"/>
+   <object idref="ClassNode14"/>
   </void>
  </object>
 </java>
