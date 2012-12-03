@@ -1,0 +1,63 @@
+Minutes of Meetings - 6
+
+ 
+
+Project: Monster Mash - Group Project 06
+
+Meeting: Sixth Project Meeting.
+
+Attendees: All project members present except Aiman Arafat (Illness)
+
+Place and date of meeting: Room 502, Tuesday 20th November 2012.
+
+Circulation list: All project members, plus project manager.
+
+Author: Samuel Mills
+
+Date of Minutes: Tuesday 20th November 2012.
+
+Version: 1.0
+
+ 
+
+Matters arising
+
+============
+
+Last week was the test documents review and the test document was successfully submitted.
+
+ 
+
+New business
+
+===========
+
+We started the meeting by talking about the Design Specification which is required by the 7th December 2012 and the planning of the demonstration to show our progress so far on the 11th of December.
+
+ 
+
+Chris Arom went onto discuss what he learned from the standards meeting. He mentioned that the communication standards are complete already and that he agreed with a set of people on how the implementation is going to function. (HTTP). He then went into detail about servlets and how certain procedures would work. XML serialization suggested by project manager and advised that Java serialization is clunky and should generally be avoided in this case.
+
+ 
+
+Next we talked about how the test team will be implementing server to server interaction. Are we going to be relying on others before we can continue or will our end of the project work regardless? The main consensus of the group was that our end should still work if other groups are not on the same page as us.
+
+ 
+
+GUI final design needs to be completed by Chris Arom soon so it can actually be developed, assisting this will be Samuel Mills. As the design to be completed is purely graphical, this means that the actual design of the components within the game are ready to be developed (Design Team). Dan Mcguckin mentioned Violet as UML Editor (.jar file on Github)
+
+ 
+
+Went then further discussed admin roles but this still hasn’t developed from the last discussion we had in the previous meeting. It was decided that Dan Mcguckin and Chris Arom are to look into this. Finally we talked about how we could start database implementation and populating the database.
+
+ 
+
+Next meeting could be on Thursday 22nd November 2012 (This will be setup if needed, monitor Facebook for updates) but the next definite meeting will be on Tuesday 27th of November. (Room 502, 1.00PM
+
+ 
+
+AOB
+
+=====
+
+None

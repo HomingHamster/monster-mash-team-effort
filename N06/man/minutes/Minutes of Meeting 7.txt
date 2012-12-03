@@ -1,0 +1,55 @@
+Minutes of Meetings - 7
+
+ 
+
+Project: Monster Mash - Group Project 06
+
+Meeting: Seventh Project Meeting.
+
+Attendees: All project members present except Felix Farquharson (No apology given)
+
+Place and date of meeting: Room 502, Tuesday 27th November 2012.
+
+Circulation list: All project members, plus project manager.
+
+Author: Samuel Mills
+
+Date of Minutes: Tuesday 27th November 2012.
+
+Version: 1.0
+
+ 
+
+Matters arising
+
+============
+
+Chris Arom confirmed design GUI is still going ahead and all members of the group are continuing with the tasks they have been assigned for the next hand in date.
+
+ 
+
+New business
+
+===========
+
+We started the meeting by discussing how we are going to prepare data for the databases. JUnit and SQL were mentioned). Dan Mcguckin mentioned how he set up some databases with entity classes and that he has created the role of a persistence manager. (Add/remove/edit account etc). It was suggested by the project manager to reflect this back to the test team.
+
+ 
+
+James Slater set a date for the game design to be finally completed by which is the 29th November 2012. Chris Arom explained how his Photoshop skills are limited but he would do his best regarding designing the final game GUI so code development can formally start. Plan document was also suggested to be completed for Thursday 29th November so JSP’s can be developed.
+
+ 
+
+We then discussed our developments on the current tasks which have been distributed throughout the team and all members of the group are happy with what they have to do. We then moved onto what exactly we are going to demonstrate on the 10th of December. Project leader said the main aim was to have the game fully complete visually even if the features don’t necessarily work and to show our database development.
+
+ 
+
+Next meeting could be on Thursday 29th November 2012 (This will be setup if needed, monitor Facebook for updates) but the next definite meeting will be on Tuesday 4h of December. (Room 502, 1.00PM
+
+ 
+
+AOB
+
+=====
+
+Discussed timesheets and everyone is on track regarding hour contribution. Noted how people who are on a smaller amount of hours still have work to do which will help contribute to their hour totally considerably.

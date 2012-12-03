@@ -1,0 +1,51 @@
+Minutes of Meetings - 4
+
+Project: Monster Mash - Group Project 06
+
+Meeting: Fourth Project Meeting.
+
+Attendees: All project members present.
+
+Place and date of meeting: Room 502, Tuesday 30th October 2012.
+
+Circulation list: All project members, plus project manager.
+
+Author: Samuel Mills
+
+Date of Minutes: Tuesday 30th October 2012.
+
+Version: 1.0
+
+ 
+
+Matters arising
+
+============
+
+Last week we discussed each group member’s individual tasks which have now been completed and the final document has been submitted.
+
+ 
+
+New business
+
+===========
+
+We started this week’s meeting by looking at both GUI designs which Ben Brooks and Aiman Arafat had developed. The group agreed we are going to put both GUI designs in the project plan document and then explain that we are going to take ideas from both GUI’s and develop them to create a main GUI for the game.
+
+The group then discussed group standards and how we would have to agree with other groups regarding factors such as will two players have to be online to request/accept or decline a fight or can it be done if one player is offline. James Slater then brought up the standard meeting which is at 2pm tomorrow in C55. Chris Arom agreed to attend.
+
+ACTION: cki
+
+Project manager encouraged members of the group assigned to testing (Felix and Chris) to start filling in test documents. James Slater explained that he and the group manager had changed a few of the roles around and he will discuss further on Thursday. UML was brought up and we discussed that the beginnings of a model are already in place. DIA discussed.
+
+Chris discussed how he has setup a login. J2EE authorization was explained by Project Manager in detail and the group was encouraged to look into it more.
+
+The next unofficial group meeting will take place on Thursday 1st November 2012 (2.00PM-3.00PM) in the Delphinium. The next official meeting will take place on Tuesday 6th November 2012.
+
+ 
+
+AOB
+
+=====
+
+None
