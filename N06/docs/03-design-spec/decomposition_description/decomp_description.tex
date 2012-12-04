@@ -1,0 +1,56 @@
+\section{DECOMPOSITION DESCRIPTION}
+\subsection{Applications in system}
+% This was Amy's bit, but was mis-understood so please replace with below %
+In our Monster Mash design, there will be only one application. This handles everything from serving JSPs that a user can see in their browser, to the database connections, inter-server connections and data processing.
+Most of the classes in our application are briefly described below and these all come together to let the user 
+
+\subsection{Significant classes in each pacakge}
+\subsubsection{Significant classes in the Model package}
+	\paragraph{User}
+	The User class contains fields to hold the user's data for things such as Name, Password, Money, Friends, etc. Each user can have between 1 and 6 monsters. You can also set the user's default battle monster from the changeBattleMonster method in this class. A user is created using the UserFactory class.
+	\paragraph{Monster}
+	This class contains all of the monster's stats. For example, height, age, strength, sex, etc. A monster is created via the MonsterFactory class.
+	\paragraph{PersistManager}
+	PersistManager is the class which can create, update or delete a user or monster. Search for users or monsters and start or stop the main application. It is also this class which talks to the User database, Monster database and shop database.
+\subsubsection{Significant classes in the Controller package}
+	\paragraph{Login}
+	Login contains methods that will allow a user to login or register themselves.
+	\paragraph{Shop}
+	Shop contains methods that let a user buy or sell monsters.
+	\paragraph{FriendsList}
+	FriendsList contains methods for managing a user's friends. E.g. addFriend, removeFriend, getFriend, etc.
+	\paragraph{TradeMonsters}
+	TradeMonster contains a method for trading two monsters.
+	\paragraph{Breed}
+	The Breed class has methods which calculate a cost of a monster, creating a child and checking if monsters are of the same sex.
+	\paragraph{SimulateFight}
+	SimulateFight has methods to calculate a winner of a fight between two monsters and calcualte the prize amount of a fight.
+
+\subsection{Mapping from requirements to classes}
+\begin{tabular}{| l | l |}
+\hline
+Requirement & Classes Providing Requirement \\
+\hline
+FR1 (Server-based authentication) & Login, CreateMonsterAndUser, PersistManager, User and UserFactory \\
+\hline
+FR2 (Server friends list) & FriendsList and PersistManager \\
+\hline
+FR3 (Server monster list) & CreateMonsterAndUser, PersistManager, User and Monster \\
+\hline
+FR4 (Server monster mash management) & SimulateFight, FriendsList, PersistManager, User and Monster \\
+\hline
+FR5 (Server-server communication) & PersistManager \\
+\hline
+FR6 (Client options) & Login, Shop, FriendsList, TradeMonsters, Breed, SimulateFight and PersistManager \\
+\hline
+FR7 (Startup of software in browser) & Login and PersistManager \\
+\hline
+FR8 (Game display in browser) & FriendsList, TradeMonsters, Breed, SimulateFight and PersistManager \\
+\hline
+FR9 (Friend matching) & FriendsList, PersistManager \\
+\hline
+FR10 (Fight notifications) & SimulateFight and PersistManager \\
+\hline
+FR11 (Friends rich list) & FriendsList \\
+\hline
+\end{tabular}
