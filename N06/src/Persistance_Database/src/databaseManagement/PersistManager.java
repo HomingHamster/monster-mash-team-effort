@@ -15,7 +15,7 @@ import javax.persistence.Query;
  *
  * @author Dan
  */
-public class PersistManager {
+public class PersistManager implements PersistanceManagerInterface {
 
     private EntityManager managerMonster;
     private EntityManagerFactory factoryMonster;
@@ -205,5 +205,20 @@ public class PersistManager {
         factoryMonster.close();
         managerUser.close();
         factoryUser.close();
+    }
+
+    @Override
+    public void addToShop(Monster monster) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public void removeFromShop(Monster monster) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public List<Monster> getAllShop() {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 }
