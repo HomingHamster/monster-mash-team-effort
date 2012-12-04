@@ -1,0 +1,25 @@
+Minutes of Meetings - 8
+Project: Monster Mash - Group Project 06
+Meeting: Eighth Project Meeting.
+Attendees: All project members present except Rebecca James (Illness) Chris Arom (Illness)
+Place and date of meeting: Room 502, Tuesday 4th December 2012.
+Circulation list: All project members, plus project manager.
+Author: Samuel Mills
+Date of Minutes: Tuesday 4th November 2012.
+Version: 1.0
+
+Matters arising
+============
+Looked over Thursday’s meeting and discussed what was achieved. Talked about how Chris Arom has now completed the final GUI design and how everyone is still continuing their individual document contribution for the final hand in on Friday 7th December.
+
+New business
+===========
+In regards to last week’s discussion regarding preparing data for the databases, this week Dan Mcguckin mentioned HSQLDB and said how he has looked into that.
+
+Project manager stated that we have left the document review a bit too close for comfort as the hand in date is the 10th of December. Document review meeting has been setup for Wednesday 5th December 2012 at 12.00PM in the Delphinium. It is really imperative that all members of the group attend this meeting with the work they have been assigned to complete so the group can review each document individually and can prepare a final draft. It is advised that all work is sent to Samuel Mills (sam39) ASAP so all documents can be combined into a single document. Samuel Mills will try and combine all documents by the review meeting however if he has not received work from certain individuals within a timely manner then this will not be achievable. Bring your own work to the review meeting just in case.
+
+It was advised to email Chris Arom as communication is lacking regarding his current progress for the document review and hand in submission. This is an urgent matter and needs to be resolved. (Should get Chris Arom’s number for future reference as we could not contact him)
+
+Project manager went into detailed discussion about servlets as members of the group are relying on Chris Arom’s servlet work however communication is again lacking and work has not been passed on for development. (Should be on GIT at least) This is also urgent as it is delaying design specification document development which is due on Friday 7th Decemeber. Mentioned that we have a model, list of pages but the controller is missing (the parameters that go out are what?). Next meeting is for Wednesday 5th December 2012 at 12.00PM in the Delphinium.
+
+AOB - None
