@@ -15,7 +15,7 @@ import javax.persistence.Query;
  *
  * @author Dan
  */
-public class PersistManager implements PersistanceManagerInterface {
+public class PersistManager implements PersistenceManagerInterface {
 
     private EntityManager managerMonster;
     private EntityManagerFactory factoryMonster;

@@ -7,10 +7,10 @@ package databaseManagement;
 import java.util.List;
 
 /**
- * PersistenceManager Interface.
+ * PersistanceManager Interface.
  * @author Dan
  */
-public interface PersistanceManagerInterface {
+public interface PersistenceManagerInterface {
 
     public void init();
 
