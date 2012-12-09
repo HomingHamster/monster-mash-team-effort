@@ -1,0 +1,165 @@
+\documentclass{beamer}
+
+\ifx\themename\undefined
+  \def\themename{Berlin}
+\fi
+
+\usetheme{\themename}
+
+\beamertemplatetransparentcovered
+
+\usepackage{times}
+\usepackage[T1]{fontenc}
+
+\usepackage[normalem]{ulem}
+
+\title{Testing Web Applications.}
+\subtitle{How should we test the Monster Mash game?}
+
+\author{Felix Farquharson}
+\institute{Group Project\\ CS2SOMETHING}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+  \frametitle{Outline}
+  \tableofcontents
+\end{frame}
+
+\section{Different types of testing.}
+\subsection{Overview}
+
+\begin{frame}<1>
+  \frametitle{The different types of testing.}
+
+  \begin{block}{I've done some research...}
+    ... Well, I googled it at least! I was thinking about a 
+	way of testing everything that was reliable and 
+	worked for all the different parts of the application
+	all in one.
+  \end{block}
+
+\
+
+As it turns out we should probably test each part of the program
+in a way that suits that specific part.
+
+\end{frame}
+
+\subsection{List of types}
+
+\begin{frame}<2>
+  \frametitle{A list of different types}
+  \framesubtitle{Courtesy of http://www.softwaretestinghelp.com/}
+
+  \begin{enumerate}
+	\item Functionality Testing
+	\item Usability testing
+	\item Interface testing         
+	\item Compatibility testing     << This is probably irrelivant.
+	\item Performance testing	<< These are probably
+	\item \sout{Security testing} 	<< both just for wow.
+  \end{enumerate}
+\end{frame}
+
+
+\section{Suggested Tests}
+\subsection{Functionality Testing}
+
+\begin{frame}<3>
+\frametitle{Testing the Functionality}
+\begin{itemize}
+\item Now, I took this to mean testing the backend.
+\item Testing the code that makes the application do somthing useful.
+\item This is where JUnit might \emph{acctually} be of some use. We might use it
+in a fashion like Richard Shipman described in his lecture today 
+(15/10).\\
+Ie. write the tests and then develop to make sure the 
+tests are forfilled. (Maybe with some overlap to allow development
+to begin immediately.)
+\item Other useful tests might be Test Tables and manual testing.
+\end{itemize}
+\end{frame}
+
+\subsection{Useablity Testing}
+
+\begin{frame}<4>
+\frametitle{Testing the Useability.}
+
+\begin{itemize}
+\item I took this to mean largely testing the UI.
+\item making sure all the links are intuative.
+\item Making sure the application isn't too complicated 
+	for normal human beings.
+\end{itemize}
+\begin{block}{How?}
+For this I think that testing with real people is going to be 
+very important. Preferably people who have never seen the program
+before.
+\end{block}
+
+Making sure the UI designers understand what other people not in
+our group see will probably help.
+\end{frame}
+
+\subsection{Interface Testing}
+\begin{frame}<5>
+\frametitle{Testing the interface.}
+\begin{itemize}
+\item Largely the same as Useability testing (I struggled to see
+any difference at all).
+\item Google define = testing the human interaction of a product
+\item we run command-line tools, automated web browsers, 
+or something else automatic...
+\item See http://seleniumhq.org/ (automates web browsers).
+\item I thought testing in different web browsers might be 
+important here. (see http://browsershots.org/)
+\end{itemize}
+\end{frame}
+
+\subsection{Compatability Testing}
+\begin{frame}<6>
+\frametitle{Testing compatibilty.}
+\begin{block}{My understanding}
+While this type of testing is probably refering to checking it 
+works on all browsers or the server runs in all places. Most of
+this task is taken away because of the fact Java is multiplatform.\\
+Also I have covered the browser differences in the previous slide.
+\end{block}
+\begin{itemize}
+\item I propose we use this title as a way to test that the server 
+will interact with the other groups servers.
+\item I couldn't think of a way to test this until we have defined
+somthing to test it by. ie. the method of communication between 
+servers.
+\end{itemize}
+\end{frame}
+
+\subsection{security and performance testing}
+\begin{frame}<7>
+\frametitle{Testing for security and for performance.}
+While these are both important, we have been told that we should
+not be concerned about security. I think it's still good practice,
+so we could run a few simple automated tests. (See Nessus on 
+http://www.tenable.com/).\\
+Performance is not likely to be an issue, and we are limited with 
+our platforms and resources etc. So we can leave this for later if
+appropriate, I think.
+\end{frame}
+
+\section{Questions.}
+
+\begin{frame}<8>
+\frametitle{Questions?}
+
+\begin{block}{}
+Are there any questions?
+\end{block}
+
+\end{frame}
+
+\end{document}

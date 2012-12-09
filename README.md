@@ -4,21 +4,18 @@ monster-mash-team-effort
 Read this first
 ---------------
 
-I've created all of the directories mentioned the the specification.
-I've created a .gitignore file to ignore the build, bin and dist
-directories that might be created by an IDE.
-I've left the ref folder outside the project's root directory, this 
-is for the simple reason that it should not be included in its
-current state in the project itself.
+The RESOURCES FOLDER is for things that might be useful that don't
+go in the project directory because they are either compiled code, not
+our work or PDFs/JARs etc.
+
+Directory structure as established, I've merged the ref folder into 
+the resources folder ben made, because it seemed pointless to have
+two folders for what I'm pretty sure is the same thing.
+
 Anything else outside the N06 directory will also not be included in
 the final project.
-This readme is also not part of the project, just an easy way to
+This README is also not part of the project, just an easy way to
 leave everyone notes.
-
-At some point we are going to begin using the netbeans module for 
-dealing with git, so treat the instructions below as a sort of 
-failsafe. (I don't know anything about the module yet, I will be
-researching it this week.)
 
 Using Git from the command line
 -------------------------------
