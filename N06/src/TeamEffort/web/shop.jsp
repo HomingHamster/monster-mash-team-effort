@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Monster Mash- Main Page</title>
+        <title>Monster Mash- Shop</title>
         <link href="resources/template/css/bootstrap.min.css" rel="stylesheet" media="screen">
         <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
@@ -35,11 +35,12 @@
                 </div>
 
                 <div class="span10">
-                    <h1>Welcome Page</h1>
+                    <h1>Shop</h1>
 
                     <p>Placeholder placeholder placeholder</p>
 
-                    <p>Placeholder placeholder placeholder</p>
+                    <p>Placeholder placeholder placeholder</p>	
+
                 </div>
             </div>
 
