@@ -80,7 +80,52 @@
 			</div>
 		</div>
 	</div>
+	<div id="friendslist" style="padding:5px;position:fixed;bottom:0;right:25px;width:200px;background:#eee;border:1px solid #aaa;">
+		<div id="friends" style="display:none;overflow:auto;max-height:300px">
+			<ul style="list-style-type:none;">
+				<!-- JSP Loop through friends -->
+				<li><a href="#">Friend 1</a></li>
+				<li><a href="#">Friend 1</a></li>
+				<li><a href="#">Friend 1</a></li>
+				<li><a href="#">Friend 1</a></li>
+				<li><a href="#">Friend 1</a></li>
+				<li><a href="#">Friend 1</a></li>
+				<li><a href="#">Friend 1</a></li>
+				<li><a href="#">Friend 1</a></li>
+				<li><a href="#">Friend 1</a></li>
+				<li><a href="#">Friend 1</a></li>
+				<li><a href="#">Friend 1</a></li>
+				<li><a href="#">Friend 1</a></li>
+				<li><a href="#">Friend 1</a></li>
+				<li><a href="#">Friend 1</a></li>
+				<li><a href="#">Friend 1</a></li>
+				<li><a href="#">Friend 1</a></li>
+				<li><a href="#">Friend 1</a></li>
+				<li><a href="#">Friend 1</a></li>
+				<li><a href="#">Friend 1</a></li>
+				<li><a href="#">Friend 1</a></li>
+				<li><a href="#">Friend 1</a></li>
+				<li><a href="#">Friend 1</a></li>
+				<li><a href="#">Friend 1</a></li>
+				<li><a href="#">Friend 1</a></li>
+				<li><a href="#">Friend 1</a></li>
+				<li><a href="#">Friend 1</a></li>
+				<li><a href="#">Friend 1</a></li>
+				<!-- If user has no friends: -->
+				<!-- <li>You have no friends!</li> -->
+			</ul>
+		</div>
+		<div id="friendslistbutton" style="text-align:center;font-weight:bold;text-decoration:underline;">
+			Show Friends
+		</div>
+	</div>
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+	<script>
+    $("#friendslistbutton").click(function () {
+      $("#friends").stop().slideToggle("slow");
+      $("#friendslistbutton").text($("#friendslistbutton").text() == 'Hide Friends' ? 'Show Friends' : 'Hide Friends');
+    });
+	</script>
 </body>
 </html>
