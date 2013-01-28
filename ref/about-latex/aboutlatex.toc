@@ -1,7 +1,0 @@
-\beamer@endinputifotherversion {3.07pt}
-\beamer@sectionintoc {1}{What is \LaTeX {} then?}{3}{0}{1}
-\beamer@subsectionintoc {1}{1}{Removing the design from the data...}{3}{0}{1}
-\beamer@subsectionintoc {1}{2}{Why it's better.}{4}{0}{1}
-\beamer@sectionintoc {2}{And how?}{6}{0}{2}
-\beamer@subsectionintoc {2}{1}{Intro to commands.}{6}{0}{2}
-\beamer@subsectionintoc {2}{2}{Resources}{7}{0}{2}
