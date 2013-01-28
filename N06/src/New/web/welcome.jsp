@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<jsp:useBean id="user" class="Login.checkLogin" scope="session"/>
 <html lang="en">
     <head>
         <title>Monster Mash- Main Page</title>
@@ -35,7 +36,7 @@
                 </div>
 
                 <div class="span10">
-                    <h1>Welcome Page</h1>
+                    <h1>Welcome Page <%=user.getUsername()%></h1>
 
                     <p>Placeholder placeholder placeholder</p>
 
