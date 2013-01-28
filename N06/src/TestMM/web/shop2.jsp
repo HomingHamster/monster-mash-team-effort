@@ -54,7 +54,7 @@
 			</thead>
 			<tbody>
 				<tr>
-					<td><img src="http://blog.furred.net/MonsterID.ashx?seed=1"></td>
+					<td><img src="http://bbrks.me/221/monsterid.php?seed=1"></td>
 					<td>13</td>
 					<td>0.7m</td>
 					<td>3</td>
@@ -63,7 +63,7 @@
 					<td><button class="btn btn-primary">Buy</button></td>
 				</tr>
 				<tr>
-					<td><img src="http://blog.furred.net/MonsterID.ashx?seed=2"></td>
+					<td><img src="http://bbrks.me/221/monsterid.php?seed=2"></td>
 					<td>13</td>
 					<td>0.7m</td>
 					<td>3</td>
@@ -72,7 +72,7 @@
 					<td><button class="btn btn-primary">Buy</button></td>
 				</tr>
 				<tr>
-					<td><img src="http://blog.furred.net/MonsterID.ashx?seed=3"></td>
+					<td><img src="http://bbrks.me/221/monsterid.php?seed=3"></td>
 					<td>13</td>
 					<td>0.7m</td>
 					<td>3</td>
@@ -122,7 +122,7 @@
 			<div id="friends" style="overflow:auto;max-height:300px">
 				<ul style="list-style-type:none;margin:0;">
 					<!-- JSP Loop through friends -->
-					<li><a href="#"><i class="icon-user"></i> Ben</a></li>
+					<!-- <li><a href="#"><i class="icon-user"></i> Ben</a></li>
 					<li><a href="#"><i class="icon-user"></i> James</a></li>
 					<li><a href="#"><i class="icon-user"></i> Lorem Ipsum</a></li>
 					<li><a href="#"><i class="icon-user"></i> Lorem Ipsum</a></li>
@@ -141,9 +141,9 @@
 					<li><a href="#"><i class="icon-user"></i> Lorem Ipsum</a></li>
 					<li><a href="#"><i class="icon-user"></i> Lorem Ipsum</a></li>
 					<li><a href="#"><i class="icon-user"></i> Lorem Ipsum</a></li>
-					<li><a href="#"><i class="icon-user"></i> Lorem Ipsum</a></li>
+					<li><a href="#"><i class="icon-user"></i> Lorem Ipsum</a></li> -->
 					<!-- If user has no friends: -->
-					<!-- <li>You have no friends!</li> -->
+					<li><a href="#"><i class="icon-info-sign"></i> You have no friends! :(</li>
 				</ul>
 			</div>
 			<a href="#addFriend" role="button" class="btn btn-primary btn-block" data-toggle="modal"><i class="icon-plus icon-white"></i> Add Friend</a>
