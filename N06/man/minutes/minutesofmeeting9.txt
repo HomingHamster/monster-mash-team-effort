@@ -1,0 +1,24 @@
+Minutes of Meetings – 9
+
+Project: Monster Mash - Group Project 06
+Meeting: First Project Demonstration
+Attendees: All project members present 
+Place and date of meeting: Room 502, Tuesday 11th December 2012.
+Circulation list: All project members, plus project manager.
+Author: Samuel Mills
+Date of Minutes: Tuesday 11th November 2012.
+Version: 1.0
+
+Matters arising
+============
+None
+
+New business
+===========
+In this week’s meeting we demonstrated our current project to the project manager. James Slater started the demonstration by discussing what we initially aimed to show at the demonstration as realistically the group hasn’t had time to develop and code certain features. James mentioned how we had the GUI fully working however not all the components worked, which is what we aimed for. He then moved onto discussing each feature and explained how they are going to function. Explained to the project manager that there is going to be no friend to friend selling but it is all going to be done via the shop.
+
+Dan Mcguckin went onto show he created a persistence manager class which controls the monster, user and shop databases and he went onto discuss how he’s linking users to monsters.
+
+Chris Arom demonstrated the servlets and explained how the servers are communicating with each other. Project manager raised a question about concurrency (Can a user request a fight if a monster is already in a fight, what will happen?) The group concluded that if a monster is fighting then they are considered busy and are not available to fight until their current fight has finished. We looked into how monsters are to age and how this will affect their health and strength attributes. Talked about how we are restricting the user’s available monster limit and how many monsters can be produced in a litter when breeding. We decided it would be only 1 monster, per breed. Project manager advised to look into concurrency more and the design of algorithms (E.g the fight and aging)
+
+Project leader mentioned things that have to be done over the Christmas holidays. Previous documentation to be updated and errors corrected, algorithms to be developed, asp to servlet communication and server to server.
