@@ -11,9 +11,9 @@
         <title>Monster Mash Logon</title>
         <link href="resources/template/css/bootstrap.min.css" rel="stylesheet" media="screen">
             <!-- jQuery files -->
-            <script type="text/javascript" src="../css/menu/jquery/jquery.js"></script>
-            <script type="text/javascript" src="../css/menu/jquery/jquery-ui.js"></script>
-
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+            <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js"></script>
+            <!-- Two JQuery scripts used for the forms(register/forgot pass) to appear, and replace each other if one is currently opened. -->
             <script type="text/javascript"> 
                 $(document).ready(function(){
                     $(".login").click(function(){
@@ -34,7 +34,12 @@
     </head>
     <body>
         <div id="header">
-            <img src="resources/template/img/indexheader2.png" width="930px" class="img-polaroid">
+            <img src="resources/template/img/indexheader2.png" 
+                 style=" display: block;
+                 margin-left: auto;
+                 margin-right: auto 
+                 "
+                 width="930px" class="img-polaroid">
         </div>
         <div class="mainbody" align="center">
             <!--form action = post, name = bla bla-->
@@ -52,14 +57,14 @@
             <h1> Register </h1>
             <p> Username : <input type="text"> </p>
             <p> Password: <input type="text"></p>
-            <p> e-mail : <input type="text"> </p> 
+            <p> E-mail:      <input type="text"> </p> 
             <input type="submit" value="Register" name="finishRegistration">
         </div>
 
         <div class="forgotDiv" align="center" style="display:none">
-
-            <p> Your username : <input type="text"> </p>
-            <p> Your e-mail : <input type="text"> </p> 
+            <h1> Request your password </h1>
+            <p> Your Username : <input type="text"> </p>
+            <p> Your E-mail :       <input type="text"> </p> 
             <input type="button" name="requestButton" value="Request Password">
 
 
