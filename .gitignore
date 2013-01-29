@@ -1,4 +1,3 @@
-N06/build/
 N06/bin/
 N06/dist/
 *~
@@ -13,5 +12,8 @@ N06/dist/
 Icon?
 ehthumbs.db
 Thumbs.db
+
 /nbproject/private/
-/build/
+*build/
+*build/*
+

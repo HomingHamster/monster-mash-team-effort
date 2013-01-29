@@ -1,4 +1,4 @@
-<!-- Base.jsp - Contains the html that should *never* change.
+<!-- Base.tag - Contains the html that should *never* change.
 Except in exceptional circumstances, like a bootstrap update.
 Blame: Felix (fef) -->
 
@@ -18,7 +18,7 @@ Blame: Felix (fef) -->
 	<head>
 		<!-- Include the framework css/js files -->
 		<link href="<%= locationToResources %>bootstrap/css/bootstrap.css" rel="stylesheet" />
-		<link href="${locationToResources}bootstrap/css/bootstrap-responsive.css" rel="stylesheet" />
+		<link href="<%= locationToResources %>bootstrap/css/bootstrap-responsive.css" rel="stylesheet" />
 
 		<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
 		<!--[if lt IE 9]>
@@ -26,7 +26,7 @@ Blame: Felix (fef) -->
 		<![endif]-->
 
 		<!-- Custom css/js -->
-		<link href="${locationToResources}css/style.css" />
+		<link href="<%= locationToResources %>css/style.css" />
 
 		<!-- JSP invoke to allow other templates to add to the header -->
 		<jsp:invoke fragment="head" />
@@ -60,7 +60,7 @@ Blame: Felix (fef) -->
 
 			<!-- The Javascript template JS files - at the bottom for quicker loading -->
 			<script src="http://code.jquery.com/jquery-latest.js"></script>
-			<script src="${locationToResources}bootstrap/js/bootstrap.min.js"></script>
+			<script src="<%= locationToResources %>bootstrap/js/bootstrap.min.js"></script>
 
 			<!-- Custom JS files and code -->
 			<script>
