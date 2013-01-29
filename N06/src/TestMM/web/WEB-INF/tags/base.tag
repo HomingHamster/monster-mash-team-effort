@@ -19,6 +19,8 @@ Blame: Felix (fef) -->
 		<!-- Include the framework css/js files -->
 		<link href="<%= locationToResources %>bootstrap/css/bootstrap.css" rel="stylesheet" />
 		<link href="<%= locationToResources %>bootstrap/css/bootstrap-responsive.css" rel="stylesheet" />
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="<%= locationToResources %>bootstrap/js/bootstrap.min.js"></script>
 
 		<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
 		<!--[if lt IE 9]>
@@ -58,16 +60,8 @@ Blame: Felix (fef) -->
 				<jsp:invoke fragment="footer" />
 			</footer>
 
-			<!-- The Javascript template JS files - at the bottom for quicker loading -->
-			<script src="http://code.jquery.com/jquery-latest.js"></script>
-			<script src="<%= locationToResources %>bootstrap/js/bootstrap.min.js"></script>
-
-			<!-- Custom JS files and code -->
-			<script>
-				$("#friendslistbutton").click(function () {
-					$("#friendscontainer").stop().slideToggle("slow");
-				});
-			</script>
+			<!-- Friends List - (DO NOT WRAP IN DIV) -->
+			<jsp:include page="parts/friendslist.jsp" />
 
 		<!-- End the bootstrap container -->
 		</div>
