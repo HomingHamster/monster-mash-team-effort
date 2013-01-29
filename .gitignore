@@ -13,3 +13,5 @@ N06/dist/
 Icon?
 ehthumbs.db
 Thumbs.db
+/nbproject/private/
+/build/
