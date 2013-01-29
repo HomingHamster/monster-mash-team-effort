@@ -9,6 +9,9 @@
 <jsp:useBean id="user" class="Login.checkLogin" scope="session"/>
 <jsp:setProperty name="user" property="*"/> 
 <HTML>
+	<head>
+		<meta http-equiv="Refresh" content="0; url=<%= user.checkLogin() %>" />
+	</head>
 <BODY>
 <A HREF=<%= user.checkLogin()%> >Continue</A>
 </BODY>
