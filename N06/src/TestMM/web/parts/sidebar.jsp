@@ -2,9 +2,7 @@
   <li class="nav-header">User Stats</li>
   <li><i class="icon-user"></i> Username: Ben</li>
   <li><i class="icon-shopping-cart"></i> Money: 99999 &curren;</li>
-</ul>
-<p></p>
-<ul class="nav nav-list">
+  <hr />
   <li class="nav-header">Active Monster</li>
   <li><img src="http://bbrks.me/221/monsterid.php?seed=12837" /></li>
   <li><i class="icon-comment"></i> Name: Eric</li>
