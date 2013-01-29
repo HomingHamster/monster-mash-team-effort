@@ -37,10 +37,10 @@
             <img src="resources/template/img/indexheader2.png" width="930px" class="img-polaroid">
         </div>
         <div class="mainbody" align="center">
-            <FORM METHOD=POST ACTION="SaveName.jsp">
-                UserName: <INPUT TYPE=TEXT NAME=username SIZE=20 required="true"><BR>
-                Password: <INPUT TYPE=TEXT NAME=password SIZE=20 required ="true"><BR>
-                                    <P><INPUT TYPE=SUBMIT VALUE="Login">
+            <FORM method="post" ACTION="SaveName.jsp">
+                UserName: <input type="text" NAME="username" SIZE=20 required="true"><br>
+                Password: <input type="password" NAME="password" SIZE=20 required ="true"><br>
+                                    <P><input TYPE=SUBMIT VALUE="Login">
                                             <div class="login"><input type="submit" name="register"value="Register"></div>
                                             <div class="forgotPassword"><input type="submit" name="forgotPassword" value="Forgot Password"></div>
 
