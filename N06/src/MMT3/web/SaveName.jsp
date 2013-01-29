@@ -9,7 +9,8 @@
 <jsp:useBean id="user" class="monsterMashGroupProject.Login" scope="session"/>
 <jsp:setProperty name="user" property="*"/> 
 <HTML>
+    <head><meta http-equiv="Refresh" conent="0; url=<%=user.LoginUser()%>" /></head>
 <BODY>
-<A HREF=<%= user.LoginUser()%> >Continue</A>
+<A HREF=<%= user.LoginUser()%>>Continue</A>
 </BODY>
 </HTML>
