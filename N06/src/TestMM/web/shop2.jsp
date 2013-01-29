@@ -155,7 +155,7 @@
 			<a href="#addFriend" role="button" class="btn btn-primary btn-block" data-toggle="modal"><i class="icon-plus icon-white"></i> Add Friend</a>
 		</div>
 		<div id="friendslistbutton" style="text-align:center;cursor:pointer;">
-			<span><i class="icon-th-list"></i> Friends <b>(24)</b></span>
+			<span><i class="icon-th-list"></i> Friends <b>(24<!-- <%= numberOfFriendsOnline %> -->)</b></span>
 		</div>
 	</div>
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
