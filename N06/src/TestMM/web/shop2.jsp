@@ -21,20 +21,26 @@
 					<a class="brand" href="#">Monster Mash</a>
 					<ul class="nav">
 						<li><a href="#">Home</a></li>
-						<!-- If Logged Out -->
-						<li><a  href="login.jsp">Login</a></li>
-						<!-- End If -->
-						<!-- If  Logged In -->
+						<!-- <%
+							if (!user.isLoggedIn()) {
+						%> -->
+						<li><a  href="index.jsp">Login</a></li>
+						<!-- <%
+							} else if (user.isLoggedIn()) {
+						%> -->
+						<li><a href="battle.jsp">Battle</a></li>
 						<li class="dropdown active">
-							<a class="dropdown-toggle" id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/page.html">Shop<b class="caret"></b></a>
+							<a class="dropdown-toggle" id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="#">Shop <b class="caret"></b></a>
 							<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
 								<li><a tabindex="-1" href="#anotherAction">Buy Monsters</a></li>
 								<li><a tabindex="-1" href="#anotherAction">Sell Monsters</a></li>
 							</ul>
 						</li>
-						<li><a href="#">Farm</a></li>
-						<li><a href="#">Link</a></li>
-						<!-- End If -->
+						<li><a href="farm.jsp">Farm</a></li>
+						<li><a href="about.jsp">About</a></li>
+						<!-- <%
+							}
+						%> -->
 					</ul>
 				</div>
 			</div>
