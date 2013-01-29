@@ -1,7 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 
-<t:base>
+<t:page_sidebar>
 		<!-- Body Content -->
 		<h2>About</h2>
 		<p class="lead">Monster Mash is a CS221 Group Project to make an educational game based on genetics. The game involves breeding monsters and battling them.</p>
@@ -28,4 +28,4 @@
 				</ul>
 			</div>
 		</div>
-</t:base>
+</t:page_sidebar>

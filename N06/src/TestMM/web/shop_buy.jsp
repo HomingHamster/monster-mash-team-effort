@@ -1,11 +1,9 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 
-<jsp:useBean id="user" class="Login.checkLogin" scope="session"/>
-
 <t:page_sidebar>
 		<!-- Body Content -->
-		<h2>Shop</h2>
+		<h2>Buy Monsters</h2>
 		<table class="table table-striped table-bordered">
 			<thead>
 				<tr>

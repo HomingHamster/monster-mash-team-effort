@@ -1,54 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>Monster Mash- Farm</title>
-    <link href="resources/template/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-</head>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 
-<body>
-	<div class="container">
-		<div id="header">
-			<img src="resources/template/img/indexheader2.png" width="930px" class="img-polaroid">
-		</div>
-		<div class="navigation">
-			<div class="navbar">
-			  <div class="navbar-inner">
-			    <a class="brand" href="#">Monster Mash</a>
-			    <ul class="nav">
-			      <li class="active"><a href="#">Home</a></li>
-			      <li><a href="#">Login</a></li>
-			      <li><a href="#">Register</a></li>
-			    </ul>
-			  </div>
-			</div>
-		</div>
-
-		<div class="row">
-
-			<div class="span2">
-				<ul class="nav nav-list">
-					<li><a href="farm.jsp"><img width="120px" src="resources/template/img/farm.png"></a></li>
-					<li><a href="shop.jsp"><img width="120px" src="resources/template/img/shop.png"></a></li>
-					<li><a href="friends.jsp"><img width="120px" src="resources/template/img/friends.png"></a></li>
-				</ul>
-			</div>
-
-			<div class="span10">
-				<h1>FARM</h1>
-
-				<p>Placeholder placeholder placeholder placeholder. Placeholder placeholder placeholder placeholder. Placeholder placeholder placeholder placeholder. Placeholder placeholder placeholder placeholder. Placeholder placeholder placeholder placeholder. Placeholder placeholder placeholder placeholder. Placeholder placeholder placeholder placeholder. Placeholder placeholder placeholder placeholder. Placeholder placeholder placeholder placeholder. </p>
-
-				<p>Placeholder placeholder placeholder placeholder. Placeholder placeholder placeholder placeholder. Placeholder placeholder placeholder placeholder. Placeholder placeholder placeholder placeholder. </p>
-			</div>
-		</div>
-
-
-
-	</div>
-
-	<script src="http://code.jquery.com/jquery-latest.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-</body>
-
-</html>
+<t:page_sidebar>
+		<!-- Body Content -->
+		<h2>Farm</h2>
+		<table class="table table-striped table-bordered">
+			<thead>
+				<tr>
+					<th width="120px">Monster</th>
+					<th>Age</th>
+					<th>Height</th>
+					<th>Strength</th>
+					<th>Aggression</th>
+					<th>Breed?</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><img src="http://bbrks.me/221/monsterid.php?seed=4"></td>
+					<td>13</td>
+					<td>0.7m</td>
+					<td>3</td>
+					<td>1</td>
+					<td><input type="checkbox" /></td>
+				</tr>
+				<tr>
+					<td><img src="http://bbrks.me/221/monsterid.php?seed=5"></td>
+					<td>13</td>
+					<td>0.7m</td>
+					<td>3</td>
+					<td>1</td>
+					<td><input type="checkbox" /></td>
+				</tr>
+				<tr>
+					<td><img src="http://bbrks.me/221/monsterid.php?seed=6"></td>
+					<td>13</td>
+					<td>0.7m</td>
+					<td>3</td>
+					<td>1</td>
+					<td><input type="checkbox" /></td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="5"></td>
+					<td><input type="submit" class="btn btn-primary btn-block" value="Breed Selected" />
+				</tr>
+			</tfoot>
+		</table>
+</t:page_sidebar>
