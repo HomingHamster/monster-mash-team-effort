@@ -1,7 +1,4 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
-
-<t:page_sidebar>
+<jsp:include page="includes/header.jsp" />
 		<!-- Body Content -->
 		<h2>Buy Monsters</h2>
 		<table class="table table-striped table-bordered">
@@ -46,4 +43,4 @@
 				</tr>
 			</tbody>
 		</table>
-</t:page_sidebar>
+<jsp:include page="includes/footer.jsp" />

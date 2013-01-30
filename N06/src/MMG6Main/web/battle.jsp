@@ -1,8 +1,5 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
-
-<t:base>
-	<!-- Body Content -->
+<jsp:include page="includes/header.jsp" />
+<!-- Body Content -->
 	<h2>Battling ENEMYNAME</h2>
 	<div class="row">
 		<div class="span4 offset1 well" style="text-align:center;">
@@ -31,4 +28,4 @@
 			<input type="submit" class="btn btn-danger btn-large" value="Start Battle" />
 		</div>
 	</div>
-</t:base>
+<jsp:include page="includes/footer.jsp" />
