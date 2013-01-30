@@ -3,8 +3,8 @@
 
 <ul class="nav nav-list">
   <li class="nav-header">User Stats<%= usercontroller.setTheUsr(user) %></li>
-  <li><i class="icon-user"></i> Username: <%=usercontroller.getTheUsr().getUsername() %></li>
-  <li><i class="icon-shopping-cart"></i> Money: <%=usercontroller.getTheUsr().getVirtualMoney() %> &curren;</li>
+  <li><i class="icon-user"></i> Username: <%=user.getUsername() %></li>
+  <li><i class="icon-shopping-cart"></i> Money: <%=user.getUsername() %> &curren;</li>
   <hr />
   <li class="nav-header">Active Monster</li>
   <li><img src="http://bbrks.me/221/monsterid.php?seed=12837" /></li>
@@ -15,4 +15,3 @@
   <li><i class="icon-warning-sign"></i> Aggression: <%= usercontroller.getMonster(0).getAggression() %></li>
   <li><i class="icon-shopping-cart"></i> Price: <%= usercontroller.getMoney() %> &curren;</li>
 </ul>
-<jsp:include page="../parts/friendslist.jsp" />

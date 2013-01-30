@@ -4,6 +4,8 @@
  */
 package monsterMashGroupProject;
 
+import Scheduling.LogginChecker;
+import Scheduling.MonsterLifeCycle;
 import databaseManagement.*;
 import java.util.*;
 import java.util.regex.Pattern;
@@ -50,8 +52,12 @@ public class Login {
         List<MyUser> users = persistIt.searchUsers();
         for (int i = 0; i < users.size(); i++) {
             if ((users.get(i).getUsername().equals(username)) && (users.get(i).getUserPassword().equals(password))) {
-               user= users.get(i); 
-                
+                user = users.get(i);
+                user.setIsLoggedIn(true);
+                user.setIsActive(true);
+                persistIt.update(user);
+                new LogginChecker(600, user);
+                new MonsterLifeCycle(60, user);
                 return "welcome.jsp";
             }
         }
@@ -59,11 +65,26 @@ public class Login {
         return "index.jsp";
     }
 
-    public String Register(String usrname, String usrpassword,String email) {
+    public String LogOff() {
+        persistIt.init();
+        List<MyUser> users = persistIt.searchUsers();
+        for (int i = 0; i < users.size(); i++) {
+            if ((users.get(i).getUsername().equals(username)) && (users.get(i).getUserPassword().equals(password))) {
+                user = users.get(i);
+                user.setIsLoggedIn(false);
+                persistIt.update(user);
+                return "welcome.jsp";
+            }
+        }
+        persistIt.shutdown();
+        return "index.jsp";
+    }
+
+    public String Register(String usrname, String usrpassword, String email) {
         persistIt.init();
         //if ((matches(REGEX, name.toString()) == true) && (matches(REGEX, password.toString()) == true)) {
         MyUser myUser = UserFactory.makeIt(usrname, usrpassword, 100);
-        
+
         persistIt.create(myUser);
         Monster gary = MonsterFactory.makeIt("Gary", 10, 10, 10, 10, usrname);
         persistIt.create(gary);

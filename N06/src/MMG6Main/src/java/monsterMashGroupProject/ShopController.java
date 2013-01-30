@@ -72,7 +72,7 @@ public class ShopController {
 
         pesMan.init();
         
-        List<Monster> mon = pesMan.searchMonsters();
+        List<Monster> mon = pesMan.searchMonsters("");
 
         for (int i = 0; i < mon.size(); i++) {
             if (mon.get(i).getId() == Integer.parseInt(monsterID)) {
@@ -80,7 +80,9 @@ public class ShopController {
             }
         }
         shp.SellMonster(monster);
-       
+        
+        pesMan.shutdown();
+        
         return "shop_sell.jsp";
     }
 }
