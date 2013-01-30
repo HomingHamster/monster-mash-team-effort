@@ -21,6 +21,7 @@ public class MonsterFactory {
         newMonster.setAggression(aggression);
         newMonster.setStrength(strength);
         newMonster.setWorth(0);
+        newMonster.setIsDead(false);
         newMonster.setOwner(owner);
         return newMonster;
     }

@@ -17,7 +17,7 @@ public class FriendsList {
     public void addFriend(MyUser user, MyUser friend) {
         persistIt.init();
         user.getFriends().set(user.getFriends().size(), friend);
-        //user.setIsActive(true);
+        user.setIsActive(true);
         persistIt.update(user);
         persistIt.shutdown();
     }
@@ -29,7 +29,7 @@ public class FriendsList {
                 user.getFriends().remove(i);
             }
         }
-        //user.setIsActive(true);
+        user.setIsActive(true);
         persistIt.update(user);
         persistIt.shutdown();
     }

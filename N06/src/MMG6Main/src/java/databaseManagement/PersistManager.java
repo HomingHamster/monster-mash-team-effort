@@ -141,6 +141,24 @@ public class PersistManager {
      * @param username
      * @return
      */
+    public MyUser getUpdatedUser(MyUser user) {
+        EntityTransaction tx = manager.getTransaction();
+        tx.begin();
+        Query query = manager.createQuery("SELECT u FROM MyUser u WHERE u.username='" + user.getUsername() + "'");
+        tx.commit();
+        userList = (List<MyUser>) query.getResultList();
+        return userList.get(0);
+    }
+
+    public Monster getUpdatedMonster(MyUser user, Monster monster) {
+        EntityTransaction tx = manager.getTransaction();
+        tx.begin();
+        Query query = manager.createQuery("SELECT m FROM Monster m WHERE m.owner='" + user.getUsername() + "' AND m.name='" + monster.getName() + "' ");
+        tx.commit();
+        monsterList = (List<Monster>) query.getResultList();
+        return monsterList.get(0);
+    }
+
     public List<Monster> searchMonsters(String username) {
         EntityTransaction tx = manager.getTransaction();
         tx.begin();
@@ -157,6 +175,15 @@ public class PersistManager {
         tx.commit();
         monsterList = (List<Monster>) query.getResultList();
         return monsterList;
+    }
+
+    public List<Monster> searchGraveYard(String username) {
+        EntityTransaction tx = manager.getTransaction();
+        tx.begin();
+        Query query = manager.createQuery("SELECT m FROM Monster m WHERE m.owner='" + username + "' AND m.isDead=1");
+        tx.commit();
+        userMonsters = (List<Monster>) query.getResultList();
+        return userMonsters;
     }
 
     public List<MyUser> searchUsers() {
@@ -186,20 +213,20 @@ public class PersistManager {
             Logger.getLogger(PersistManager.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
             Logger.getLogger(PersistManager.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        catch (ClassNotFoundException ex) {
+        } catch (ClassNotFoundException ex) {
             Logger.getLogger(PersistManager.class.getName()).log(Level.SEVERE, null, ex);
-        }    }
+        }
+    }
 
     public void shutdown() {
-            manager.close();
-            factory.close();
-            try {
-                Connection c = DriverManager.getConnection("jdbc:derby://localhost:1527/monsters", "", "");
-                Statement stmt = c.createStatement();
-                stmt.execute("SHUTDOWN");
+        manager.close();
+        factory.close();
+        try {
+            Connection c = DriverManager.getConnection("jdbc:derby://localhost:1527/monsters", "", "");
+            Statement stmt = c.createStatement();
+            stmt.execute("SHUTDOWN");
         } catch (SQLException ex) {
             Logger.getLogger(PersistManager.class.getName()).log(Level.SEVERE, null, ex);
         }
-}
+    }
 }
