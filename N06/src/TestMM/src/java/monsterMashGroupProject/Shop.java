@@ -33,9 +33,9 @@ public class Shop {
         }
         persistIt.shutdown();
     }
-    
+
     public void SellMonster(Monster monster) {
-                persistIt.init();
+        persistIt.init();
         List<Monster> monsters = persistIt.searchMonsters();
         boolean found = false;
 
@@ -44,11 +44,10 @@ public class Shop {
                 found = true;
             }
         }
-        if (found == true) {
+        if (found) {
             monster.setOwner("");
             persistIt.update(monster);
-        }
-        else {
+        } else {
             System.out.println("Error");
         }
         persistIt.shutdown();

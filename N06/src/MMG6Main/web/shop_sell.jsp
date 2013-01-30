@@ -20,17 +20,16 @@
     <tbody>
         <% for (int i = 0; i < usercontroller.getNumOfMonsters(); i++) {%>
         <tr>
-            <td><img src="http://bbrks.me/221/monsterid.php?seed=1"></td>
+            <td><img src="http://bbrks.me/221/monsterid.php?seed=2"></td>
             <td><%= usercontroller.getMonster(i).getName()%></td>
             <td><%= usercontroller.getMonster(i).getAge()%></td>
             <td><%= usercontroller.getMonster(i).getHeight()%></td>
             <td><%= usercontroller.getMonster(i).getStrength()%></td>
             <td><%= usercontroller.getMonster(i).getAggression()%></td>
             <td><%= usercontroller.getMonster(i).getWorth()%> &curren;</td>
-            <td><form name="first" METHOD=POST ACTION="buyMonster.jsp">
-                    <input type="hidden" name="monsterid" value=<%= shp.getShopMonsters(i).getId()%> />
-                    <input type="hidden" name="userNam" value= <%= usercontroller.getTheUsr().getUsername()%> />
-                    <input type="submit" class="btn btn-primary" value="Buy" />
+            <td><form name="first" METHOD=POST ACTION="sellMonster.jsp">
+                    <input type="hidden" name="monsterid" value=<%= usercontroller.getMonster(i).getId()%> />
+                    <input type="submit" class="btn btn-primary" value="Sell" />
                 </form></td>
         </tr>
         <%}%>

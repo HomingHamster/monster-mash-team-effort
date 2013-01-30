@@ -12,7 +12,7 @@
 		<a href="#addFriend" role="button" class="btn btn-primary btn-block" data-toggle="modal"><i class="icon-plus icon-white"></i> Add Friend</a>
 	</div>
 	<div id="friendslistbutton" style="text-align:center;cursor:pointer;">
-            <span><i class="icon-th-list"></i> Friends <br></br></span>
+            <span><i class="icon-th-list"></i> Friends <b><%= usercontroller.getNumOfFriends() %></b></span>
 	</div>
 </div>
 
@@ -45,8 +45,3 @@
 	</div>
 </div>
 
-<script>
-	$("#friendslistbutton").click(function () {
-		$("#friendscontainer").stop().slideToggle("slow");
-	});
-</script>
