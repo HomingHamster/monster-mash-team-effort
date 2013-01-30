@@ -63,7 +63,7 @@ public class ShopController {
         shp.BuyMonster(monster, user);
 
         //pesMan.shutdown();
-        return "shopBuy.jsp";
+        return "shop_buy.jsp";
     }
     
     public String sellMonster(String monsterID){
@@ -83,6 +83,6 @@ public class ShopController {
         
         pesMan.shutdown();
         
-        return "shopSell.jsp";
+        return "shop_sell.jsp";
     }
 }
