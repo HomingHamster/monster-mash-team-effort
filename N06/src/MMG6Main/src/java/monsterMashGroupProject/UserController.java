@@ -109,4 +109,8 @@ public class UserController {
     public int getMoney() {
         return theUsr.getVirtualMoney();
     }
+    
+    public int getNumOfFriends(){
+        return theUsr.getFriends().size();
+    }
 }

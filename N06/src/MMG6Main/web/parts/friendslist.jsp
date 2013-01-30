@@ -1,3 +1,4 @@
+
 <div id="friendslist" class="dropdown-menu" style="padding:5px;position:fixed;bottom:0;right:25px;width:200px;display:block;border-radius:6px 6px 0 0;top:auto;left:auto;border-bottom:none;">
 	<div id="friendscontainer" style="display:none;">
 		<div id="friends" style="overflow:auto;max-height:300px">
@@ -11,7 +12,7 @@
 		<a href="#addFriend" role="button" class="btn btn-primary btn-block" data-toggle="modal"><i class="icon-plus icon-white"></i> Add Friend</a>
 	</div>
 	<div id="friendslistbutton" style="text-align:center;cursor:pointer;">
-		<span><i class="icon-th-list"></i> Friends <b>(24)</b></span>
+            <span><i class="icon-th-list"></i> Friends <br></br></span>
 	</div>
 </div>
 
