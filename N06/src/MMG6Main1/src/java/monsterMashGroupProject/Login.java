@@ -57,7 +57,7 @@ public class Login {
                 user.setIsActive(true);
                 persistIt.update(user);
                 new LogginChecker(600, user);
-                new MonsterLifeCycle(180, user);
+                new MonsterLifeCycle(60, user);
                 return "welcome.jsp";
             }
         }

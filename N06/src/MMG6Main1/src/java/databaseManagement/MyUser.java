@@ -47,9 +47,6 @@ public class MyUser {
     public int getVirtualMoney() {
         return virtualMoney;
     }
-
-<<<<<<< HEAD
-=======
     public void setIsLoggedIn(boolean isLoggedIn) {
         this.isLoggedIn = isLoggedIn;
     }
@@ -65,8 +62,6 @@ public class MyUser {
     public boolean isIsActive() {
         return isActive;
     }
-
->>>>>>> Updated
     public void setFriends(List<MyUser> friends) {
         this.friends = friends;
     }

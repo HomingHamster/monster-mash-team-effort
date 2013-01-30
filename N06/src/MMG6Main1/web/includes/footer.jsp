@@ -8,7 +8,7 @@
 
 			<!-- javascript files -->
 			<script src="http://code.jquery.com/jquery-latest.js"></script>
-			<script src="/MMG6Main/resources/bootstrap/js/bootstrap.min.js"></script>
+			<script src="/MMG6Main1/resources/bootstrap/js/bootstrap.min.js"></script>
 	
 			<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
 			<!--[if lt IE 9]>
