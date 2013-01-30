@@ -10,6 +10,14 @@
 <HTML>
     <HEAD><META http-equiv="Refresh" content="0; url= <%= buyMon.buyMonster(request.getParameter("monsterid"), request.getParameter("userNam"))%>"/></HEAD>
     <BODY>
-        
+        <jsp:include page="includes/header.jsp" />
+		<!-- Body Content -->
+		<div class="well" style="text-align:center;">
+			<h2>Loading</h2>
+			<img src="resources/template/img/loading.gif" />
+		</div>
+
+<jsp:include page="includes/footer.jsp" />
+
     </BODY>
 </html>
