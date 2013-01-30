@@ -2,7 +2,7 @@
 <jsp:useBean id="usercontroller" class="monsterMashGroupProject.UserController" scope="session"/>
 
 <ul class="nav nav-list">
-  <li class="nav-header">User Stats</li>
+  <li class="nav-header">User Stats <%= usercontroller.setTheUsr(user) %></li>
   <li><i class="icon-user"></i> Username: <%=user.getUsername() %></li>
   <li><i class="icon-shopping-cart"></i> Money: <%=user.getUsername() %> &curren;</li>
   <hr />
