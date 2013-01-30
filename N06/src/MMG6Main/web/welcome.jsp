@@ -1,10 +1,10 @@
 <jsp:useBean id="user" class="monsterMashGroupProject.Login" scope="session"/>
 <jsp:useBean id="monsters" class="monsterMashGroupProject.UserController" scope="session"/>
-
-<jsp:include page="includes/header.jsp" />
-<jsp:include page="includes/sidebar.jsp" />
+<%= monsters.setTheUsr(user) %>
+<%@ include file="includes/header.jsp" %>
+<%@ include file="includes/sidebar.jsp" %>
 		<!-- Body Content -->
-		<h2>Welcome <%=monsters.setTheUsr(user) %></h2>
+		<h2>Welcome </h2>
 		<p class="lead">Welcome</p>
         <% for(int x = 0; x < monsters.getNumOfMonsters();x++){ %>
             <p>Monster</p>
@@ -13,5 +13,5 @@
             <p>Age: <%= monsters.getMonster(x).getAge() %></p>
             <p>Aggression: <%= monsters.getMonster(x).getAggression() %></p>
         <% } %>
-<jsp:include page="includes/sidebarclose.jsp" />
-<jsp:include page="includes/footer.jsp" />
+<%@ include file="includes/sidebarclose.jsp" %>
+<%@ include file="includes/footer.jsp" %>
