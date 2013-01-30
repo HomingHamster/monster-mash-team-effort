@@ -29,35 +29,12 @@
 
 		<!-- Register Modal -->
 		<div id="registerModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		  <form class="form-horizontal" name="registerform" method="post" action="registeruser.jsp">
-		  <div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-			<h3 id="myModalLabel">Register New User</h3>
-		  </div>
-		  <div class="modal-body">
-				 <div class="control-group">
-				  <label class="control-label" for="username">Username</label>
-				  <div class="controls">
-					<input type="text" name="username" id="username" placeholder="Username" />
-				  </div>
-				</div>
-				<div class="control-group">
-				  <label class="control-label" for="password">Password</label>
-				  <div class="controls">
-					<input type="password" name="password" id="password" placeholder="Password" />
-					<!--<p><a href="forgottenpassword.jsp">Forgotten Password?</a></p>-->
-				  </div>
-				</div>
-				<div class="control-group">
-				  <div class="controls">
-				  </div>
-				</div>
-		  </div>
-		  <div class="modal-footer">
-			<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-			<input type="submit" class="btn btn-primary" value="Register New User" />
-		  </div>
-		  </form>
+		 <form name="second" method=POST action="CreateUser.jsp">
+                                                <p> Username : <input type="text" name="regUsername"> </p>
+                                                <p> Password: <input type="text" name="regPassword"></p>
+                                                <p> e-mail : <input type="text" name="regEmail"> </p> 
+                                                <input type="submit" value="Register" >
+                                            </form>
 		</div>
 
 <jsp:include page="includes/footer.jsp" />
