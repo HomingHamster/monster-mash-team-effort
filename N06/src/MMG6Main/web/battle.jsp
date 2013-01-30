@@ -1,4 +1,4 @@
-<jsp:include page="includes/header.jsp" />
+<%@ include file="includes/header.jsp" %>
 <!-- Body Content -->
 	<h2>Battling ENEMYNAME</h2>
 	<div class="row">
@@ -28,4 +28,4 @@
 			<input type="submit" class="btn btn-danger btn-large" value="Start Battle" />
 		</div>
 	</div>
-<jsp:include page="includes/footer.jsp" />
+<%@ include file="includes/footer.jsp" %>
