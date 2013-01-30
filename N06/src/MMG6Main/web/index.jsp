@@ -1,4 +1,5 @@
 <jsp:include page="includes/header.jsp" />
+<jsp:include page="includes/sidebar.jsp" />
 		<!-- Body Content -->
 		<h2>Welcome USERNAME</h2>
 		<p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -13,4 +14,5 @@
 		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<jsp:include page="includes/sidebarclose.jsp" />
 <jsp:include page="includes/footer.jsp" />

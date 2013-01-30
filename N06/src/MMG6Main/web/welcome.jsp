@@ -2,6 +2,7 @@
 <jsp:useBean id="monsters" class="monsterMashGroupProject.UserController" scope="session"/>
 
 <jsp:include page="includes/header.jsp" />
+<jsp:include page="includes/sidebar.jsp" />
 		<!-- Body Content -->
 		<h2>Welcome <%=monsters.setTheUsr(user) %></h2>
 		<p class="lead">Welcome</p>
@@ -12,4 +13,5 @@
             <p>Age: <%= monsters.getMonster(x).getAge() %></p>
             <p>Aggression: <%= monsters.getMonster(x).getAggression() %></p>
         <% } %>
+<jsp:include page="includes/sidebarclose.jsp" />
 <jsp:include page="includes/footer.jsp" />

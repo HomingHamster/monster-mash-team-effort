@@ -1,4 +1,5 @@
 <jsp:include page="includes/header.jsp" />
+<jsp:include page="includes/sidebar.jsp" />
 		<!-- Body Content -->
 		<h2>Sell Monsters</h2>
 		<table class="table table-striped table-bordered">
@@ -49,4 +50,5 @@
 				</tr>
 			</tfoot>
 		</table>
+<jsp:include page="includes/sidebarclose.jsp" />
 <jsp:include page="includes/footer.jsp" />
