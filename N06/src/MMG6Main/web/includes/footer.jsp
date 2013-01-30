@@ -4,6 +4,7 @@
 			</footer>
 
 			<!-- Friends List - (DO NOT WRAP IN DIV) -->
+<<<<<<< HEAD
 			<jsp:include page="../parts/friendslist.jsp" />
 
 			<!-- javascript files -->
@@ -19,6 +20,9 @@
 				%("a[href='" + window.location.pathname + "']").parent().addClass("active");
 			</script>
 
+=======
+			
+>>>>>>> update side bar
 		<!-- End the bootstrap container -->
 		</div>
 	</body>

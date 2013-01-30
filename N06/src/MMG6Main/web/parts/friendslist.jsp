@@ -1,4 +1,4 @@
-
+<jsp:useBean id="usercontroller" class="monsterMashGroupProject.UserController" scope="session"/>
 <div id="friendslist" class="dropdown-menu" style="padding:5px;position:fixed;bottom:0;right:25px;width:200px;display:block;border-radius:6px 6px 0 0;top:auto;left:auto;border-bottom:none;">
 	<div id="friendscontainer" style="display:none;">
 		<div id="friends" style="overflow:auto;max-height:300px">
