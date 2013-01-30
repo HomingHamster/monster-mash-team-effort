@@ -7,7 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <jsp:useBean id="usercontroller" class="monsterMashGroupProject.UserController" scope="session"/>
-<jsp:setProperty name="monsters" property="*"/> 
+<jsp:setProperty name="usercontroller" property="*"/> 
 <html>
     <head>
         <META http-equiv="Refresh" content="0; url=<%=usercontroller.bread()%>"/>

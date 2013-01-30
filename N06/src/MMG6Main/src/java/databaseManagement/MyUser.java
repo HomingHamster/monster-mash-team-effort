@@ -5,6 +5,7 @@
 package databaseManagement;
 
 import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.*;
 
 /**
@@ -13,10 +14,15 @@ import javax.persistence.*;
  */
 @Entity
 public class MyUser {
+
     @Id
     private String username;
     private String userPassword;
+    private boolean isLoggedIn;
+    private boolean isActive;
     private int virtualMoney;
+    @OneToMany
+    private List<MyUser> friends;
 
     public void setUsername(String username) {
         this.username = username;
@@ -29,8 +35,7 @@ public class MyUser {
     public void setVirtualMoney(int virtualMoney) {
         this.virtualMoney = virtualMoney;
     }
-   
-    
+
     public String getUsername() {
         return username;
     }
@@ -42,14 +47,28 @@ public class MyUser {
     public int getVirtualMoney() {
         return virtualMoney;
     }
-    
-    public boolean isLoggedIn(){
-       return true;
-   }
-    
-    public int getFriendsNum(){
-        return 5;
+
+    public void setIsLoggedIn(boolean isLoggedIn) {
+        this.isLoggedIn = isLoggedIn;
     }
-    
-    
+
+    public boolean isIsLoggedIn() {
+        return isLoggedIn;
+    }
+
+    public void setIsActive(boolean isActive) {
+        this.isActive = isActive;
+    }
+
+    public boolean isIsActive() {
+        return isActive;
+    }
+
+    public void setFriends(List<MyUser> friends) {
+        this.friends = friends;
+    }
+
+    public List<MyUser> getFriends() {
+        return friends;
+    }
 }

@@ -72,9 +72,10 @@ public class UserController {
         
         List<Monster> mon = pesMan.searchMonsters(theUsr.getUsername());
         
-        pesMan.shutdown();
+        
         
         return mon.get(num);
+        
     }
     public String bread(){
         
@@ -86,7 +87,6 @@ public class UserController {
       
       childMon = breed.breedMonsters(mon.get(choice1), mon.get(choice2), childName, theUsr.getUsername());
       
-      pesMan.shutdown();
         
         return "farm.jsp";
     }
