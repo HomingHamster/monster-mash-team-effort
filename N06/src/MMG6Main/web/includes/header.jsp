@@ -4,8 +4,8 @@
 		<!-- Include the framework css/js files -->
 		<link href="/MMG6Main/resources/bootstrap/css/bootstrap.css" rel="stylesheet" />
 		<link href="/MMG6Main/resources/bootstrap/css/bootstrap-responsive.css" rel="stylesheet" />
-		<script src="/MMG6Main/resources/bootstrap/js/bootstrap.min.js"></script>
 		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="/MMG6Main/resources/bootstrap/js/bootstrap.min.js"></script>
 
 		<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
 		<!--[if lt IE 9]>
