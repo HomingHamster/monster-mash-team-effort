@@ -105,4 +105,8 @@ public class UserController {
         
         return "";
     }
+    
+    public int getMoney() {
+        return theUsr.getVirtualMoney();
+    }
 }
