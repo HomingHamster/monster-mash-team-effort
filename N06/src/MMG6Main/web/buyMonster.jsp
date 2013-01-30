@@ -8,8 +8,8 @@
 <!DOCTYPE html>
 <jsp:useBean id="buyMon" class="monsterMashGroupProject.ShopController" scope="session"/>
 <HTML>
-    <HEAD><META http-equiv="Refresh" content="0; url= <%= buyMon.buyMonster(request.getParameter("monsterid"), request.getParameter("user"))%>"/></HEAD>
+    <HEAD><META http-equiv="Refresh" content="0; url= <%= buyMon.buyMonster(request.getParameter("monsterid"), request.getParameter("userNam"))%>"/></HEAD>
     <BODY>
-        <A HREF=<%= buyMon.buyMonster(request.getParameter("monsterid"), request.getParameter("user"))%>>Loading</A>
+        
     </BODY>
 </html>
