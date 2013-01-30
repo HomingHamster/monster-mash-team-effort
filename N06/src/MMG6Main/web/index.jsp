@@ -1,4 +1,4 @@
-<jsp:include page="includes/header" />
+<jsp:include page="includes/header.jsp" />
 		<!-- Body Content -->
 		<h2>Welcome USERNAME</h2>
 		<p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
