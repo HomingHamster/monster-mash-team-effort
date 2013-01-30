@@ -29,14 +29,13 @@ public class Shop {
             monster.setOwner(user.getUsername());
             persistIt.update(monster);
             user.setVirtualMoney((user.getVirtualMoney()-monster.getWorth()));
-            persistIt.update(user);
         } else {
             System.out.println("Error");
         }
         persistIt.shutdown();
     }
     
-    public void SellMonster(Monster monster,MyUser user) {
+    public void SellMonster(Monster monster) {
                 persistIt.init();
         List<Monster> monsters = persistIt.searchMonsters();
         boolean found = false;
@@ -49,8 +48,6 @@ public class Shop {
         if (found == true) {
             monster.setOwner("");
             persistIt.update(monster);
-            //user.setVirtualMoney((user.getVirtualMoney()+monster.getWorth()));
-            //persistIt.update(user);
         }
         else {
             System.out.println("Error");
