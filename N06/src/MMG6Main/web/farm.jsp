@@ -1,4 +1,4 @@
-<jsp:useBean id="monsters" class="monsterMashGroupProject.UserController" scope="session"/>
+<jsp:useBean id="usercontroller" class="monsterMashGroupProject.UserController" scope="session"/>
 <jsp:useBean id="shp" class="monsterMashGroupProject.ShopController" scope="session"/>
 <jsp:include page="includes/header.jsp"/>
 <jsp:include page="includes/sidebar.jsp" />
@@ -17,14 +17,14 @@
         </tr>
     </thead>
     <tbody>
-        <% for (int i = 0; i < monsters.getNumOfMonsters(); i++) {%>
+        <% for (int i = 0; i < usercontroller.getNumOfMonsters(); i++) {%>
         <tr>
             <td><img src="http://bbrks.me/221/monsterid.php?seed=1"></td>
-            <td><%= monsters.getMonster(i).getName()%></td>
-            <td><%= monsters.getMonster(i).getAge()%></td>
-            <td><%= monsters.getMonster(i).getHeight()%></td>
-            <td><%= monsters.getMonster(i).getStrength()%></td>
-            <td><%= monsters.getMonster(i).getAggression()%></td>
+            <td><%= usercontroller.getMonster(i).getName()%></td>
+            <td><%= usercontroller.getMonster(i).getAge()%></td>
+            <td><%= usercontroller.getMonster(i).getHeight()%></td>
+            <td><%= usercontroller.getMonster(i).getStrength()%></td>
+            <td><%= usercontroller.getMonster(i).getAggression()%></td>
             <td><%= i%> </td>
         </tr>
         <%}%>

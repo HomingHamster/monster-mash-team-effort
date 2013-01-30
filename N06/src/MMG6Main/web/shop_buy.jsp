@@ -1,4 +1,4 @@
-<jsp:useBean id="monsters" class="monsterMashGroupProject.UserController" scope="session"/>
+<jsp:useBean id="usercontroller" class="monsterMashGroupProject.UserController" scope="session"/>
 <jsp:useBean id="shp" class="monsterMashGroupProject.ShopController" scope="session"/>
 <jsp:include page="includes/header.jsp" />
 <jsp:include page="includes/sidebar.jsp" />
@@ -29,7 +29,7 @@
             <td><%= shp.getShopMonsters(i).getWorth()%> &curren;</td>
             <td><form name="first" METHOD=POST ACTION="buyMonster.jsp">
                     <input type="hidden" name="monsterid" value=<%= shp.getShopMonsters(i).getId()%> />
-                    <input type="hidden" name="userNam" value= <%= monsters.getTheUsr().getUsername()%> />
+                    <input type="hidden" name="userNam" value= <%= usercontroller.getTheUsr().getUsername()%> />
                     <input type="submit" class="btn btn-primary" value="Buy" />
                 </form>
             </td>

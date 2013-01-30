@@ -6,11 +6,11 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<jsp:useBean id="monsters" class="monsterMashGroupProject.UserController" scope="session"/>
+<jsp:useBean id="usercontroller" class="monsterMashGroupProject.UserController" scope="session"/>
 <jsp:setProperty name="monsters" property="*"/> 
 <html>
     <head>
-        <META http-equiv="Refresh" content="0; url=<%=monsters.bread()%>"/>
+        <META http-equiv="Refresh" content="0; url=<%=usercontroller.bread()%>"/>
     </head>
     <body>
         <jsp:include page="includes/header.jsp" />
