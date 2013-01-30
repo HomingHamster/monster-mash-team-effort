@@ -1,7 +1,7 @@
 <jsp:useBean id="monsters" class="monsterMashGroupProject.UserController" scope="session"/>
 <jsp:useBean id="shp" class="monsterMashGroupProject.ShopController" scope="session"/>
-<%@ include file="includes/header.jsp" %>
-<%@ include file="includes/sidebar.jsp" %>
+<jsp:include page="includes/header.jsp"/>
+<jsp:include page="includes/sidebar.jsp" />
 <!-- Body Content -->
 <h2>Farm</h2>
 <table class="table table-striped table-bordered">
@@ -42,5 +42,5 @@
         </tr>
     </tfoot>
 </table>
-<%@ include file="includes/sidebarclose.jsp" %>
-<%@ include file="includes/footer.jsp" %>
+<jsp:include page="includes/sidebarclose.jsp" />
+<jsp:include page="includes/footer.jsp" />

@@ -1,4 +1,4 @@
-<%@ include file="includes/header.jsp" %>
+<jsp:include page="includes/header.jsp"/>
 		<!-- Body Content -->
 		<div class="row">
 			<div class="well span6 offset3">
@@ -37,4 +37,4 @@
                                             </form>
 		</div>
 
-<%@ include file="includes/footer.jsp" %>
+<jsp:include page="includes/footer.jsp" />

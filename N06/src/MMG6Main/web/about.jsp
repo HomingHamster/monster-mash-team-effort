@@ -1,5 +1,5 @@
-<%@ include file="includes/header.jsp" %>
-<%@ include file="includes/sidebar.jsp" %>
+<jsp:include page="includes/header.jsp"/>
+<jsp:include page="includes/sidebar.jsp" />
 		<!-- Body Content -->
 		<h2>About</h2>
 		<p class="lead">Monster Mash is a CS221 Group Project to make an educational game based on genetics. The game involves breeding monsters and battling them.</p>
@@ -26,5 +26,5 @@
 				</ul>
 			</div>
 		</div>
-<%@ include file="includes/sidebarclose.jsp" %>
-<%@ include file="includes/footer.jsp" %>
+<jsp:include page="includes/sidebarclose.jsp" />
+<jsp:include page="includes/footer.jsp" />
