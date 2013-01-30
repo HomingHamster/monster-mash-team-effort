@@ -53,7 +53,7 @@ Author Ben (beb12) -->
 
                 <!-- JSP doBody - the other templates will handle this part. -->
                 <div id="body" class="span9">
-                    <jsp:doBody/>
+                    <jsp:include page="page/welcome.jsp" />
                 </div>
             </div>
 

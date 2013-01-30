@@ -19,7 +19,7 @@
 			</li>
 			<li><a href="farm.jsp">Farm</a></li>
 			<li><a href="about.jsp">About</a></li>
-            <li><a href="logout.jsp">Logout</a></li>
+			<li><a href="logout.jsp">Logout</a></li>
 			<%
 				//}
 			%>

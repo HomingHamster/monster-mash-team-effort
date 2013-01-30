@@ -1,7 +1,4 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
-
-<t:base>
+<jsp:include page="includes/header.jsp" />
 		<!-- Body Content -->
 		<div class="row">
 			<div class="well span6 offset3">
@@ -34,7 +31,7 @@
 		<div id="registerModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		  <form class="form-horizontal" name="registerform" method="post" action="registeruser.jsp">
 		  <div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">Ã—</button>
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 			<h3 id="myModalLabel">Register New User</h3>
 		  </div>
 		  <div class="modal-body">
@@ -63,4 +60,4 @@
 		  </form>
 		</div>
 
-</t:base>
+<jsp:include page="includes/footer.jsp" />
