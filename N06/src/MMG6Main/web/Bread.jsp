@@ -10,9 +10,9 @@
 <jsp:setProperty name="monsters" property="*"/> 
 <html>
     <head>
-        <HEAD><META http-equiv="Refresh" content="0; url=<%=monsters.bread()%>"/>
+        <META http-equiv="Refresh" content="0; url=<%=monsters.bread()%>"/>
     </head>
     <body>
-        <A HREF=<%= monsters.bread()%> >Continue</A>
+        
     </body>
 </html>

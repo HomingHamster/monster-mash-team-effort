@@ -1,50 +1,46 @@
+<jsp:useBean id="monsters" class="monsterMashGroupProject.UserController" scope="session"/>
+<jsp:useBean id="shp" class="monsterMashGroupProject.ShopController" scope="session"/>
 <jsp:include page="includes/header.jsp" />
 <jsp:include page="includes/sidebar.jsp" />
-		<!-- Body Content -->
-		<h2>Farm</h2>
-		<table class="table table-striped table-bordered">
-			<thead>
-				<tr>
-					<th width="120px">Monster</th>
-					<th>Age</th>
-					<th>Height</th>
-					<th>Strength</th>
-					<th>Aggression</th>
-					<th>Breed?</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td><img src="http://bbrks.me/221/monsterid.php?seed=4"></td>
-					<td>13</td>
-					<td>0.7m</td>
-					<td>3</td>
-					<td>1</td>
-					<td><input type="checkbox" /></td>
-				</tr>
-				<tr>
-					<td><img src="http://bbrks.me/221/monsterid.php?seed=5"></td>
-					<td>13</td>
-					<td>0.7m</td>
-					<td>3</td>
-					<td>1</td>
-					<td><input type="checkbox" /></td>
-				</tr>
-				<tr>
-					<td><img src="http://bbrks.me/221/monsterid.php?seed=6"></td>
-					<td>13</td>
-					<td>0.7m</td>
-					<td>3</td>
-					<td>1</td>
-					<td><input type="checkbox" /></td>
-				</tr>
-			</tbody>
-			<tfoot>
-				<tr>
-					<td colspan="5"></td>
-					<td><input type="submit" class="btn btn-primary btn-block" value="Breed Selected" />
-				</tr>
-			</tfoot>
-		</table>
+<!-- Body Content -->
+<h2>Farm</h2>
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th width="120px">Monster</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Height</th>
+            <th>Strength</th>
+            <th>Aggression</th>
+            <th>Breed?</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for (int i = 0; i < monsters.getNumOfMonsters(); i++) {%>
+        <tr>
+            <td><img src="http://bbrks.me/221/monsterid.php?seed=1"></td>
+            <td><%= monsters.getMonster(i).getName()%></td>
+            <td><%= monsters.getMonster(i).getAge()%></td>
+            <td><%= monsters.getMonster(i).getHeight()%></td>
+            <td><%= monsters.getMonster(i).getStrength()%></td>
+            <td><%= monsters.getMonster(i).getAggression()%></td>
+            <td><%= i%> </td>
+        </tr>
+        <%}%>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="6"></td>
+            <td>  <FORM name="first" METHOD=POST ACTION="Bread.jsp">
+                    Monster 1: <INPUT TYPE=TEXT NAME=choice1 SIZE=20><BR>
+                    Monster 2: <INPUT TYPE=TEXT NAME=choice2 SIZE=20><BR>
+                    Name of Child: <INPUT TYPE=TEXT NAME=childName SIZE=20><BR>
+                    <P><INPUT TYPE=SUBMIT VALUE="Breed"></p>
+                </form>
+            </td>
+        </tr>
+    </tfoot>
+</table>
 <jsp:include page="includes/sidebarclose.jsp" />
 <jsp:include page="includes/footer.jsp" />
