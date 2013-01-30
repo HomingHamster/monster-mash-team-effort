@@ -34,7 +34,7 @@ public class MonsterLifeCycle {
 
         @Override
         public void run() {
-            PersistManager persistIt = new PersistManager();
+           /* PersistManager persistIt = new PersistManager();
             persistIt.init();
             List<MyUser> users = persistIt.searchUsers();
             for (int i = 0; i < users.size(); i++) {
@@ -60,8 +60,8 @@ public class MonsterLifeCycle {
                 }
             } else {
                 timer.cancel();
-            }
-            persistIt.shutdown();
+            }*/
+            //persistIt.shutdown();
         }
     }
 }

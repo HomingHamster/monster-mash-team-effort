@@ -18,8 +18,8 @@ public class MyUser {
     @Id
     private String username;
     private String userPassword;
-    private boolean isLoggedIn;
-    private boolean isActive;
+    //private boolean isLoggedIn;
+    //private boolean isActive;
     private int virtualMoney;
     @OneToMany
     private List<MyUser> friends;
@@ -47,7 +47,7 @@ public class MyUser {
     public int getVirtualMoney() {
         return virtualMoney;
     }
-    public void setIsLoggedIn(boolean isLoggedIn) {
+    /*public void setIsLoggedIn(boolean isLoggedIn) {
         this.isLoggedIn = isLoggedIn;
     }
 
@@ -61,7 +61,7 @@ public class MyUser {
 
     public boolean isIsActive() {
         return isActive;
-    }
+    }*/
     public void setFriends(List<MyUser> friends) {
         this.friends = friends;
     }

@@ -33,7 +33,7 @@ public class LogginChecker {
 
         @Override
         public void run() {
-            PersistManager persistIt = new PersistManager();
+          /*  PersistManager persistIt = new PersistManager();
             List<MyUser> users = persistIt.searchUsers();
             for (int i = 0; i < users.size(); i++) {
                 if ((users.get(i).getUsername().equals(user.getUsername())) && (users.get(i).getUserPassword().equals(user.getUsername()))) {
@@ -48,7 +48,7 @@ public class LogginChecker {
                         user.setIsActive(false);
                     }
                 }
-            }
+            }*/
         }
     }
 }

@@ -67,6 +67,17 @@ public class UserController {
         return "";
     }
 
+    public String logOut(){
+        
+        theUsr = null;
+        
+        Login log = new Login();
+        
+        log.LogOff();
+        
+        return "index.jsp";
+    }
+    
     public Monster getMonster(int num) {
 
         pesMan.init();
