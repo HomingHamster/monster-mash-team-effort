@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class Shop {
 
-    PersistManager persistIt = new PersistManager();
+    private PersistManager persistIt = new PersistManager();
 
     public void BuyMonster(Monster monster, MyUser user) {
         persistIt.init();

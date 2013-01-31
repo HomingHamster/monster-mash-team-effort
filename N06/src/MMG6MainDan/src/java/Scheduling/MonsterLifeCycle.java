@@ -17,7 +17,7 @@ import java.util.TimerTask;
  */
 public class MonsterLifeCycle {
 
-    Timer timer;
+    private Timer timer;
 
     public MonsterLifeCycle(int seconds, MyUser user) {
         timer = new Timer();
@@ -42,20 +42,20 @@ public class MonsterLifeCycle {
                     user = users.get(i);
                 }
             }
-            if (user.isIsActive() == true) {
+            if (user.isIsLoggedIn() == true) {
                 List<Monster> monsters = persistIt.searchMonsters(user.getUsername());
                 for (int i = 0; i < monsters.size(); i++) {
-                    if ((monsters.get(i).getAge() > monsters.get(i).getMaxAge()) || (monsters.get(i).getAge() == monsters.get(i).getMaxAge())) {
-                        monsters.get(i).setIsDead(true);
-                        timer.cancel();
+                        if ((monsters.get(i).getAge() > monsters.get(i).getMaxAge()) || (monsters.get(i).getAge() == monsters.get(i).getMaxAge())) {
+                            monsters.get(i).setIsDead(true);
+                            timer.cancel();
 
-                    } else {
-                        System.out.println("lol");
-                        int currentAge = monsters.get(i).getAge();
-                        monsters.get(i).setAge(currentAge + 1);
-                        persistIt.getUpdatedMonster(user, monsters.get(i));
-                        System.out.println(monsters.get(i).getAge() + " " + monsters.get(i).getName());
-                    }
+                        } else {
+                            int currentAge = monsters.get(i).getAge();
+                            monsters.get(i).setAge(currentAge + 1);
+                            persistIt.getUpdatedMonster(user, monsters.get(i));
+                            persistIt.getUpdatedUser(user);
+                            System.out.println(monsters.get(i).getAge() + " " + monsters.get(i).getName());
+                        }
 
                 }
             } else {

@@ -72,6 +72,7 @@ public class Login {
             if ((users.get(i).getUsername().equals(username)) && (users.get(i).getUserPassword().equals(password))) {
                 user = users.get(i);
                 user.setIsLoggedIn(false);
+                user.setIsActive(false);
                 persistIt.update(user);
                 return "welcome.jsp";
             }
