@@ -57,7 +57,7 @@
 				</div>
 				<div class="modal-footer">
 					<button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Close</button>
-					<input type="submit" class="btn btn-primary" value="<i class="icon-plus icon-white"></i> Register New User" />
+					<input type="submit" class="btn btn-primary" value="Register New User" />
 				</div>
 			</form>
 		</div>
