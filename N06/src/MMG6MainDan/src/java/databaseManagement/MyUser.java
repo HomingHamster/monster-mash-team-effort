@@ -25,7 +25,7 @@ public class MyUser {
     private boolean isActive;
     private int virtualMoney;
     @OneToMany
-    private List<MyUser> friends;
+    private List<MyUser> friends = new ArrayList<MyUser>();
     @OneToMany
     private List<MyUser> requests;
     /**
