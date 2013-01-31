@@ -8,13 +8,17 @@ import databaseManagement.*;
 import java.util.List;
 
 /**
- *
+ * Contains methods relating to the shop.
  * @author dam44
  */
 public class Shop {
 
     private PersistManager persistIt = new PersistManager();
-
+    /**
+     * Allows a user to buy a selected monster.
+     * @param monster
+     * @param user 
+     */
     public void BuyMonster(Monster monster, MyUser user) {
         persistIt.init();
         List<Monster> monsters = persistIt.searchShopMonsters();
@@ -34,7 +38,12 @@ public class Shop {
         }
         persistIt.shutdown();
     }
-    
+       /**
+     * allows a user to list a monster in the shop to 
+     * be sold.
+     * @param monster
+     * @param user 
+     */ 
     public void SellMonster(Monster monster) {
                 persistIt.init();
         List<Monster> monsters = persistIt.searchMonsters();
@@ -48,6 +57,10 @@ public class Shop {
         if (found == true) {
             monster.setOwner("");
             persistIt.update(monster);
+                        //user.setVirtualMoney((
+                    //user.getVirtualMoney()+monster
+                    //.getWorth()));
+            //persistIt.update(user);
         }
         else {
             System.out.println("Error");

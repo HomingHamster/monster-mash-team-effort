@@ -5,7 +5,8 @@
 package Scheduling;
 
 /**
- *
+ * This class checks to see if a user is still active
+ * and logged on.
  * @author dam44
  */
 import java.util.Timer;
@@ -17,12 +18,19 @@ import monsterMashGroupProject.Login;
 public class LogginChecker {
 
     private Timer timer;
-
+    /**
+     * Runs Task on a user every x seconds.
+     * @param seconds
+     * @param user 
+     */
     public LogginChecker(int seconds, MyUser user) {
         timer = new Timer();
         timer.scheduleAtFixedRate(new Task(user), seconds * 1000, seconds * 1000);
     }
-
+   /**
+     * Class extends TimerTask. Checks if user is still
+     * logged into the website.
+     */
     class Task extends TimerTask {
 
         MyUser user;
@@ -30,7 +38,10 @@ public class LogginChecker {
         public Task(MyUser user) {
             this.user = user;
         }
-
+        /**
+         * logic to set a user as logged out if they
+         * are inactive.
+         */
         @Override
         public void run() {
             PersistManager persistIt = new PersistManager();

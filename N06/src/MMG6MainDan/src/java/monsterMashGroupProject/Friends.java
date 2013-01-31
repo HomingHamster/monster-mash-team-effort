@@ -7,7 +7,8 @@ package monsterMashGroupProject;
 import databaseManagement.*;
 
 /**
- *
+ * Contains methods that relate to the list of friends
+ * each user has.
  * @author Dan
  */
 public class Friends {
@@ -90,6 +91,7 @@ public class Friends {
                 friend.getFriends().remove(i);
             }
         }
+        //user.setIsActive(true);
         user.setIsActive(true);
         persistIt.update(user);
         persistIt.shutdown();

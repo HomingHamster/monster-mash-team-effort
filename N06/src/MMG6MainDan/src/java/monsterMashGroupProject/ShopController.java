@@ -10,7 +10,8 @@ import databaseManagement.PersistManager;
 import java.util.List;
 
 /**
- *
+ * Contains methods relating to the control of the 
+ * system's monster shop.
  * @author jamesslater
  */
 public class ShopController {
@@ -18,7 +19,11 @@ public class ShopController {
     private PersistManager pesMan = new PersistManager();
     private Monster monster;
     private MyUser user;
-
+    /**
+     * gets x number of monsters from the shop list.
+     * @param x
+     * @return Monster list of monsters.
+     */
     public Monster getShopMonsters(int x) {
 
         pesMan.init();
@@ -27,7 +32,10 @@ public class ShopController {
 
         return mon.get(x);
     }
-
+    /**
+     * gets the amount of items in the shop.
+     * @return int amount of items
+     */
     public int getNumOfItems() {
         pesMan.init();
 
@@ -37,7 +45,12 @@ public class ShopController {
 
         return mon.size();
     }
-
+    /**
+     * initiates a monster purchase.
+     * @param monsterID
+     * @param usr
+     * @return 
+     */
     public String buyMonster(String monsterID, String usr) {
 
         Shop shp = new Shop();
@@ -65,7 +78,12 @@ public class ShopController {
         //pesMan.shutdown();
         return "shop_buy.jsp";
     }
-    
+        /**
+     * Initiates the sale of a monster.
+     * @param monsterID
+     * @param usr
+     * @return String page to redirect to.
+     */
     public String sellMonster(String monsterID){
         
         Shop shp = new Shop();

@@ -8,6 +8,8 @@ import databaseManagement.Monster;
 import java.util.Random;
 
 /**
+ * Class contains methods relating to monsters having
+ * fights.
  * @author Dan
  */
 public class Fight {
@@ -15,6 +17,9 @@ public class Fight {
     private Random rand = new Random();
     /**
      * Picks a winner and returns the winning monster.
+     * @param m1
+     * @param m2
+     * @return 
      */
     public Monster determineWinner(Monster m1, Monster m2) {
         int m1Prob = randomizeProbabilities(compareAttributesRetM1(m1, m2));
@@ -27,7 +32,10 @@ public class Fight {
     }
 
     /**
-     * +- 5% randomly from the probabilities so long as the lower probability is greater than 5.
+     * +- 5% randomly from the probabilities so long as
+     * the lower probability is greater than 5.
+     * @param m1Prob
+     * @return int probability
      */
     public int randomizeProbabilities(int m1Prob) {
         if ((m1Prob > 5) || (m1Prob < 95)) {
@@ -39,7 +47,13 @@ public class Fight {
     }
 
     /**
-     * Percentage (out of 100) determining who is most likely to win based on monster statistics, including age.
+    /**
+     * Percentage (out of 100) determining who is most
+     * likely to win based on monster statistics,
+     * including age.
+     * @param m1
+     * @param m2
+     * @return 
      */
     public int compareAttributesRetM1(Monster m1, Monster m2) {
         int[] stats1 = new int[2];

@@ -11,12 +11,21 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
- *
+ * A class that contains methods that relate to
+ * breeding of monsters.
  * @author Dan
  */
 public class Breed {
-
+    
+    /**
+     * Function to return the monster created by
+     * breeding the two provided parents.
+     * @param m1
+     * @param m2
+     * @param monsterName
+     * @param userName
+     * @return Monster based on two parents.
+     */
             private Random rand = new Random();
     
     public Monster breedMonsters(Monster m1, Monster m2, String monsterName, String userName, boolean persistChild){
@@ -64,7 +73,16 @@ public class Breed {
        }
         return newMonster;
     }
-
+    
+    /**
+     * Function to return the monster created by
+     * breeding the two provided parents.
+     * @param m1
+     * @param m2
+     * @param monsterName
+     * @param userName
+     * @return Monster based on two parents.
+     */
     public int makeAttribute(int attrib1, int attrib2) {   
             int midStat = attrib1 + ((attrib2 - attrib1)/2);    
             int min = -(attrib1 / 8);
@@ -74,10 +92,23 @@ public class Breed {
         return finalStat;
     }
 
+    /**
+     * Shows how good a monster is by adding various
+     * attributes.
+     * @param m
+     * @return int the monster's rating.
+     */
     public int generalAssess(Monster m) {
         return (m.getAggression() + m.getStrength());
     }
-    
+       /**
+     * Stores a monster in the persistence manager.
+     * @param monster
+     * @throws ClassNotFoundException
+     * @throws SQLException
+     * @throws InstantiationException
+     * @throws IllegalAccessException 
+     */
     public void passToPM(Monster monster) throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException {
         PersistManager persistIt = new PersistManager();
          try {

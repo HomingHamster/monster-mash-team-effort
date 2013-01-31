@@ -7,13 +7,17 @@ package monsterMashGroupProject;
 import databaseManagement.*;
 
 /**
- *
+ * Contains methods relating to trade of monsters.
  * @author dam44
  */
 public class Trade {
     
     private PersistManager persistIt = new PersistManager();
-    
+      /**
+     * Initiates the trade of two given monsters.
+     * @param monster1
+     * @param monster2 
+     */
     public Trade(Monster monster1, Monster monster2) {
         persistIt.init();
         String temp = monster1.getOwner();

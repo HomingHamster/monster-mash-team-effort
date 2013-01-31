@@ -10,7 +10,8 @@ import databaseManagement.PersistManager;
 import java.util.List;
 
 /**
- *
+ * Contains classes that relate to the control of user
+ * accounts.
  * @author jamesslater
  */
 public class UserController {
@@ -57,15 +58,29 @@ public class UserController {
         this.childMon = childMon;
     }
   
+     /**
+     * gets the current user.
+     * @return MyUser user.
+     */
     public MyUser getTheUsr() {
         return theUsr;
     }
 
+    /**
+     * sets the current user.
+     * @param log
+     * @return String blank for compatability.
+     */
     public String setTheUsr(Login log) {
         this.theUsr = log.user;
         return "";
     }
   
+    /**
+     * Gets a users monster by index number.
+     * @param num
+     * @return Monster monster.
+     */
     public Monster getMonster(int num){
         
         pesMan.init();
@@ -75,7 +90,11 @@ public class UserController {
         
         
         return mon.get(num);
-        
+            //TODO: spelling mistake maybe?
+    /**
+     * Puts a monster in breadcrumbs ready for serving.
+     * @return BreadcrumbMonster a breaded monster.
+     */
     }
     public String bread(){
         
@@ -90,7 +109,10 @@ public class UserController {
         
         return "farm.jsp";
     }
-    
+        /**
+     * gets the number of monster a user has.
+     * @return int number of monsters.
+     */
     public int getNumOfMonsters(){
         
         pesMan.init();
@@ -99,21 +121,35 @@ public class UserController {
         
         return mon.size();
     }
-    
+        /**
+     * sells a monster at index in the shop.
+     * @param x
+     * @return String 
+     */
     public String sellMonster(int x){
         
         
         return "";
     }
-    
+        /**
+     * gets the amount of money a user has.
+     * @return int amount of money.
+     */
     public int getMoney() {
         return theUsr.getVirtualMoney();
     }
-    
+        /**
+     * gets the number of friends a user has.
+     * @return int number of friends.
+     */
     public int getNumOfFriends(){
         return theUsr.getFriends().size();
     }
-    
+        /**
+     * gets a link to the user's monster's picture
+     * @param monName
+     * @returßßn String address to picture.
+     */
     public String getPicSrc(String monName) {
         String temp = "http://bbrks.me/221/monsterid.php?seed=" + monName;
         return temp;

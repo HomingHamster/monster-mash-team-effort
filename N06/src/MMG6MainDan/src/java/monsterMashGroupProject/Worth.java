@@ -7,17 +7,25 @@ package monsterMashGroupProject;
 import databaseManagement.*;
 
 /**
- *
+ * Contains methods relating to calculating a
+ * monster's worth.
  * @author dam44
  */
 public class Worth {
-
+    /**
+     * Calculates the worth of a monster.
+     * @param monster
+     * @return 
+     */
     private PersistManager persistIt;
 
     public int Worth(Monster monster) {
         return (((monster.getStrength() + monster.getAggression()) * assessAge(monster)) / 10);
     }
-
+    /**
+     * Updates the worth of a monster.
+     * @param monster 
+     */
     public void UpdateMonsterWorth(Monster monster) {
         persistIt = new PersistManager();
         persistIt.init();
@@ -30,6 +38,11 @@ public class Worth {
      * Out of 10. If they are younger or older than middle aged (between 40 and
      * 60 percent of their max age) then the assessment number decreases which
      * hence deceases the over-all likely-hood of winning for the monster.
+     */
+        /**
+     * assess the age of a monster.
+     * @param m
+     * @return int age.
      */
     public static int assessAge(Monster m) {
         double age = (double) m.getAge();

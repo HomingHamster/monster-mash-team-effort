@@ -12,18 +12,25 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 /**
- *
+ * A class to contain the logic that ages a monster.
  * @author dam44
  */
 public class MonsterLifeCycle {
 
     private Timer timer;
-
+    /**
+     * Runs task on the selected user every x seconds.
+     * @param seconds
+     * @param user 
+     */
     public MonsterLifeCycle(int seconds, MyUser user) {
         timer = new Timer();
         timer.scheduleAtFixedRate(new Task(user), seconds * 1000, seconds * 1000);
     }
-
+    /**
+     * Class extends TimerTask to contain the logic
+     * that ages all of a user's monsters.
+     */
     class Task extends TimerTask {
 
         MyUser user;
@@ -31,7 +38,9 @@ public class MonsterLifeCycle {
         public Task(MyUser user) {
             this.user = user;
         }
-
+        /**
+         * Method contains the logic to age a monster.
+         */
         @Override
         public void run() {
             PersistManager persistIt = new PersistManager();

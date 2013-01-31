@@ -12,7 +12,8 @@ import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 
 /**
- *
+ * Class containing methods related to logging a user
+ * into the system.
  * @author dam44
  */
 public class Login {
@@ -22,31 +23,52 @@ public class Login {
     private String username;
     private String password;
     public MyUser user;
-
+    /**
+     * Returns the user this class relates to.
+     * @return MyUser user.
+     */
     public MyUser getUser() {
         return user;
     }
-
+    /**
+     * Sets the current user the class relates to.
+     * @param user 
+     */
     public void setUser(MyUser user) {
         this.user = user;
     }
-
+    /**
+     * Gets the username the class relates to.
+     * @return String username.
+     */
     public String getUsername() {
         return username;
     }
-
+    /**
+     * Sets the username currently related to.
+     * @param username 
+     */
     public void setUsername(String username) {
         this.username = username;
     }
-
+    /**
+     * gets the password currently related to.
+     * @return String password.
+     */
     public String getPassword() {
         return password;
     }
-
+    /**
+     * Sets a new password currently related to.
+     * @param password 
+     */
     public void setPassword(String password) {
         this.password = password;
     }
-
+    /**
+     * Gets current user and logs them in.
+     * @return String file to be directed to.
+     */
     public String LoginUser() {
         persistIt.init();
         List<MyUser> users = persistIt.searchUsers();
@@ -65,6 +87,9 @@ public class Login {
         return "index.jsp";
     }
 
+    /**
+     * Gets current user and logs them off.
+     */
     public String LogOff() {
         persistIt.init();
         List<MyUser> users = persistIt.searchUsers();
@@ -80,7 +105,13 @@ public class Login {
         persistIt.shutdown();
         return "index.jsp";
     }
-
+    /**
+     * Registers a new user.
+     * @param usrname
+     * @param usrpassword
+     * @param email
+     * @return String page to be redirected to.
+     */
     public String Register(String usrname, String usrpassword, String email) {
         persistIt.init();
         //if ((matches(REGEX, name.toString()) == true) && (matches(REGEX, password.toString()) == true)) {
@@ -93,7 +124,12 @@ public class Login {
         persistIt.shutdown();
         return "index.jsp";
     }
-
+    /**
+     * Applies a regex to an input.
+     * @param regex
+     * @param input
+     * @return bool matches.
+     */
     public boolean matches(String regex, String input) {
         return Pattern.matches(regex, input);
     }
