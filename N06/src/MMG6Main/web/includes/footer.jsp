@@ -2,9 +2,6 @@
 				<hr />
 				<p>&copy; Team Effort N06 2013</p>
 			</footer>
-
-			<!-- Friends List - (DO NOT WRAP IN DIV) -->
-			<jsp:include page="../parts/friendslist.jsp" />
 	
 			<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
 			<!--[if lt IE 9]>

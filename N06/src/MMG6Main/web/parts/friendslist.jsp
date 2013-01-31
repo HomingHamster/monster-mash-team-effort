@@ -1,3 +1,5 @@
+<jsp:useBean id="user" class="monsterMashGroupProject.Login" scope="session"/>
+<jsp:useBean id="usercontroller" class="monsterMashGroupProject.UserController" scope="session"/>
 
 <div id="friendslist" class="dropdown-menu" style="padding:5px;position:fixed;bottom:0;right:25px;width:200px;display:block;border-radius:6px 6px 0 0;top:auto;left:auto;border-bottom:none;">
 	<div id="friendscontainer" style="display:none;">
@@ -6,19 +8,19 @@
 				<!-- JSP Loop through friends -->
 				<!-- <li><a href="#"><i class="icon-user"></i> Username</a></li>
 				<!-- If user has no friends: -->
-				<li><a href="#"><i class="icon-info-sign"></i> You have no friends! :(</li>
+				<li><a href="#addFriend"><i class="icon-info-sign"></i> You have no friends! :(</a></li>
 			</ul>
 		</div>
 		<a href="#addFriend" role="button" class="btn btn-primary btn-block" data-toggle="modal"><i class="icon-plus icon-white"></i> Add Friend</a>
 	</div>
 	<div id="friendslistbutton" style="text-align:center;cursor:pointer;">
-            <span><i class="icon-th-list"></i> Friends <br></br></span>
+            <span><i class="icon-th-list"></i> Friends <b>(<%= user.getUser().getFriends().size() %>)</b></span>
 	</div>
 </div>
 
 <div id="addFriend" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-header">
-		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
 		<h3 id="myModalLabel">Add Friend</h3>
 	</div>
 	<div class="modal-body" style="height:300px;">
