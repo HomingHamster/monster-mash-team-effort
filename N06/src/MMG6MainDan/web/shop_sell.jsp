@@ -36,5 +36,7 @@
         <%}%>
     </tbody>
 </table>
+        
+        
 <jsp:include page="includes/sidebarclose.jsp" />
 <jsp:include page="includes/footer.jsp" />

@@ -31,11 +31,13 @@
                     <input type="hidden" name="monsterid" value=<%= shp.getShopMonsters(i).getId()%> />
                     <input type="hidden" name="userNam" value= <%= usercontroller.getTheUsr().getUsername()%> />
                     <input type="submit" class="btn btn-primary" value="Buy" />
+
                 </form>
             </td>
         </tr>
         <%}%>
     </tbody>
 </table>
+       
 <jsp:include page="includes/sidebarclose.jsp" />
 <jsp:include page="includes/footer.jsp" />
