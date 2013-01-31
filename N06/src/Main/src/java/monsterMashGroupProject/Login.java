@@ -116,10 +116,10 @@ public class Login {
         persistIt.init();
         //if ((matches(REGEX, name.toString()) == true) && (matches(REGEX, password.toString()) == true)) {
         MyUser myUser = UserFactory.makeIt(usrname, usrpassword, 100);
-        MyUser friend = UserFactory.makeIt("Derek1", "harry", 100);
+//        MyUser friend = UserFactory.makeIt("Derek1", "harry", 100);
         persistIt.create(myUser);
-        persistIt.create(friend);
-        myUser.getFriends().add(friend);
+//        persistIt.create(friend);
+//        myUser.getFriends().add(friend);
         Monster gary = MonsterFactory.makeIt("Gary", 10, 10, 10, 10, usrname);
         //myUser.addFriend(friend);
         persistIt.create(gary);

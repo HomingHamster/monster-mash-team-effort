@@ -45,13 +45,14 @@ public class PersistManager {
 
     public void create(MyUser user) {
         EntityTransaction tx = manager.getTransaction();
+       
         tx.begin();
         try {
             manager.persist(user);
             //System.out.println(user.getName() +" "+ user.getPassword() +" "+ user.isLoggedIn() +" "+ user.getVirtualMoney());
             tx.commit();
         } catch (Exception ex) {
-            tx.rollback();
+                tx.rollback();
         }
         System.out.println(user.getUsername() + " has been created.");
     }
@@ -217,6 +218,7 @@ public class PersistManager {
     public void init() {
         try {
             Class.forName("org.apache.derby.jdbc.ClientDriver").newInstance();
+            
             factory = Persistence.createEntityManagerFactory("monsters");
             manager = factory.createEntityManager();
         } catch (InstantiationException ex) {
