@@ -19,7 +19,7 @@
     <tbody>
         <% for (int i = 0; i < usercontroller.getNumOfMonsters(); i++) {%>
         <tr>
-            <td><img src="http://bbrks.me/221/monsterid.php?seed=1"></td>
+            <td><img src=<%= usercontroller.getPicSrc(shp.getShopMonsters(i).getName()) %>></td>
             <td><%= usercontroller.getMonster(i).getName()%></td>
             <td><%= usercontroller.getMonster(i).getAge()%></td>
             <td><%= usercontroller.getMonster(i).getHeight()%></td>
