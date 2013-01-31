@@ -7,8 +7,10 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <jsp:useBean id="usercontroller" class="monsterMashGroupProject.UserController" scope="session"/>
+<usercontroller:InvalidateSession />
+<usercontroller:redirect url="login.jsp" />
 <HTML>
-    <HEAD><META http-equiv="Refresh" content="0; url= <%= usercontroller.logOut() %>"/></HEAD>
+    <HEAD><META http-equiv="Refresh" content="0; url= <%= usercontroller.logOut()%>" /></HEAD>
     <BODY>
         <jsp:include page="includes/header.jsp" />
 		<!-- Body Content -->
