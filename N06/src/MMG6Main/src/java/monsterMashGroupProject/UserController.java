@@ -70,9 +70,8 @@ public class UserController {
     /**
      * sets the current user.
      * @param log
-     * @return String empty
+     * @return String blank for compatability.
      */
-    //TODO: What's the sting for?
     public String setTheUsr(Login log) {
         this.theUsr = log.user;
         return "";
