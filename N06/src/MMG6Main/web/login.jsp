@@ -38,22 +38,21 @@
 					  <div class="control-group">
 					    <label class="control-label" for="regUsername">Username</label>
 					    <div class="controls">
-					      <input type="text" id="regUsername" placeholder="Username">
+					      <input type="text" id="regUsername" placeholder="Username" />
 					    </div>
 					  </div>
 					  <div class="control-group">
 					    <label class="control-label" for="regEmail">E-Mail</label>
 					    <div class="controls">
-					      <input type="text" id="regEmail" placeholder="E-Mail" type="email" required>
+					      <input type="text" id="regEmail" placeholder="E-Mail" type="email" />
 					    </div>
 					  </div>
 					  <div class="control-group">
 					    <label class="control-label" for="regPassword">Password</label>
 					    <div class="controls">
-					      <input type="password" id="regPassword" placeholder="Password">
+					      <input type="password" id="regPassword" placeholder="Password"  />
 					    </div>
 					  </div>
-					</form>
 				</div>
 				<div class="modal-footer">
 					<button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Close</button>
