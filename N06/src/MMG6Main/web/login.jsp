@@ -30,7 +30,7 @@
 		<!-- Register Modal -->
 		<div id="registerModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
 				<h3 id="myModalLabel">Register New User</h3>
 			</div>
 			<form class="form-horizontal" method="POST" action="CreateUser.jsp">
