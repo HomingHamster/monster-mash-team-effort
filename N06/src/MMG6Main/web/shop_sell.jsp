@@ -29,6 +29,7 @@
             <td><%= usercontroller.getMonster(i).getWorth()%> &curren;</td>
             <td><form name="first" METHOD=POST ACTION="sellMonster.jsp">
                     <input type="hidden" name="monsterid" value=<%= usercontroller.getMonster(i).getId()%> />
+                    <input type="hidden" name="userNam" value= <%= usercontroller.getTheUsr().getUsername()%> />
                     <input type="submit" class="btn btn-primary" value="Sell" />
                 </form></td>
         </tr>
