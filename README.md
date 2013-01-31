@@ -1,6 +1,28 @@
 monster-mash-team-effort
 ========================
 
+Getting the project to run
+--------------------------
+
+- Create new Netbeans Java Web project from existing sources
+- Set Location to project folder (GIT)
+- Set Web Pages to ./web
+- Set WEB-INF to ./web/WEB-INF
+- Set Libraries to ../../lib
+- Finish
+- Switch to services tab, right click JavaDB and create database
+- Call it monsters with username/password APP
+- Delete META-INF folder in Source Packages
+- Right click project, create New > Persistence > Persistence Unit
+- Change name to monsters
+- Change Provider to Hibernate (JPA 1.0)
+- New data source, name to MMDB5
+- Change connection to monsters [APP on APP]
+- Finish
+- Edit persistence.xml with transaction-type="RESOURCE_LOCAL"
+- Add &lt;class&gt;databaseManagement.MyUser&lt;/class&gt; and &lt;class&gt;databaseManagement.Monster&lt;/class&gt; under jta-data-source
+- Run project
+
 Read this first
 ---------------
 
