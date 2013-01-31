@@ -200,10 +200,8 @@ public class UserController {
      */
     public String getPicSrc(String monName){
         
-        String temp = 
-            "http://bbrks.me/221/monsterid.php?seed=" +
-                monName;
-        
+        String temp = "http://bbrks.me/221/monsterid.php?seed=" + monName;
+          
         return temp;
     }
 }
