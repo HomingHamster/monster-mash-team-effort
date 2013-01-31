@@ -6,9 +6,20 @@
 		<div id="friends" style="overflow:auto;max-height:300px">
 			<ul style="list-style-type:none;margin:0;">
 				<!-- JSP Loop through friends -->
-				<!-- <li><a href="#"><i class="icon-user"></i> Username</a></li>
-				<!-- If user has no friends: -->
-				<li><a href="#addFriend"><i class="icon-info-sign"></i> You have no friends! :(</a></li>
+				<!-- <li><a href="#"><i class="icon-user"></i> Username</a></li> -->
+                                <%
+                                if (user.getUser().getFriends().size() == 0) {
+                                %>
+                                    <!-- If user has no friends: -->
+                                    <li><a href="#addFriend"><i class="icon-info-sign"></i> You have no friends! :(</a></li>
+                                <%
+                                } else {
+                                    for (int i = 0; i< user.getUser().getFriends().size(); i++) { %>
+                                        <li><a href="#"><i class="icon-user"></i> <%= user.getUser().getFriends().get(i).getUsername() %></a></li>
+                                <%
+                                    }
+                                }
+                                %>
 			</ul>
 		</div>
 		<a href="#addFriend" role="button" class="btn btn-primary btn-block" data-toggle="modal"><i class="icon-plus icon-white"></i> Add Friend</a>
