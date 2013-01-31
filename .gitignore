@@ -28,5 +28,5 @@ Thumbs.db
 *build/
 *build/*
 
-META-INF/persistence.xml
+*META-INF/persistence.xml
 hibernate.cfg.xml
