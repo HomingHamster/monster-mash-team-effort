@@ -29,10 +29,43 @@
 
 		<!-- Register Modal -->
 		<div id="registerModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h3 id="myModalLabel">Register New User</h3>
+			</div>
+			<form class="form-horizontal" method="POST" action="CreateUser.jsp">
+				<div class="modal-body">
+					  <div class="control-group">
+					    <label class="control-label" for="regUsername">Username</label>
+					    <div class="controls">
+					      <input type="text" id="regUsername" placeholder="Username">
+					    </div>
+					  </div>
+					  <div class="control-group">
+					    <label class="control-label" for="regEmail">E-Mail</label>
+					    <div class="controls">
+					      <input type="text" id="regEmail" placeholder="E-Mail" type="email" required>
+					    </div>
+					  </div>
+					  <div class="control-group">
+					    <label class="control-label" for="regPassword">Password</label>
+					    <div class="controls">
+					      <input type="password" id="regPassword" placeholder="Password">
+					    </div>
+					  </div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Close</button>
+					<input type="submit" class="btn btn-primary" value="<i class="icon-plus icon-white"></i> Register New User" />
+				</div>
+			</form>
+
+
 		 <form name="second" method=POST action="CreateUser.jsp">
                                                 <p> Username : <input type="text" name="regUsername"> </p>
                                                 <p> Password: <input type="text" name="regPassword"></p>
-                                                <p> e-mail : <input type="text" name="regEmail"> </p> 
+                                                <p> e-mail : <input type="text" name="regEmail"> </p>
                                                 <input type="submit" value="Register" >
                                             </form>
 		</div>
