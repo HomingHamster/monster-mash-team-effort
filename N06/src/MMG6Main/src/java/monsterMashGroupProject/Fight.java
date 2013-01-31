@@ -12,7 +12,7 @@ import java.util.Random;
  */
 public class Fight {
 
-    private Random rand = new Random();
+    Random rand = new Random();
     /**
      * Picks a winner and returns the winning monster.
      */

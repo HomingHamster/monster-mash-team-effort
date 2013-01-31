@@ -1,8 +1,8 @@
 <div class="navbar">
 	<div class="navbar-inner">
-		<a class="brand" href="/MMG6Main/">Monster Mash</a>
+		<a class="brand" href="/MMG6Main/index.jsp">Monster Mash</a>
 		<ul class="nav">
-			<li><a href="/MMG6Main/">Home</a></li>
+			<li><a href="/MMG6Main/welcome.jsp">Home</a></li>
 			<%
 				//if (!user.getUsername().equals("")) {
 			%>

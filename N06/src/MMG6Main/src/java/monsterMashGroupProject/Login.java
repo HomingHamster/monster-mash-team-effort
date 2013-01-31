@@ -48,37 +48,39 @@ public class Login {
     }
 
     public String LoginUser() {
+        
+        String temp = "index.jsp";
         persistIt.init();
         List<MyUser> users = persistIt.searchUsers();
         for (int i = 0; i < users.size(); i++) {
             if ((users.get(i).getUsername().equals(username)) && (users.get(i).getUserPassword().equals(password))) {
                 user = users.get(i);
-                user.setIsLoggedIn(true);
-                user.setIsActive(true);
+               // user.setIsLoggedIn(true);
+                //user.setIsActive(true);
                 persistIt.update(user);
                 new LogginChecker(600, user);
                 new MonsterLifeCycle(60, user);
-                return "welcome.jsp";
+                temp = "welcome.jsp";
             }
+            
         }
         persistIt.shutdown();
-        return "index.jsp";
+        return temp;
     }
 
-    public String LogOff() {
+    public void LogOff() {
         persistIt.init();
         List<MyUser> users = persistIt.searchUsers();
         for (int i = 0; i < users.size(); i++) {
             if ((users.get(i).getUsername().equals(username)) && (users.get(i).getUserPassword().equals(password))) {
                 user = users.get(i);
-                user.setIsLoggedIn(false);
-                user.setIsActive(false);
+                //user.setIsLoggedIn(false);
                 persistIt.update(user);
-                return "welcome.jsp";
+                
             }
         }
         persistIt.shutdown();
-        return "index.jsp";
+       
     }
 
     public String Register(String usrname, String usrpassword, String email) {

@@ -1,19 +1,19 @@
 <%-- 
-    Document   : sellMonster
-    Created on : Jan 30, 2013, 5:30:52 PM
+    Document   : logout
+    Created on : Jan 30, 2013, 11:03:24 PM
     Author     : jamesslater
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<jsp:useBean id="sellMon" class="monsterMashGroupProject.ShopController" scope="session"/>
+<jsp:useBean id="usercontroller" class="monsterMashGroupProject.UserController" scope="session"/>
 <HTML>
-    <HEAD><META http-equiv="Refresh" content="0; url= <%= sellMon.sellMonster(request.getParameter("monsterid"), request.getParameter("userNam"))%>"/></HEAD>
+    <HEAD><META http-equiv="Refresh" content="0; url= <%= usercontroller.logOut() %>"/></HEAD>
     <BODY>
         <jsp:include page="includes/header.jsp" />
 		<!-- Body Content -->
 		<div class="well" style="text-align:center;">
-			<h2>Selling To Shop</h2>
+			<h2>Bye Bye</h2>
 			<img src="resources/template/img/loading.gif" />
 		</div>
 

@@ -12,14 +12,13 @@ import databaseManagement.*;
  */
 public class Worth {
 
-    private PersistManager persistIt;
+    PersistManager persistIt = new PersistManager();
 
     public int Worth(Monster monster) {
         return (((monster.getStrength() + monster.getAggression()) * assessAge(monster)) / 10);
     }
 
     public void UpdateMonsterWorth(Monster monster) {
-        persistIt = new PersistManager();
         persistIt.init();
         monster.setWorth(Worth(monster));
         persistIt.update(monster);
@@ -36,20 +35,26 @@ public class Worth {
         double maxAge = (double) m.getMaxAge();
         int ageAssess = 10;
         boolean done = false;
+        int count = 0;
+
         double lower = 0.4;
         double higher = 0.6;
         while (done == false) {
-            if ((age >= (maxAge * lower)) && (age <= (maxAge * higher))) {
+            if ((age >= (maxAge * lower)) || (age <= (maxAge * higher))) {
+                if (count == 0) {
                     done = true;
+                } else {
+                    count++;
+                    done = true;
+                    ageAssess--;
+                }
             } else {
                 if ((higher > 1) || (lower < 0)) {
                     System.out.println("Error assessing monster age.");
                     done = true;
                 } else {
-                    ageAssess--;
                     lower = lower - 0.1;
                     higher = higher + 0.1;
-                    done = false;
                 }
             }
         }

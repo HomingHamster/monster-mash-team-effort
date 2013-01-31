@@ -66,23 +66,30 @@ public class ShopController {
         return "shop_buy.jsp";
     }
     
-    public String sellMonster(String monsterID){
+    public String sellMonster(String monsterID, String usr){
         
         Shop shp = new Shop();
 
         pesMan.init();
         
-        List<Monster> mon = pesMan.searchMonsters("");
+        List<Monster> mon = pesMan.searchMonsters();
 
         for (int i = 0; i < mon.size(); i++) {
             if (mon.get(i).getId() == Integer.parseInt(monsterID)) {
                 monster = mon.get(i);
             }
         }
-        shp.SellMonster(monster);
         
-        pesMan.shutdown();
+        List<MyUser> users = pesMan.searchUsers();
         
+        for (int i = 0; i < users.size(); i++) {
+            if ((users.get(i).getUsername().equals(usr))) {
+                user = users.get(i);
+            }
+        }
+        
+        shp.SellMonster(monster,user);
+       
         return "shop_sell.jsp";
     }
 }

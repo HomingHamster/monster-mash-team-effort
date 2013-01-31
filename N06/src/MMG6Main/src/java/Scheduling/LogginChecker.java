@@ -16,7 +16,7 @@ import monsterMashGroupProject.Login;
 
 public class LogginChecker {
 
-    private Timer timer;
+    Timer timer;
 
     public LogginChecker(int seconds, MyUser user) {
         timer = new Timer();
@@ -33,8 +33,7 @@ public class LogginChecker {
 
         @Override
         public void run() {
-            PersistManager persistIt = new PersistManager();
-            persistIt.init();
+          /*  PersistManager persistIt = new PersistManager();
             List<MyUser> users = persistIt.searchUsers();
             for (int i = 0; i < users.size(); i++) {
                 if ((users.get(i).getUsername().equals(user.getUsername())) && (users.get(i).getUserPassword().equals(user.getUsername()))) {
@@ -49,8 +48,7 @@ public class LogginChecker {
                         user.setIsActive(false);
                     }
                 }
-            }
-            persistIt.shutdown();
+            }*/
         }
     }
 }
