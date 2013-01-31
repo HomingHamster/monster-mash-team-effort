@@ -14,15 +14,14 @@ import java.util.List;
  * @author jamesslater
  */
 public class UserController {
-
-    MyUser theUsr;
-    MyUser frind;
-    int choice1;
-    int choice2;
-    String childName;
-    String friendusername;
-    Monster childMon = null;
-    PersistManager pesMan = new PersistManager();
+    
+  MyUser theUsr;
+  int choice1;
+  int choice2;
+  String childName;
+  Monster childMon = null;
+  
+  PersistManager pesMan = new PersistManager();
 
     public int getChoice1() {
         return choice1;
@@ -49,15 +48,15 @@ public class UserController {
     }
 
     public Monster getChildMon() {
-
-
+        
+        
         return childMon;
     }
 
     public void setChildMon(Monster childMon) {
         this.childMon = childMon;
     }
-
+  
     public MyUser getTheUsr() {
         return theUsr;
     }
@@ -66,88 +65,52 @@ public class UserController {
         this.theUsr = log.user;
         return "";
     }
-
-    public String logOut(){
+  
+    public Monster getMonster(int num){
         
-        theUsr = null;
-        
-        Login log = new Login();
-        
-        log.LogOff();
-        
-        return "index.jsp";
-    }
-    
-    public Monster getMonster(int num) {
-
         pesMan.init();
-
+        
         List<Monster> mon = pesMan.searchMonsters(theUsr.getUsername());
-
-
-
+        
+        
+        
         return mon.get(num);
-
+        
     }
-
-    public String bread() {
-
+    public String bread(){
+        
         Breed breed = new Breed();
-
+        
         pesMan.init();
-
+        
         List<Monster> mon = pesMan.searchMonsters(theUsr.getUsername());
-
-        childMon = breed.breedMonsters(mon.get(choice1), mon.get(choice2), childName, theUsr.getUsername());
-
-
+      
+      childMon = breed.breedMonsters(mon.get(choice1), mon.get(choice2), childName, theUsr.getUsername(), true);
+      
+        
         return "farm.jsp";
     }
-
-    public int getNumOfMonsters() {
-
+    
+    public int getNumOfMonsters(){
+        
         pesMan.init();
-
+        
         List<Monster> mon = pesMan.searchMonsters(theUsr.getUsername());
-
+        
         return mon.size();
     }
-
-    public String sellMonster(int x) {
-
-
+    
+    public String sellMonster(int x){
+        
+        
         return "";
     }
-
+    
     public int getMoney() {
         return theUsr.getVirtualMoney();
     }
-
-    public int getNumOfFriends() {
-        return theUsr.getFriends().size();
-    }
-
-    public String addFriend() {
-
-        FriendsList frd = new FriendsList();
-
-        pesMan.init();
-
-        List<MyUser> ppl = pesMan.searchUsers();
-
-        for (int i = 0; i < ppl.size(); i++) {
-            if(ppl.get(i).getUsername().equals(friendusername)){
-                frd.addFriend(theUsr, ppl.get(i));
-            }
-        }
-
-        return "welcome.jsp";
-    }
     
-    public String getPicSrc(String monName){
-        
-        String temp = "http://bbrks.me/221/monsterid.php?seed="+ monName;
-        
-        return temp;
+    public int getNumOfFriends(){
+        return theUsr.getFriends().size();
     }
 }

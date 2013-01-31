@@ -12,7 +12,7 @@ import databaseManagement.*;
  */
 public class Trade {
     
-    PersistManager persistIt = new PersistManager();
+    private PersistManager persistIt = new PersistManager();
     
     public Trade(Monster monster1, Monster monster2) {
         persistIt.init();

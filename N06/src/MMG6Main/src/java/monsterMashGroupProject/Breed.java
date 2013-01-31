@@ -19,7 +19,7 @@ public class Breed {
 
             Random rand = new Random();
     
-    public Monster breedMonsters(Monster m1, Monster m2, String monsterName, String userName){
+    public Monster breedMonsters(Monster m1, Monster m2, String monsterName, String userName, boolean persistChild){
         int[] statArray = new int[4];
         int[] alterStat = new int[4];
         int[] finalStat = new int[4];
@@ -49,7 +49,7 @@ public class Breed {
         }
         Monster newMonster = MonsterFactory.makeIt(monsterName, finalStat[0], finalStat[1], finalStat[2], finalStat[3], userName);
         
-        
+       if (persistChild == true) { 
             try {
                 passToPM(newMonster);
             } catch (ClassNotFoundException ex) {
@@ -61,6 +61,7 @@ public class Breed {
             } catch (IllegalAccessException ex) {
                 Logger.getLogger(Breed.class.getName()).log(Level.SEVERE, null, ex);
             }
+       }
         return newMonster;
     }
 

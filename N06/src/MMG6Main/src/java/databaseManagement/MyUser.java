@@ -18,11 +18,13 @@ public class MyUser {
     @Id
     private String username;
     private String userPassword;
-    //private boolean isLoggedIn;
-    //private boolean isActive;
+    private boolean isLoggedIn;
+    private boolean isActive;
     private int virtualMoney;
     @OneToMany
     private List<MyUser> friends;
+    @OneToMany
+    private List<MyUser> requests;
 
     public void setUsername(String username) {
         this.username = username;
@@ -47,7 +49,8 @@ public class MyUser {
     public int getVirtualMoney() {
         return virtualMoney;
     }
-    /*public void setIsLoggedIn(boolean isLoggedIn) {
+
+    public void setIsLoggedIn(boolean isLoggedIn) {
         this.isLoggedIn = isLoggedIn;
     }
 
@@ -61,12 +64,21 @@ public class MyUser {
 
     public boolean isIsActive() {
         return isActive;
-    }*/
+    }
+
     public void setFriends(List<MyUser> friends) {
         this.friends = friends;
     }
 
     public List<MyUser> getFriends() {
         return friends;
+    }
+
+    public void setRequests(List<MyUser> requests) {
+        this.requests = requests;
+    }
+
+    public List<MyUser> getRequests() {
+        return requests;
     }
 }
