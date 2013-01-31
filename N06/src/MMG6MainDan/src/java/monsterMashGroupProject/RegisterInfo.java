@@ -45,6 +45,10 @@ public class RegisterInfo {
         
         log.Register(regUsername, regPassword, regEmail);
         
+        UserEmail email = new UserEmail();
+        email.send("felix.farquharson@googlemail.com", "monster-mash-n06@teame4t.co.uk",
+                "User Registration", "Sucessfully registered");
+        
         return "login.jsp";
     }
     

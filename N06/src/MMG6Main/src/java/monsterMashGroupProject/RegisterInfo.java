@@ -3,8 +3,6 @@
  * and open the template in the editor.
  */
 package monsterMashGroupProject;
-
-import monsterMashGroupProject.UserEmail;
         
 /**
  * Class contains methods relating to registering
