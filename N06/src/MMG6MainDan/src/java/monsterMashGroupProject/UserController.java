@@ -85,7 +85,7 @@ public class UserController {
         
         List<Monster> mon = pesMan.searchMonsters(theUsr.getUsername());
       
-      childMon = breed.breedMonsters(mon.get(choice1), mon.get(choice2), childName, theUsr.getUsername());
+      childMon = breed.breedMonsters(mon.get(choice1), mon.get(choice2), childName, theUsr.getUsername(), true);
       
         
         return "farm.jsp";
