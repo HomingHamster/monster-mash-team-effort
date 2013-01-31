@@ -18,7 +18,8 @@ import javax.persistence.Persistence;
 import javax.persistence.Query;
 
 /**
- *
+ * Contains the methods that relate to 
+ * maintaining persistence in the application.
  * @author Dan
  */
 public class PersistManager {
@@ -30,6 +31,11 @@ public class PersistManager {
     private List<MyUser> userList;
     private List<Monster> shopList;
 
+    /**
+     * Creates a monster in persistence and 
+     * puts it in the database.
+     * @param monster 
+     */
     public void create(Monster monster) {
         EntityTransaction tx = manager.getTransaction();
         tx.begin();
@@ -42,6 +48,11 @@ public class PersistManager {
         System.out.println(monster.getName() + " has been created.");
     }
 
+    /**
+     * Creates a user in persistence and puts 
+     * it in the database.
+     * @param user 
+     */
     public void create(MyUser user) {
         EntityTransaction tx = manager.getTransaction();
         tx.begin();
@@ -55,6 +66,12 @@ public class PersistManager {
         System.out.println(user.getUsername() + " has been created.");
     }
 
+    /**
+     * Updates a user in persistence and replaces
+     * it in the database.
+     * @param user
+     * @return 
+     */
     public boolean update(MyUser user) {
         EntityTransaction tx = manager.getTransaction();
         tx.begin();
@@ -70,6 +87,12 @@ public class PersistManager {
         }
     }
 
+    /**
+     * Updates a user in persistence and 
+     * replaces it in the database.
+     * @param monster
+     * @return 
+     */
     public boolean update(Monster monster) {
         EntityTransaction tx = manager.getTransaction();
         tx.begin();
@@ -90,6 +113,11 @@ public class PersistManager {
         }
     }
 
+    /**
+     * Removes a user from the database.
+     * @param user
+     * @return bool success.
+     */
     public boolean remove(MyUser user) {
         EntityTransaction tx = manager.getTransaction();
         tx.begin();
@@ -108,6 +136,11 @@ public class PersistManager {
         }
     }
 
+    /**
+     * removes a monster from the database.
+     * @param monster
+     * @return 
+     */
     public boolean remove(Monster monster) {
         EntityTransaction tx = manager.getTransaction();
         tx.begin();
@@ -122,6 +155,11 @@ public class PersistManager {
         }
     }
 
+    /**
+     * drops a given table from the database.
+     * @param table
+     * @return bool success.
+     */
     public boolean dropTable(String table) {
         EntityTransaction tx = manager.getTransaction();
         tx.begin();
@@ -136,10 +174,9 @@ public class PersistManager {
     }
 
     /**
-     * Returns list of Monsters owned by the passed user.
-     *
+     * Gets an updated user given the original.
      * @param username
-     * @return
+     * @return MyUser user.
      */
     public MyUser getUpdatedUser(MyUser user) {
         EntityTransaction tx = manager.getTransaction();
@@ -150,6 +187,12 @@ public class PersistManager {
         return userList.get(0);
     }
 
+    /**
+     * gets an updated monster given a user and a monster.
+     * @param user
+     * @param monster
+     * @return Monster updated monster.
+     */
     public Monster getUpdatedMonster(MyUser user, Monster monster) {
         EntityTransaction tx = manager.getTransaction();
         tx.begin();
@@ -159,6 +202,11 @@ public class PersistManager {
         return monsterList.get(0);
     }
 
+    /**
+     * returns a list of monsters for a given username.
+     * @param username
+     * @return List<Monster> monsters.
+     */
     public List<Monster> searchMonsters(String username) {
         EntityTransaction tx = manager.getTransaction();
         tx.begin();
@@ -168,6 +216,10 @@ public class PersistManager {
         return userMonsters;
     }
 
+    /**
+     * returns a list of monsters.
+     * @return List<Monster> monsters.
+     */
     public List<Monster> searchMonsters() {
         EntityTransaction tx = manager.getTransaction();
         tx.begin();
@@ -177,6 +229,13 @@ public class PersistManager {
         return monsterList;
     }
 
+    /**
+     * searches the the monster graveyard for
+     * monsters that used to belong to a given
+     * user.
+     * @param username
+     * @return List<Monster> monsters.
+     */
     public List<Monster> searchGraveYard(String username) {
         EntityTransaction tx = manager.getTransaction();
         tx.begin();
@@ -186,6 +245,11 @@ public class PersistManager {
         return userMonsters;
     }
 
+    /**
+     * Search users
+     * @return List<MyUser> users.
+     */
+    //TODO: what users does this return, all of them?
     public List<MyUser> searchUsers() {
         EntityTransaction tx = manager.getTransaction();
         tx.begin();
@@ -195,6 +259,11 @@ public class PersistManager {
         return userList;
     }
 
+    /**
+     * gets a list of monsters that are 
+     * currently in the shop.
+     * @return List<Monster> monsters.
+     */
     public List<Monster> searchShopMonsters() {
         EntityTransaction tx = manager.getTransaction();
         tx.begin();
@@ -204,6 +273,9 @@ public class PersistManager {
         return shopList;
     }
 
+    /**
+     * initialise the persistence.
+     */
     public void init() {
         try {
             Class.forName("org.apache.derby.jdbc.ClientDriver").newInstance();
@@ -218,6 +290,9 @@ public class PersistManager {
         }
     }
 
+    /**
+     * shuts down the persistence.
+     */
     public void shutdown() {
         manager.close();
         factory.close();
