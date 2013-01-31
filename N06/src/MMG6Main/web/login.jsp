@@ -60,14 +60,6 @@
 					<input type="submit" class="btn btn-primary" value="<i class="icon-plus icon-white"></i> Register New User" />
 				</div>
 			</form>
-
-
-		 <form name="second" method=POST action="CreateUser.jsp">
-                                                <p> Username : <input type="text" name="regUsername"> </p>
-                                                <p> Password: <input type="text" name="regPassword"></p>
-                                                <p> e-mail : <input type="text" name="regEmail"> </p>
-                                                <input type="submit" value="Register" >
-                                            </form>
 		</div>
 
 <jsp:include page="includes/footer.jsp" />
