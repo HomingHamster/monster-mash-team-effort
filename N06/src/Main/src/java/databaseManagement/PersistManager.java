@@ -16,6 +16,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
+import javax.security.auth.message.callback.PrivateKeyCallback.Request;
 
 /**
  *
@@ -90,6 +91,25 @@ public class PersistManager {
         } finally {
             return false;
         }
+    }
+    
+    public boolean update(Requests request){
+        
+        EntityTransaction tx = manager.getTransaction();
+        tx.begin();
+        try {
+        Requests theRequest = manager.find(Requests.class, request.getType());
+        theRequest.setType(request.getType());
+        theRequest.setUserTo(request.getUserTo());
+        theRequest.setIpAddress(request.getIpAddress());
+        theRequest.setFromWho(request.getFromWho());
+        tx.commit();
+                } catch (Exception ex) {
+            tx.rollback();
+        } finally {
+            return false;
+        }
+        
     }
 
     public boolean remove(MyUser user) {
@@ -214,6 +234,7 @@ public class PersistManager {
         shopList = (List<Monster>) query.getResultList();
         return shopList;
     }
+    
 
     public void init() {
         try {
