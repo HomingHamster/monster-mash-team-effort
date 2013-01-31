@@ -12,48 +12,81 @@ import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 
 /**
- *
+ * Class containing methods related to logging a user
+ * into the system.
  * @author dam44
  */
 public class Login {
 
     PersistManager persistIt = new PersistManager();
-    private static final String REGEX = "([0-9a-zA-Z_-!?@]+)";
+    private static final String REGEX = 
+            "([0-9a-zA-Z_-!?@]+)";
     private String username;
     private String password;
     public MyUser user;
 
+    /**
+     * Returns the user this class relates to.
+     * @return MyUser user.
+     */
     public MyUser getUser() {
         return user;
     }
 
+    /**
+     * Sets the current user the class relates to.
+     * @param user 
+     */
     public void setUser(MyUser user) {
         this.user = user;
     }
 
+    /**
+     * Gets the username the class relates to.
+     * @return String username.
+     */
     public String getUsername() {
         return username;
     }
 
+    /**
+     * Sets the username currently related to.
+     * @param username 
+     */
     public void setUsername(String username) {
         this.username = username;
     }
 
+    /**
+     * gets the password currently related to.
+     * @return String password.
+     */
     public String getPassword() {
         return password;
     }
 
+    /**
+     * Sets a new password currently related to.
+     * @param password 
+     */
     public void setPassword(String password) {
         this.password = password;
     }
 
+    /**
+     * Gets current user and logs them in.
+     * @return String file to be directed to.
+     */
     public String LoginUser() {
         
         String temp = "index.jsp";
         persistIt.init();
         List<MyUser> users = persistIt.searchUsers();
         for (int i = 0; i < users.size(); i++) {
-            if ((users.get(i).getUsername().equals(username)) && (users.get(i).getUserPassword().equals(password))) {
+            if ((users.get(i).getUsername()
+                    .equals(username)) && (users.get(i)
+                    .getUserPassword()
+                    .equals(password))) {
                 user = users.get(i);
                // user.setIsLoggedIn(true);
                 //user.setIsActive(true);
@@ -68,11 +101,17 @@ public class Login {
         return temp;
     }
 
+    /**
+     * Gets current user and logs them off.
+     */
     public void LogOff() {
         persistIt.init();
         List<MyUser> users = persistIt.searchUsers();
         for (int i = 0; i < users.size(); i++) {
-            if ((users.get(i).getUsername().equals(username)) && (users.get(i).getUserPassword().equals(password))) {
+            if ((users.get(i).getUsername()
+                    .equals(username)) && (users.get(i)
+                    .getUserPassword()
+                    .equals(password))) {
                 user = users.get(i);
                 //user.setIsLoggedIn(false);
                 persistIt.update(user);
@@ -83,20 +122,39 @@ public class Login {
        
     }
 
-    public String Register(String usrname, String usrpassword, String email) {
+    /**
+     * Registers a new user.
+     * @param usrname
+     * @param usrpassword
+     * @param email
+     * @return String page to be redirected to.
+     */
+    public String Register(String usrname, 
+            String usrpassword, String email) {
         persistIt.init();
-        //if ((matches(REGEX, name.toString()) == true) && (matches(REGEX, password.toString()) == true)) {
-        MyUser myUser = UserFactory.makeIt(usrname, usrpassword, 100);
+        //if ((matches(REGEX, name.toString()) == true)
+        //      && (matches(REGEX, password.toString()) 
+        //      == true)) {
+        MyUser myUser = UserFactory.makeIt(usrname, 
+                usrpassword, 100);
 
         persistIt.create(myUser);
-        Monster gary = MonsterFactory.makeIt("Gary", 10, 10, 10, 10, usrname);
+        Monster gary = MonsterFactory.makeIt("Gary", 
+                10, 10, 10, 10, usrname);
         persistIt.create(gary);
         //}
         persistIt.shutdown();
         return "index.jsp";
     }
 
-    public boolean matches(String regex, String input) {
+    /**
+     * Applies a regex to an input.
+     * @param regex
+     * @param input
+     * @return bool matches.
+     */
+    public boolean matches(String regex, 
+            String input) {
         return Pattern.matches(regex, input);
     }
 }

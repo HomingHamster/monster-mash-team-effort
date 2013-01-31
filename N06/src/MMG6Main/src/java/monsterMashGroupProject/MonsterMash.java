@@ -24,23 +24,46 @@ public class MonsterMash {
      */
     
 
-    /*public MonsterMash() throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException {
-        PersistManager persistIt = new PersistManager();
-        User user = UserFactory.makeIt("Dan21", "hi", 0);
-        Monster monster1 = MonsterFactory.makeIt("Gary", 2000, 2000, 2000, 2000, user.getName());
-        Monster monster2 = MonsterFactory.makeIt("Fred", 2000, 2000, 2000, 2000, user.getName());
-        Monster monster3 = MonsterFactory.makeIt("Bob", 2000, 2000, 2000, 2000, "");
-        Monster newMonster = breed.breedMonsters(monster1, monster2, "Dreamings", "Dan8");
-        Monster monsterChild = fight.determineWinner(monster1, monster2);
-        System.out.println(newMonster.getName() + " " + newMonster.getMaxAge() + " " + newMonster.getAggression() + " " + newMonster.getHeight() + " " + newMonster.getStrength() + " " + user.getName());
+    /*public MonsterMash() throws SQLException, 
+            ClassNotFoundException, 
+            InstantiationException, 
+            IllegalAccessException {
+        PersistManager persistIt = 
+                new PersistManager();
+        User user = UserFactory.makeIt("Dan21", 
+                "hi", 0);
+        Monster monster1 = MonsterFactory.makeIt(
+                "Gary", 2000, 2000, 2000, 2000, 
+                user.getName());
+        Monster monster2 = MonsterFactory.makeIt(
+                "Fred", 2000, 2000, 2000, 2000,
+                user.getName());
+        Monster monster3 = MonsterFactory.makeIt(
+                "Bob", 2000, 2000, 2000, 2000, "");
+        Monster newMonster = 
+                breed.breedMonsters(monster1, monster2,
+                "Dreamings", "Dan8");
+        Monster monsterChild = fight.determineWinner(
+                monster1, monster2);
+        System.out.println(newMonster.getName() + " " 
+                + newMonster.getMaxAge() + " " + 
+                newMonster.getAggression() + " " + 
+                newMonster.getHeight() + " " + 
+                newMonster.getStrength() + " " + 
+                user.getName());
 
         try {
             persistIt.init();
-            for (int i = 0; i < persistIt.searchUsers().size(); i++) {
-                persistIt.remove(persistIt.searchUsers().get(i));
+            for (int i = 0; i < persistIt.searchUsers()
+                    .size(); i++) {
+                persistIt.remove(
+                        persistIt.searchUsers()
+                        .get(i));
             }
-            for (int i = 0; i < persistIt.searchMonsters().size(); i++) {
-                persistIt.remove(persistIt.searchMonsters().get(i));
+            for (int i = 0; i < persistIt
+                    .searchMonsters().size(); i++) {
+                persistIt.remove(persistIt
+                        .searchMonsters().get(i));
             }
             persistIt.create(monster1);
             persistIt.create(monster2);
@@ -49,7 +72,8 @@ public class MonsterMash {
             for (User u : persistIt.searchUsers()) {
                 System.out.println(u.getName());
             }
-            for (Monster m : persistIt.searchMonsters()) {
+            for (Monster m : persistIt
+                    .searchMonsters()) {
                 System.out.println(m.getName());
             }
 

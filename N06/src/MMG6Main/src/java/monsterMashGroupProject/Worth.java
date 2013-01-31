@@ -7,17 +7,29 @@ package monsterMashGroupProject;
 import databaseManagement.*;
 
 /**
- *
+ * Contains methods relating to calculating a
+ * monster's worth.
  * @author dam44
  */
 public class Worth {
 
     PersistManager persistIt = new PersistManager();
 
+    /**
+     * Calculates the worth of a monster.
+     * @param monster
+     * @return 
+     */
     public int Worth(Monster monster) {
-        return (((monster.getStrength() + monster.getAggression()) * assessAge(monster)) / 10);
+        return (((monster.getStrength() + 
+                monster.getAggression()) * 
+                assessAge(monster)) / 10);
     }
 
+    /**
+     * Updates the worth of a monster.
+     * @param monster 
+     */
     public void UpdateMonsterWorth(Monster monster) {
         persistIt.init();
         monster.setWorth(Worth(monster));
@@ -30,6 +42,11 @@ public class Worth {
      * 60 percent of their max age) then the assessment number decreases which
      * hence deceases the over-all likely-hood of winning for the monster.
      */
+    /**
+     * assess the age of a monster.
+     * @param m
+     * @return int age.
+     */
     public static int assessAge(Monster m) {
         double age = (double) m.getAge();
         double maxAge = (double) m.getMaxAge();
@@ -40,7 +57,8 @@ public class Worth {
         double lower = 0.4;
         double higher = 0.6;
         while (done == false) {
-            if ((age >= (maxAge * lower)) || (age <= (maxAge * higher))) {
+            if ((age >= (maxAge * lower)) || (
+                    age <= (maxAge * higher))) {
                 if (count == 0) {
                     done = true;
                 } else {
@@ -50,7 +68,9 @@ public class Worth {
                 }
             } else {
                 if ((higher > 1) || (lower < 0)) {
-                    System.out.println("Error assessing monster age.");
+                    System.out.println(
+                        "Error assessing monster age."
+                            );
                     done = true;
                 } else {
                     lower = lower - 0.1;

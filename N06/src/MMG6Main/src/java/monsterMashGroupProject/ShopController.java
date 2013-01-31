@@ -10,7 +10,8 @@ import databaseManagement.PersistManager;
 import java.util.List;
 
 /**
- *
+ * Contains methods relating to the control of the 
+ * system's monster shop.
  * @author jamesslater
  */
 public class ShopController {
@@ -19,6 +20,11 @@ public class ShopController {
     Monster monster;
     MyUser user;
 
+    /**
+     * gets x number of monsters from the shop list.
+     * @param x
+     * @return Monster list of monsters.
+     */
     public Monster getShopMonsters(int x) {
 
         pesMan.init();
@@ -28,6 +34,10 @@ public class ShopController {
         return mon.get(x);
     }
 
+    /**
+     * gets the amount of items in the shop.
+     * @return int amount of items
+     */
     public int getNumOfItems() {
         pesMan.init();
 
@@ -38,7 +48,14 @@ public class ShopController {
         return mon.size();
     }
 
-    public String buyMonster(String monsterID, String usr) {
+    /**
+     * initiates a monster purchase.
+     * @param monsterID
+     * @param usr
+     * @return 
+     */
+    public String buyMonster(String monsterID, 
+            String usr) {
 
         Shop shp = new Shop();
 
@@ -47,7 +64,8 @@ public class ShopController {
         List<Monster> mon = pesMan.searchMonsters("");
 
         for (int i = 0; i < mon.size(); i++) {
-            if (mon.get(i).getId() == Integer.parseInt(monsterID)) {
+            if (mon.get(i).getId() == Integer
+                    .parseInt(monsterID)) {
                 monster = mon.get(i);
             }
         }
@@ -55,7 +73,8 @@ public class ShopController {
 
         List<MyUser> users = pesMan.searchUsers();
         for (int i = 0; i < users.size(); i++) {
-            if ((users.get(i).getUsername().equals(usr))) {
+            if ((users.get(i).getUsername()
+                    .equals(usr))) {
                 user = users.get(i);
             }
         }
@@ -66,7 +85,14 @@ public class ShopController {
         return "shop_buy.jsp";
     }
     
-    public String sellMonster(String monsterID, String usr){
+    /**
+     * Initiates the sale of a monster.
+     * @param monsterID
+     * @param usr
+     * @return String page to redirect to.
+     */
+    public String sellMonster(String monsterID,
+            String usr){
         
         Shop shp = new Shop();
 
@@ -75,7 +101,8 @@ public class ShopController {
         List<Monster> mon = pesMan.searchMonsters();
 
         for (int i = 0; i < mon.size(); i++) {
-            if (mon.get(i).getId() == Integer.parseInt(monsterID)) {
+            if (mon.get(i).getId() == Integer
+                    .parseInt(monsterID)) {
                 monster = mon.get(i);
             }
         }
@@ -83,7 +110,8 @@ public class ShopController {
         List<MyUser> users = pesMan.searchUsers();
         
         for (int i = 0; i < users.size(); i++) {
-            if ((users.get(i).getUsername().equals(usr))) {
+            if ((users.get(i).getUsername()
+                    .equals(usr))) {
                 user = users.get(i);
             }
         }
