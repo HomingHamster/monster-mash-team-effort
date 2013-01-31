@@ -34,5 +34,6 @@ nb-configuration.xml
 *build/*
 
 META-INF/persistence.xml
+hibernate.cfg.xml
 
 /N06/src/MMG6Main/dist/
