@@ -21,7 +21,7 @@ public class RequestController {
     
     Requests request;
     
-    public String controller(String requestID, String choice){
+    public String controller(String requestID, String acceptbtn, String declinebtn){
         
         FriendHandler friendHand = new FriendHandler();
         
@@ -35,7 +35,7 @@ public class RequestController {
             }
         }
         
-        if ((choice.equals("acceptbtn")&&(request.getType().equals("FriendRequest")))){
+        if ((acceptbtn.equals("Accept")&&(request.getType().equals("FriendRequest")))){
             try {
                 friendHand.acceptFriendRequest(request);
             } catch (IOException ex) {
