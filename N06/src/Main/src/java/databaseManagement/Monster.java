@@ -8,7 +8,8 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 /**
- * Contains all of the methods that relate to a monster.
+ * Contains all of the methods that relate to a monster. Monster is an entity class that
+ * is persisted into the database.
  * @author Dan
  */
 @Entity

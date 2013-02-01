@@ -39,7 +39,9 @@ public class MonsterLifeCycle {
             this.user = user;
         }
         /**
-         * Method contains the logic to age a monster.
+         * Method contains the logic to age a monster. Time between aging alterable. New thread
+         * is started for user when they login that ages all their monsters. When the age of the monster
+         * reaches the monsters max age the monster is removed.
          */
         @Override
         public void run() {

@@ -40,7 +40,8 @@ public class LogginChecker {
         }
         /**
          * logic to set a user as logged out if they
-         * are inactive.
+         * are inactive. Thread is started for user when they login, 
+         * time between checks can be altered.
          */
         @Override
         public void run() {

@@ -8,7 +8,9 @@ import javax.security.auth.message.callback.PrivateKeyCallback.Request;
 
 /**
  *
- * @author jamesslater
+ * @author jamesslater 
+ * Entity classes cannot have
+ * initialiser methods, thus a factory class must be made to create new requests quickly.
  */
 public class RequestFactory {
 

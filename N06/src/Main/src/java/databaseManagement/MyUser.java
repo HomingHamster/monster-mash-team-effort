@@ -10,7 +10,7 @@ import javax.persistence.*;
 
 /**
  * Contains the methods relating to the 
- * management of users.
+ * management of users. User is an entity class that is persisted to the database.
  * @author Dan
  */
 @Entity

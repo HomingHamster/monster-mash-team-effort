@@ -5,7 +5,8 @@
 package databaseManagement;
 
 /**
- * Contains methods related to creating a user.
+ * Contains methods related to creating a user. Entity classes cannot have
+ * initialiser methods, thus a factory class must be made to create new users quickly.
  * @author Dan
  */
 public class UserFactory {

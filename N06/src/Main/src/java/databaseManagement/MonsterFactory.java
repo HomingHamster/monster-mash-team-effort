@@ -7,7 +7,8 @@ package databaseManagement;
 import monsterMashGroupProject.Worth;
 
 /**
- * Contains the methods that relate to creation of monsters.
+ * Contains the methods that relate to creation of monsters. Entity classes cannot have
+ * initialiser methods, thus a factory class must be made to create new monsters quickly.
  * @author Dan
  */
 public class MonsterFactory {

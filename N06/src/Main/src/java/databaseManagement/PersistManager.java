@@ -21,6 +21,7 @@ import javax.security.auth.message.callback.PrivateKeyCallback.Request;
 /**
  *
  * @author Dan
+ * PersistManager is used to handle transactions with the database.
  */
 public class PersistManager {
 
@@ -33,6 +34,10 @@ public class PersistManager {
     private List<Requests> requests;
     private List<Friends> friends;
 
+    /**
+     * Adds monsters to the database.
+     * @param monster 
+     */
     public void create(Monster monster) {
         EntityTransaction tx = manager.getTransaction();
         tx.begin();
@@ -44,6 +49,10 @@ public class PersistManager {
         }
     }
 
+    /**
+     * Adds requests to the database.
+     * @param request 
+     */
     public void create(Requests request) {
         EntityTransaction tx = manager.getTransaction();
         tx.begin();
@@ -55,6 +64,10 @@ public class PersistManager {
         }
     }
 
+    /**
+     * Adds friends to the database.
+     * @param friend 
+     */
     public void create(Friends friend) {
         EntityTransaction tx = manager.getTransaction();
         tx.begin();
@@ -66,6 +79,10 @@ public class PersistManager {
         }
     }
 
+    /**
+     * Adds users to the database.
+     * @param user 
+     */
     public void create(MyUser user) {
         EntityTransaction tx = manager.getTransaction();
 
@@ -78,6 +95,11 @@ public class PersistManager {
         }
     }
 
+    /**
+     * Updates a user in the database.
+     * @param user
+     * @return 
+     */
     public boolean update(MyUser user) {
         EntityTransaction tx = manager.getTransaction();
         tx.begin();
@@ -93,6 +115,11 @@ public class PersistManager {
         }
     }
 
+    /**
+     * Updates monsters in the database.
+     * @param monster
+     * @return 
+     */
     public boolean update(Monster monster) {
         EntityTransaction tx = manager.getTransaction();
         tx.begin();
@@ -113,6 +140,11 @@ public class PersistManager {
         }
     }
 
+    /**
+     * Updates a friend in the database.
+     * @param friend
+     * @return 
+     */
     public boolean update(Friends friend) {
 
         EntityTransaction tx = manager.getTransaction();
@@ -132,6 +164,11 @@ public class PersistManager {
 
     }
 
+    /**
+     * Updates a request in the database.
+     * @param request
+     * @return 
+     */
     public boolean update(Requests request) {
 
         EntityTransaction tx = manager.getTransaction();
@@ -151,6 +188,11 @@ public class PersistManager {
 
     }
 
+    /**
+     * Removes a user from the database.
+     * @param user
+     * @return 
+     */
     public boolean remove(MyUser user) {
         EntityTransaction tx = manager.getTransaction();
         tx.begin();
@@ -169,6 +211,11 @@ public class PersistManager {
         }
     }
 
+    /**
+     * Removes a monster from the database.
+     * @param monster
+     * @return 
+     */
     public boolean remove(Monster monster) {
         EntityTransaction tx = manager.getTransaction();
         tx.begin();
@@ -183,6 +230,11 @@ public class PersistManager {
         }
     }
 
+    /**
+     * Removes a request from the database.
+     * @param request
+     * @return 
+     */
     public boolean remove(Requests request) {
         EntityTransaction tx = manager.getTransaction();
         tx.begin();
@@ -197,6 +249,11 @@ public class PersistManager {
         }
     }
 
+    /**
+     * Removes a friend from the database.
+     * @param friend
+     * @return 
+     */
     public boolean remove(Friends friend) {
         EntityTransaction tx = manager.getTransaction();
         tx.begin();
@@ -211,6 +268,11 @@ public class PersistManager {
         }
     }
 
+    /**
+     * Drops a table from the database.
+     * @param table
+     * @return 
+     */
     public boolean dropTable(String table) {
         EntityTransaction tx = manager.getTransaction();
         tx.begin();
@@ -225,7 +287,7 @@ public class PersistManager {
     }
 
     /**
-     * Returns list of Monsters owned by the passed user.
+     * Gets the most recent version of a user from the database.
      *
      * @param username
      * @return
@@ -239,6 +301,12 @@ public class PersistManager {
         return userList.get(0);
     }
 
+    /**
+     * Gets the most recent version of a monster from the database.
+     * @param user
+     * @param monster
+     * @return 
+     */
     public Monster getUpdatedMonster(MyUser user, Monster monster) {
         EntityTransaction tx = manager.getTransaction();
         tx.begin();
@@ -248,6 +316,11 @@ public class PersistManager {
         return monsterList.get(0);
     }
 
+    /**
+     * 
+     * @param username
+     * @return 
+     */
     public List<Monster> searchMonsters(String username) {
         EntityTransaction tx = manager.getTransaction();
         tx.begin();
