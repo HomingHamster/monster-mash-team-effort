@@ -8,13 +8,13 @@
                 <!-- JSP Loop through friends -->
                 <!-- <li><a href="#"><i class="icon-user"></i> Username</a></li> -->
                 <%
-                    if (user.getUser().getFriends().size() == 0) {
+                    if (true) {
                 %>
                 <!-- If user has no friends: -->
                 <li><a href="#addFriend"><i class="icon-info-sign"></i> You have no friends! :(</a></li>
-                <%                                } else {
-                                    for (int i = 0; i < user.getUser().getFriends().size(); i++) {%>
-                <li><a href="#"><i class="icon-user"></i> <%= user.getUser().getFriends().get(i).getUsername()%></a></li>
+                <%                              } else {
+                                    for (int i = 0; i < 0; i++) {%>
+                <li><a href="#"><i class="icon-user"></i> ></a></li>
                 <%
                         }
                     }
@@ -24,7 +24,7 @@
         <a href="#addFriend" role="button" class="btn btn-primary btn-block" data-toggle="modal"><i class="icon-plus icon-white"></i> Add Friend</a>
     </div>
     <div id="friendslistbutton" style="text-align:center;cursor:pointer;">
-        <span><i class="icon-th-list"></i> Friends <b>(<%= user.getUser().getFriends().size()%>)</b></span>
+        <span><i class="icon-th-list"></i> Friends <b></b></span>
     </div>
 </div>
 

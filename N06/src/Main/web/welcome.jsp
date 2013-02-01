@@ -15,15 +15,7 @@
         </tr>
     </thead>
     <tbody>
-        <% for (int i = 0; i < usercontroller.getSizeOfRequests(); i++) {%>
-        <tr>
-            <td><%= usercontroller.getRequest(i).getType()%></td>
-            <td><%= usercontroller.getRequest(i).getFromWho()%></td>
-            <td><button type="submit" onclick="index.jsp" class="btn btn-primary">Accept</button>
-                <button type="submit" onclick="farm.jsp" class="btn btn-danger">Decline</button>
-            </td>
-        </tr>
-        <%}%>
+      
     </tbody>
 </table>
 <jsp:include page="includes/sidebarclose.jsp" />

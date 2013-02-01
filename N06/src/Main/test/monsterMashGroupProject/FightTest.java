@@ -25,8 +25,8 @@ public class FightTest {
 
     @Before
     public void setUp() {
-        m = MonsterFactory.makeIt("Gary", 0, 0, 0, 0, "Doesn't matter");
-        f = MonsterFactory.makeIt("Crabbies", 100, 100, 100, 100, "Don't care");
+        //m = MonsterFactory.makeIt("Gary", 0, 0, 0, 0, "Doesn't matter");
+       // f = MonsterFactory.makeIt("Crabbies", 100, 100, 100, 100, "Don't care");
         instance = new Fight();
     }
 

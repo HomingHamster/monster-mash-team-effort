@@ -27,8 +27,8 @@ public class WorthTest {
     }
     @Before
     public void setUp() {
-        m = MonsterFactory.makeIt("Jerry the Turtle", 100, 100, 100, 100, "Meh");
-        n = MonsterFactory.makeIt("Barry the Zebra", 100, 100, 100, 100, "Mehhh");
+        //m = MonsterFactory.makeIt("Jerry the Turtle", 100, 100, 100, 100, "Meh");
+       // n = MonsterFactory.makeIt("Barry the Zebra", 100, 100, 100, 100, "Mehhh");
         m.setAge(50);
         n.setAge(90);
         instance = new Worth();
