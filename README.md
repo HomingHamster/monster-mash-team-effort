@@ -5,22 +5,33 @@ Getting the project to run
 --------------------------
 
 - Create new Netbeans Java Web project from existing sources
-- Set Location to project folder (GIT)
-- Set Web Pages to ./web
-- Set WEB-INF to ./web/WEB-INF
-- Set Libraries to ../../lib
+- Set Location to N06/src/Main
+- Make sure project name is Main
+- Set Web Pages to N06/src/Main/web
+- Set WEB-INF to N06/src/Main/web/WEB-INF
+- Set Libraries to N06/lib
 - Finish
 - Switch to services tab, right click JavaDB and create database
 - Call it monsters with username/password APP
+- Switch back to Project tab
 - Delete META-INF folder in Source Packages
 - Right click project, create New > Persistence > Persistence Unit
 - Change name to monsters
 - Change Provider to Hibernate (JPA 1.0)
-- New data source, name to MMDB5
+- Click arrow on right hand side for new data source, name to MMDB5
 - Change connection to monsters [APP on APP]
 - Finish
-- Edit persistence.xml with transaction-type="RESOURCE_LOCAL"
-- Add &lt;class&gt;databaseManagement.MyUser&lt;/class&gt; and &lt;class&gt;databaseManagement.Monster&lt;/class&gt; under jta-data-source
+- Edit the persistence.xml with transaction-type="RESOURCE_LOCAL"
+- Add underneath jta-data-source:
+
+&lt;class&gt;databaseManagement.MyUser&lt;/class&gt;
+
+&lt;class&gt;databaseManagement.Monster&lt;/class&gt;
+
+&lt;class&gt;databaseManagement.Friends&lt;/class&gt;
+
+&lt;class&gt;databaseManagement.Requests&lt;/class&gt;
+
 - Run project
 
 Read this first
