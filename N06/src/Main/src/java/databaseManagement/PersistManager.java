@@ -239,7 +239,7 @@ public class PersistManager {
         EntityTransaction tx = manager.getTransaction();
         tx.begin();
         try {
-            Request theRequest = manager.find(Request.class, request.getId());
+            Requests theRequest = manager.find(Requests.class, request.getId());
             manager.remove(theRequest);
             tx.commit();
         } catch (Exception ex) {

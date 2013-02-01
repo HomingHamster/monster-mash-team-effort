@@ -1,7 +1,7 @@
 <jsp:useBean id="usercontroller" class="monsterMashGroupProject.UserController" scope="session"/>
 <jsp:include page="includes/header.jsp"/>
 <!-- Body Content -->
-<h2>Battling ENEMYNAME</h2>
+<h2>Battling</h2>
 <div class="row">
     <div class="span4 offset1 well" style="text-align:center;">
         <table class="table table-striped table-bordered">

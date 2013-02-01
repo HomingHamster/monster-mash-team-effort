@@ -105,7 +105,6 @@ public class AcceptFriendship extends HttpServlet {
                 String param = req.toString();
 
                 if (param.equals(id)) {
-
                     Friends f = ff.makeIt(requests.get(i).getUserTo(), fromWho, address);
                     Friends f2 = ff.makeIt(fromWho, requests.get(i).getUserTo(), address);
                     persistIt.create(f);
@@ -122,7 +121,8 @@ public class AcceptFriendship extends HttpServlet {
                 Integer req = requests.get(i).getId();
                 String param = req.toString();
 
-                if (param.equals(id)) {
+                if (param.equals(id)) {                
+                    
                     persistIt.remove(requests.get(i));
                 }
             }
