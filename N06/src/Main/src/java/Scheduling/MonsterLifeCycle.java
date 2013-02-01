@@ -54,8 +54,10 @@ public class MonsterLifeCycle {
             if (user.isIsLoggedIn() == true) {
                 List<Monster> monsters = persistIt.searchMonsters(user.getUsername());
                 for (int i = 0; i < monsters.size(); i++) {
+                    if (monsters.get(i).isIsImmortal() == false) {
                         if ((monsters.get(i).getAge() > monsters.get(i).getMaxAge()) || (monsters.get(i).getAge() == monsters.get(i).getMaxAge())) {
                             monsters.get(i).setIsDead(true);
+                            persistIt.remove(monsters.get(i));
                             timer.cancel();
 
                         } else {
@@ -65,7 +67,7 @@ public class MonsterLifeCycle {
                             persistIt.getUpdatedUser(user);
                             System.out.println(monsters.get(i).getAge() + " " + monsters.get(i).getName());
                         }
-
+                    }
                 }
             } else {
                 timer.cancel();

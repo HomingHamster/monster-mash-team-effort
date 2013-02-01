@@ -56,7 +56,7 @@ public class Breed {
         for (int i = 0; i < alterStat.length; i++) {
             finalStat[i] = makeAttribute(alterStat[i], statArray[i]);
         }
-        Monster newMonster = MonsterFactory.makeIt(monsterName, finalStat[0], finalStat[1], finalStat[2], finalStat[3], userName);
+        Monster newMonster = MonsterFactory.makeIt(monsterName, finalStat[0], finalStat[1], finalStat[2], finalStat[3], userName, false);
         
        if (persistChild == true) { 
             try {

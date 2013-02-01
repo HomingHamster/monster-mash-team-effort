@@ -120,7 +120,7 @@ public class Login {
         persistIt.create(myUser);
 //        persistIt.create(friend);
 //        myUser.getFriends().add(friend);
-        Monster gary = MonsterFactory.makeIt("Gary", 10, 10, 10, 10, usrname);
+        Monster gary = MonsterFactory.makeIt("Gary", 10, 10, 10, 10, usrname, true);
         //myUser.addFriend(friend);
         persistIt.create(gary);
         persistIt.update(user);
