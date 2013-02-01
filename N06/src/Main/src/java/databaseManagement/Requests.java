@@ -5,6 +5,7 @@
 package databaseManagement;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 /**
@@ -15,6 +16,8 @@ import javax.persistence.Id;
 public class Requests {
     
     @Id
+    @GeneratedValue
+    String id;        
     String type;
     String userTo;
     String fromWho;
