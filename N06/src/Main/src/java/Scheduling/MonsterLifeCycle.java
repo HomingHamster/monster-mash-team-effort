@@ -62,7 +62,7 @@ public class MonsterLifeCycle {
 
                         } else {
                             int currentAge = monsters.get(i).getAge();
-                            monsters.get(i).setAge(currentAge + 0);
+                            monsters.get(i).setAge(currentAge + 1);
                             persistIt.getUpdatedMonster(user, monsters.get(i));
                             persistIt.getUpdatedUser(user);
                             System.out.println(monsters.get(i).getAge() + " " + monsters.get(i).getName());

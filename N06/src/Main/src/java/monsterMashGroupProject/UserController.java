@@ -187,7 +187,7 @@ public class UserController {
 
         List<Monster> mon = pesMan.searchMonsters(theUsr.getUsername());
 
-        winner = fight.determineWinner(mon.get(choice1), mon.get(choice2));
+        winner = fight.determineWinner(mon.get(choice1), mon.get(choice2), true);
         
         return "Outcome.jsp";
     }

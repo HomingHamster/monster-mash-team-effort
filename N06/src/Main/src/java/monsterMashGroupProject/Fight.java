@@ -9,38 +9,48 @@ import databaseManagement.PersistManager;
 import java.util.Random;
 
 /**
- * Class contains methods relating to monsters having
- * fights.
+ * Class contains methods relating to monsters having fights.
+ *
  * @author Dan
  */
 public class Fight {
 
     private Random rand = new Random();
+
     /**
      * Picks a winner and returns the winning monster.
+     *
      * @param m1
      * @param m2
-     * @return 
+     * @return
      */
-    public Monster determineWinner(Monster m1, Monster m2) {
-        
-        PersistManager pesistIt = new PersistManager();
+    public Monster determineWinner(Monster m1, Monster m2, boolean usePersistence) {
+
         int m1Prob = randomizeProbabilities(compareAttributesRetM1(m1, m2));
         int randomPick = rand.nextInt(100);
-        
-        pesistIt.init();
-        if (m1Prob >= randomPick) {
-            pesistIt.remove(m2);
-            return m1;
+        if (usePersistence == true) {
+            PersistManager pesistIt = new PersistManager();
+            pesistIt.init();
+            if (m1Prob >= randomPick) {
+                pesistIt.remove(m2);
+                return m1;
+            } else {
+                pesistIt.remove(m1);
+                return m2;
+            }
         } else {
-            pesistIt.remove(m1);
-            return m2;
+            if (m1Prob >= randomPick) {
+                return m1;
+            } else {
+                return m2;
+            }
         }
     }
 
     /**
-     * +- 5% randomly from the probabilities so long as
-     * the lower probability is greater than 5.
+     * +- 5% randomly from the probabilities so long as the lower probability is
+     * greater than 5.
+     *
      * @param m1Prob
      * @return int probability
      */
@@ -54,13 +64,13 @@ public class Fight {
     }
 
     /**
-    /**
-     * Percentage (out of 100) determining who is most
-     * likely to win based on monster statistics,
-     * including age.
+     * /**
+     * Percentage (out of 100) determining who is most likely to win based on
+     * monster statistics, including age.
+     *
      * @param m1
      * @param m2
-     * @return 
+     * @return
      */
     public int compareAttributesRetM1(Monster m1, Monster m2) {
         int[] stats1 = new int[2];
@@ -81,6 +91,4 @@ public class Fight {
         m1Prob = (int) Math.round((finalStats[0] * 100.0) / total);
         return m1Prob;
     }
-
-
 }

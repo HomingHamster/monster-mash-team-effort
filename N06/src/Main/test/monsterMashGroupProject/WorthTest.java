@@ -27,8 +27,8 @@ public class WorthTest {
     }
     @Before
     public void setUp() {
-        //m = MonsterFactory.makeIt("Jerry the Turtle", 100, 100, 100, 100, "Meh");
-       // n = MonsterFactory.makeIt("Barry the Zebra", 100, 100, 100, 100, "Mehhh");
+        m = MonsterFactory.makeIt("Jerry the Turtle", 100, 100, 100, 100, "Meh", false);
+        n = MonsterFactory.makeIt("Barry the Zebra", 100, 100, 100, 100, "Mehhh", false);
         m.setAge(50);
         n.setAge(90);
         instance = new Worth();
@@ -41,7 +41,7 @@ public class WorthTest {
         System.out.println("Worth");
         int resultm = instance.Worth(m);
         int resultn = instance.Worth(n);
-        //assertEquals(200, resultm);
+        assertEquals(200, resultm);
         assertEquals(120, resultn);
     }
 
@@ -53,7 +53,7 @@ public class WorthTest {
         System.out.println("assessAge");
         int resultm = Worth.assessAge(m);
         int resultn = Worth.assessAge(n);
-        //assertEquals(10, resultm);
+        assertEquals(10, resultm);
         assertEquals(6, resultn);
     }
 }

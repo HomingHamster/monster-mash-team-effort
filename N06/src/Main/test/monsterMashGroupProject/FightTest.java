@@ -25,8 +25,8 @@ public class FightTest {
 
     @Before
     public void setUp() {
-        //m = MonsterFactory.makeIt("Gary", 0, 0, 0, 0, "Doesn't matter");
-       // f = MonsterFactory.makeIt("Crabbies", 100, 100, 100, 100, "Don't care");
+        m = MonsterFactory.makeIt("Gary", 0, 0, 0, 0, "Doesn't matter", false);
+        f = MonsterFactory.makeIt("Crabbies", 100, 100, 100, 100, "Don't care", false);
         instance = new Fight();
     }
 
@@ -38,7 +38,7 @@ public class FightTest {
         System.out.println("determineWinner");
 
         Monster expResult = f;
-        Monster result = instance.determineWinner(m, f);
+        Monster result = instance.determineWinner(m, f, false);
         assertEquals(expResult, result);
     }
     /**
