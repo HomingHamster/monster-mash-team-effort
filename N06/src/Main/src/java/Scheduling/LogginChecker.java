@@ -53,7 +53,6 @@ public class LogginChecker {
                     if (user.isIsActive() == false) {
                         user.setIsLoggedIn(false);
                         persistIt.update(user);
-                        timer.cancel();
                         Login login = new Login();
                         login.LogOff();
                     } else {
