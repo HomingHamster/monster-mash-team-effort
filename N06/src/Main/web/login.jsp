@@ -30,9 +30,9 @@
 		<!-- Register Modal -->
 		<div id="registerModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			<form name="second" method=POST action="CreateUser.jsp">
-                                                 <p> Username : <input type="text" name="regUsername"> </p>
-                                                 <p> Password: <input type="text" name="regPassword"></p>
-                                                <p> e-mail : <input type="text" name="regEmail"> </p>
+                                                 <p> Username : <input type="text" name="regUsername" required> </p>
+                                                 <p> Password: <input type="text" name="regPassword" required></p>
+                                                 <p> e-mail : <input type="text" name="regEmail" required> </p>
                                                  <input type="submit" value="Register" >
                         </form>
 		</div>
