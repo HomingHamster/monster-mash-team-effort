@@ -6,6 +6,8 @@ package RequestHandlers;
 
 import databaseManagement.MyUser;
 import databaseManagement.PersistManager;
+import databaseManagement.RequestFactory;
+import databaseManagement.Requests;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -53,18 +55,26 @@ public class FriendshipServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         String requestedUser = request.getParameter("username");
-        String fromUser = request.getParameter("localUser"); 
-
+        System.out.println(requestedUser);
+        String fromUser = request.getParameter("localUser");
+        System.out.println(fromUser);
+        String url = request.getRemoteAddr();
         PersistManager persistIt = new PersistManager();
         persistIt.init();
-        List<MyUser> users = persistIt.searchUsers();
-     
-        for (int i = 0; i < users.size(); i++) {
 
+
+        RequestFactory factory;
+        factory = new RequestFactory();
+        
+
+        List<MyUser> users = persistIt.searchUsers();
+        for (int i = 0; i < users.size(); i++) {
             if (users.get(i).getUsername().toString().equals(requestedUser)) {
-                //Send friendship request
-                //If accepted
-                out.print("Accepted");
+
+                Requests addRequest = factory.makeIt("friend", fromUser, requestedUser, url);
+                persistIt.create(addRequest);
+                persistIt.update(addRequest);
+
             }
         }
     }

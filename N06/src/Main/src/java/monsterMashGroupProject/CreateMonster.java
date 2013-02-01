@@ -24,7 +24,7 @@ public class CreateMonster {
      */
     public CreateMonster(MyUser user, String monsterName) {
         persistIt.init();
-        Monster monster = MonsterFactory.makeIt(monsterName, 100, 100, 100, 100, user.getUsername());
+        Monster monster = MonsterFactory.makeIt(monsterName, 100, 100, 100, 100, user.getUsername(), false);
         persistIt.create(monster);
         persistIt.shutdown();
         worth.UpdateMonsterWorth(monster);

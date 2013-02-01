@@ -3,15 +3,15 @@ package RequestHandlers;
 import com.google.gson.Gson;
 import databaseManagement.Monster;
 import databaseManagement.PersistManager;
+import databaseManagement.RequestFactory;
+import databaseManagement.Requests;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import monsterMashGroupProject.Breed;
 
 /**
  *
@@ -88,6 +88,9 @@ public class BreedServlet extends HttpServlet {
         String height = request.getParameter("height");
         String newName = request.getParameter("name");
         String localName = request.getParameter("remoteName");
+        String from = request.getParameter("fromWho");
+        String to = request.getParameter("toWho");
+        String url = request.getRemoteAddr();
 
         int eAggr = Integer.parseInt(aggression);
         int eStr = Integer.parseInt(strength);
@@ -102,16 +105,22 @@ public class BreedServlet extends HttpServlet {
 
         PersistManager persistIt = new PersistManager();
         persistIt.init();
+        RequestFactory rf = new RequestFactory();
+        Requests addRequest = rf.makeIt("Breed", to, from, url);
+        persistIt.create(addRequest);
 
-        List<Monster> monsters = persistIt.searchMonsters();
-        for (int i = 0; i < monsters.size(); i++) {
-            if (monsters.get(i).getName().equals(localName)) {
-                Breed breed = new Breed();
-             //   out.print(gson.toJson(breed.breedMonsters(enemyMonster, monsters.get(i), newName, "sd")));
-               
+        
+        
 
-            }
-        }
+//        List<Monster> monsters = persistIt.searchMonsters();
+//        for (int i = 0; i < monsters.size(); i++) {
+//            if (monsters.get(i).getName().equals(localName)) {
+//                Breed breed = new Breed();
+//             //   out.print(gson.toJson(breed.breedMonsters(enemyMonster, monsters.get(i), newName, "sd")));
+//               
+//
+//            }
+//        }
 
 
 

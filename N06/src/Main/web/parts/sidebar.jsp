@@ -13,6 +13,7 @@
   <li><i class="icon-resize-vertical"></i> Height: <%= usercontroller.getMonster(0).getHeight() %>m</li>
   <li><i class="icon-fire"></i> Strength: <%= usercontroller.getMonster(0).getStrength() %></li>
   <li><i class="icon-warning-sign"></i> Aggression: <%= usercontroller.getMonster(0).getAggression() %></li>
-  <li><i class="icon-shopping-cart"></i> Price: <%= usercontroller.getMoney() %> &curren;</li>
+    <li><i class="icon-shopping-cart"></i> Worth: <%= usercontroller.getMonster(0).getWorth() %></li>
+  <li><i class="icon-shopping-cart"></i> Money: <%= usercontroller.getMoney() %> &curren;</li>
 </ul>
 <jsp:include page="../parts/friendslist.jsp" />

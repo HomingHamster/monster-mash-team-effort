@@ -25,7 +25,7 @@ public class Monster {
     private int aggression;
     private int worth;
     private boolean isDead;
-        //private boolean isDead;
+    private boolean isImmortal;
     private String owner;
     /**
      * gets the monster's owner
@@ -155,5 +155,13 @@ public class Monster {
 
     public boolean isIsDead() {
         return isDead;
+    }
+    
+        public void setIsImmortal(boolean isImmortal) {
+        this.isImmortal = isImmortal;
+    }
+
+    public boolean isIsImmortal() {
+        return isImmortal;
     }
 }

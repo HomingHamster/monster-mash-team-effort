@@ -144,7 +144,7 @@ public class UserController {
      * @return int number of friends.
      */
     public int getNumOfFriends(){
-        return theUsr.getFriends().size();
+        return 5;
     }
         /**
      * gets a link to the user's monster's picture

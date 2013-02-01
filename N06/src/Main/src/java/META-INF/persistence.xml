@@ -7,7 +7,7 @@
     <class>databaseManagement.Monster</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
-      <property name="hibernate.hbm2ddl.auto" value="update"/>
-    </properties>
+
+      <property name="hibernate.hbm2ddl.auto" value="update"/></properties>
   </persistence-unit>
 </persistence>

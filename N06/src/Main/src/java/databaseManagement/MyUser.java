@@ -19,15 +19,9 @@ public class MyUser {
     @Id
     private String username;
     private String userPassword;
-    //private boolean isLoggedIn;
-    //private boolean isActive;
     private boolean isLoggedIn;
     private boolean isActive;
     private int virtualMoney;
-    @OneToMany
-    private List<MyUser> friends = new ArrayList<MyUser>();
-    @OneToMany
-    private List<MyUser> requests;
     /**
      * sets the user's username.
      * @param username 
@@ -85,27 +79,5 @@ public class MyUser {
 
     public boolean isIsActive() {
         return isActive;
-    }
-    /**
-     * sets the user's friend list from a given list.
-     * @param friends 
-     */
-    public void setFriends(List<MyUser> friends) {
-        this.friends = friends;
-    }
-    /**
-     * gets the user's friends list.
-     * @return List<MyUser> friends.
-     */
-    public List<MyUser> getFriends() {
-        return friends;
-    }
-
-    public void setRequests(List<MyUser> requests) {
-        this.requests = requests;
-    }
-
-    public List<MyUser> getRequests() {
-        return requests;
     }
 }
