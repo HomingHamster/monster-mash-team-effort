@@ -23,6 +23,7 @@ public class UserController {
     private String childName;
     private Monster childMon = null;
     PersistManager pesMan = new PersistManager();
+    private Monster winner;
 
     public int getChoice1() {
         return choice1;
@@ -176,5 +177,22 @@ public class UserController {
 
         return requests.size();
 
+    }
+    
+    public String fight(){
+        
+        Fight fight = new Fight();
+        
+        pesMan.init();
+
+        List<Monster> mon = pesMan.searchMonsters(theUsr.getUsername());
+
+        winner = fight.determineWinner(mon.get(choice1), mon.get(choice2));
+        
+        return "Outcome.jsp";
+    }
+    
+    public Monster getWinner(){
+        return winner;
     }
 }

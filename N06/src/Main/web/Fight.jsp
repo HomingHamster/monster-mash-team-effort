@@ -6,12 +6,21 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<jsp:useBean id="usercontroller" class="monsterMashGroupProject.UserController" scope="session"/>
+<jsp:setProperty name="usercontroller" property="*"/> 
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <META http-equiv="Refresh" content="0; url=<%=usercontroller.fight()%>"/>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <jsp:include page="includes/header.jsp" />
+		<!-- Body Content -->
+		<div class="well" style="text-align:center;">
+			<h2>Fighting</h2>
+			<img src="resources/template/img/loading.gif" />
+		</div>
+
+<jsp:include page="includes/footer.jsp" />
+
     </body>
 </html>
