@@ -66,13 +66,13 @@
             </tfoot>
         </table>
     </div>
+</div>
     <div class="fightbutton" style="text-align:center;">
-        <input type="submit" class="btn btn-danger btn-large" value="Start Battle" />
-    </div>
-    <FORM name="first" METHOD=POST ACTION="Fight.jsp">
+       <FORM name="first" METHOD=POST ACTION="Fight.jsp">
         Monster 1: <INPUT TYPE=TEXT NAME=choice1 SIZE=20><BR>
         Monster 2: <INPUT TYPE=TEXT NAME=choice2 SIZE=20><BR>
-        <P><INPUT TYPE=SUBMIT VALUE="Breed"></p>
+        <P><INPUT TYPE=SUBMIT class="btn btn-danger btn-large" VALUE="Battle"></p>
     </form>
-</div>
+    </div>
+    
 <jsp:include page="includes/footer.jsp" />
