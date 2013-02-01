@@ -44,6 +44,17 @@ public class PersistManager {
         }
         System.out.println(monster.getName() + " has been created.");
     }
+    
+    public void create(Requests request){
+        EntityTransaction tx = manager.getTransaction();
+        tx.begin();
+        try {
+            manager.persist(request);
+            tx.commit();
+        } catch (Exception ex) {
+            tx.rollback();
+        }
+    }
 
     public void create(MyUser user) {
         EntityTransaction tx = manager.getTransaction();
@@ -137,6 +148,20 @@ public class PersistManager {
         try {
             Monster theMonster = manager.find(Monster.class, monster.getId());
             manager.remove(theMonster);
+            tx.commit();
+        } catch (Exception ex) {
+            tx.rollback();
+        } finally {
+            return false;
+        }
+    }
+    
+    public boolean remove(Request request) {
+        EntityTransaction tx = manager.getTransaction();
+        tx.begin();
+        try {
+            //Monster theMonster = manager.find(Request.class, monster.getId());
+           // manager.remove(theMonster);
             tx.commit();
         } catch (Exception ex) {
             tx.rollback();
