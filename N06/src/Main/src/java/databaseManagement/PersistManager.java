@@ -317,7 +317,7 @@ public class PersistManager {
     }
 
     /**
-     * 
+     * Retrieves all the monsters a user owns and returns them in a list.
      * @param username
      * @return 
      */
@@ -330,6 +330,10 @@ public class PersistManager {
         return userMonsters;
     }
 
+    /**
+     * Returns all monsters.
+     * @return 
+     */
     public List<Monster> searchMonsters() {
         EntityTransaction tx = manager.getTransaction();
         tx.begin();
@@ -339,6 +343,9 @@ public class PersistManager {
         return monsterList;
     }
 
+    /**
+     * Gets all requests.
+     */
     public List<Requests> searchRequets() {
 
         EntityTransaction tx = manager.getTransaction();
@@ -349,6 +356,11 @@ public class PersistManager {
         return requests;
     }
 
+    /**
+     * Returns all requests for a user.
+     * @param username
+     * @return 
+     */
     public List<Requests> searchRequets(String username) {
 
         EntityTransaction tx = manager.getTransaction();
@@ -359,6 +371,12 @@ public class PersistManager {
         return requests;
     }
 
+    /**
+     * Retrieves all dead monsters.
+     * (Monsters are currently removed when dead so method is not currently used in system.)
+     * @param username
+     * @return 
+     */
     public List<Monster> searchGraveYard(String username) {
         EntityTransaction tx = manager.getTransaction();
         tx.begin();
@@ -368,6 +386,10 @@ public class PersistManager {
         return userMonsters;
     }
 
+    /**
+     * Returns all users.
+     * @return 
+     */
     public List<MyUser> searchUsers() {
         EntityTransaction tx = manager.getTransaction();
         tx.begin();
@@ -377,6 +399,10 @@ public class PersistManager {
         return userList;
     }
 
+    /**
+     * Returns all monsters in the shop. Shop monsters do not have an owner (that is the difference).
+     * @return 
+     */
     public List<Monster> searchShopMonsters() {
         EntityTransaction tx = manager.getTransaction();
         tx.begin();
@@ -386,6 +412,11 @@ public class PersistManager {
         return shopList;
     }
 
+    /**
+     * Returns all friends for a user.
+     * @param theUser
+     * @return 
+     */
     public List<Friends> searchFriends(String theUser) {
         EntityTransaction tx = manager.getTransaction();
         tx.begin();
@@ -395,6 +426,9 @@ public class PersistManager {
         return friends;
     }
 
+    /**
+     * Initialises the persistence manager and connects to the database.
+     */
     public void init() {
         try {
             Class.forName("org.apache.derby.jdbc.ClientDriver").newInstance();
@@ -410,6 +444,9 @@ public class PersistManager {
         }
     }
 
+    /**
+     * Shuts down the persistence manager and exits from the database.
+     */
     public void shutdown() {
         manager.close();
         factory.close();
