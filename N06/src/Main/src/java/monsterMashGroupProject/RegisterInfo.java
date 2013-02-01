@@ -4,6 +4,8 @@
  */
 package monsterMashGroupProject;
 
+import java.util.regex.*;
+
 /**
  * Class contains methods relating to registering
  * new users.
@@ -65,14 +67,29 @@ public class RegisterInfo {
      */
     public String addUser(){
         Login log = new Login();
+        boolean success = false;
+        String output = "login.jsp";
         
-        log.Register(regUsername, regPassword, regEmail);
+        if (
+        Pattern.matches("^\\w{4,20}+$", regUsername) &&
+        Pattern.matches("^\\w{8,40}$", regPassword) &&
+        Pattern.matches(
+                "\\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}\\b", 
+                regEmail.toUpperCase())){
+            
+            log.Register(regUsername, regPassword, regEmail);
         
-        UserEmail email = new UserEmail();
-        email.send("felix.farquharson@googlemail.com", "monster-mash-n06@teame4t.co.uk",
-                "User Registration", "Sucessfully registered");
+            UserEmail email = new UserEmail();
+            email.send("felix.farquharson@googlemail.com", 
+                    "monster-mash-n06@teame4t.co.uk",
+                    "User Registration", "Sucessfully registered");
+            success = true;
+        }
         
-        return "login.jsp";
+        if ( success == false ){
+            output = "failedLogin.jsp";
+        }
+        return output;
     }
     
 }
