@@ -42,10 +42,9 @@ public class PersistManager {
         } catch (Exception ex) {
             tx.rollback();
         }
-        System.out.println(monster.getName() + " has been created.");
     }
-    
-    public void create(Requests request){
+
+    public void create(Requests request) {
         EntityTransaction tx = manager.getTransaction();
         tx.begin();
         try {
@@ -55,30 +54,28 @@ public class PersistManager {
             tx.rollback();
         }
     }
-    
-    public void create(Friends friend){
+
+    public void create(Friends friend) {
         EntityTransaction tx = manager.getTransaction();
         tx.begin();
         try {
             manager.persist(friend);
             tx.commit();
         } catch (Exception ex) {
-            tx.rollback();
+            //tx.rollback();
         }
     }
 
     public void create(MyUser user) {
         EntityTransaction tx = manager.getTransaction();
-       
+
         tx.begin();
         try {
             manager.persist(user);
-            //System.out.println(user.getName() +" "+ user.getPassword() +" "+ user.isLoggedIn() +" "+ user.getVirtualMoney());
             tx.commit();
         } catch (Exception ex) {
-                tx.rollback();
+            tx.rollback();
         }
-        System.out.println(user.getUsername() + " has been created.");
     }
 
     public boolean update(MyUser user) {
@@ -115,43 +112,43 @@ public class PersistManager {
             return false;
         }
     }
-    
-    public boolean update(Friends friend){
-        
+
+    public boolean update(Friends friend) {
+
         EntityTransaction tx = manager.getTransaction();
         tx.begin();
         try {
-        Friends theFriend = manager.find(Friends.class, friend.getId());
-        theFriend.setFriendUsername(friend.getFriendUsername());
-        theFriend.setMyUser(friend.getMyUser());
-        theFriend.setUrl(friend.getUrl());
-        
-        tx.commit();
-                } catch (Exception ex) {
+            Friends theFriend = manager.find(Friends.class, friend.getId());
+            theFriend.setFriendUsername(friend.getFriendUsername());
+            theFriend.setMyUser(friend.getMyUser());
+            theFriend.setUrl(friend.getUrl());
+
+            tx.commit();
+        } catch (Exception ex) {
             tx.rollback();
         } finally {
             return false;
         }
-        
+
     }
-    
-    public boolean update(Requests request){
-        
+
+    public boolean update(Requests request) {
+
         EntityTransaction tx = manager.getTransaction();
         tx.begin();
         try {
-        Requests theRequest = manager.find(Requests.class, request.getType());
-        theRequest.setType(request.getType());
-        theRequest.setUserTo(request.getUserTo());
-        theRequest.setIpAddress(request.getIpAddress());
-        theRequest.setFromWho(request.getFromWho());
-        tx.commit();
-                } catch (Exception ex) {
+            Requests theRequest = manager.find(Requests.class, request.getType());
+            theRequest.setType(request.getType());
+            theRequest.setUserTo(request.getUserTo());
+            theRequest.setIpAddress(request.getIpAddress());
+            theRequest.setFromWho(request.getFromWho());
+            tx.commit();
+        } catch (Exception ex) {
             tx.rollback();
         } finally {
             return false;
         }
-        
+
     }
 
     public boolean remove(MyUser user) {
@@ -185,13 +182,13 @@ public class PersistManager {
             return false;
         }
     }
-    
+
     public boolean remove(Requests request) {
         EntityTransaction tx = manager.getTransaction();
         tx.begin();
         try {
             Request theRequest = manager.find(Request.class, request.getId());
-           manager.remove(theRequest);
+            manager.remove(theRequest);
             tx.commit();
         } catch (Exception ex) {
             tx.rollback();
@@ -199,12 +196,12 @@ public class PersistManager {
             return false;
         }
     }
-    
-    public boolean remove(Friends friend){
+
+    public boolean remove(Friends friend) {
         EntityTransaction tx = manager.getTransaction();
         tx.begin();
         try {
-            Friends theFriend= manager.find(Friends.class, friend.getId());
+            Friends theFriend = manager.find(Friends.class, friend.getId());
             manager.remove(theFriend);
             tx.commit();
         } catch (Exception ex) {
@@ -268,27 +265,26 @@ public class PersistManager {
         monsterList = (List<Monster>) query.getResultList();
         return monsterList;
     }
-    
-    public List<Requests> searchRequets(){
-        
+
+    public List<Requests> searchRequets() {
+
         EntityTransaction tx = manager.getTransaction();
         tx.begin();
         Query query = manager.createQuery("select r from Requests r");
         tx.commit();
-         requests = (List<Requests>) query.getResultList();
+        requests = (List<Requests>) query.getResultList();
         return requests;
     }
-    
-    public List<Requests> searchRequets(String username){
-        
+
+    public List<Requests> searchRequets(String username) {
+
         EntityTransaction tx = manager.getTransaction();
         tx.begin();
         Query query = manager.createQuery("select r from Requests r where r.userTo='" + username + "'");
         tx.commit();
-         requests = (List<Requests>) query.getResultList();
+        requests = (List<Requests>) query.getResultList();
         return requests;
     }
-
 
     public List<Monster> searchGraveYard(String username) {
         EntityTransaction tx = manager.getTransaction();
@@ -316,21 +312,20 @@ public class PersistManager {
         shopList = (List<Monster>) query.getResultList();
         return shopList;
     }
-    
-    public List<Friends> searchFriends(String theUser){
+
+    public List<Friends> searchFriends(String theUser) {
         EntityTransaction tx = manager.getTransaction();
         tx.begin();
-        Query query = manager.createQuery("select f from Friends f where f.myUser='" + theUser +"'");
+        Query query = manager.createQuery("select f from Friends f where f.myUser='" + theUser + "'");
         tx.commit();
         friends = (List<Friends>) query.getResultList();
         return friends;
     }
-    
 
     public void init() {
         try {
             Class.forName("org.apache.derby.jdbc.ClientDriver").newInstance();
-            
+
             factory = Persistence.createEntityManagerFactory("monsters");
             manager = factory.createEntityManager();
         } catch (InstantiationException ex) {

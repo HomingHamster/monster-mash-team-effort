@@ -21,34 +21,46 @@ public class FriendHandler {
 
     private PersistManager persistIt = new PersistManager();
 
-    public void sendRequest(String username, String myName, String server) throws Exception {
-        //Personal message?
+    public String sendRequest(String username, String myName, String server) throws Exception {
 
-        URL url = new URL(server + "FriendshipServlet");
-        URLConnection conn = url.openConnection();
-        conn.setDoOutput(true);
-        OutputStreamWriter writer = new OutputStreamWriter(conn.getOutputStream());
-
-        writer.write("username=" + username + "&" + "localUser=" + myName);
-        writer.flush();
-        String line;
-        BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-        while ((line = reader.readLine()) != null) {
-        }
-
-
-        reader.close();
-        writer.close();
-
-        persistIt.init();
 
         RequestFactory reqFac = new RequestFactory();
 
-        Requests request = reqFac.makeIt("Pending", username, myName, server);
+        persistIt.init();
+        if (server.equals("http://localhost:8080/")) {
 
-        persistIt.create(request);
+            Requests requestOther = reqFac.makeIt("FriendRequest", myName, username, server);
+
+            Requests requestUser = reqFac.makeIt("Pending", username, myName, server);
+
+            persistIt.create(requestUser);
+            persistIt.create(requestOther);
+
+            persistIt.shutdown();
+
+            return "index.jsp";
+
+        } else {
+            URL url = new URL(server + "FriendshipServlet");
+            URLConnection conn = url.openConnection();
+            conn.setDoOutput(true);
+            OutputStreamWriter writer = new OutputStreamWriter(conn.getOutputStream());
+
+            writer.write("username=" + username + "&" + "localUser=" + myName);
+            writer.flush();
+            String line;
+            BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+            while ((line = reader.readLine()) != null) {
+            }
+
+
+            reader.close();
+            writer.close();
+        }
 
         persistIt.shutdown();
+
+        return "welcome.jsp";
     }
 
     /**
@@ -59,26 +71,35 @@ public class FriendHandler {
      * @param recipient
      */
     public void acceptFriendRequest(Requests request) throws IOException {
+
+        FriendsFactory ff = new FriendsFactory();
+
         persistIt.init();
 
-        URL url = new URL(request.getIpAddress() + "FriendshipServlet");
-        URLConnection conn = url.openConnection();
-        conn.setDoOutput(true);
-        OutputStreamWriter writer = new OutputStreamWriter(conn.getOutputStream());
+        if (request.getIpAddress().equals("http://localhost:8080/")) {
 
-        writer.write("username=" + request.getFromWho() + "&" + "localUser=" + request.getUserTo());
-        writer.flush();
-        String line;
-        BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-        while ((line = reader.readLine()) != null) {
+            Friends f = ff.makeIt(request.getUserTo(), request.getFromWho(), request.getIpAddress());
+            Friends f2 = ff.makeIt(request.getFromWho(), request.getUserTo(), request.getIpAddress());
+            persistIt.create(f);
+            persistIt.create(f2);
+
+        } else {
+            URL url = new URL(request.getIpAddress() + "FriendshipServlet");
+            URLConnection conn = url.openConnection();
+            conn.setDoOutput(true);
+            OutputStreamWriter writer = new OutputStreamWriter(conn.getOutputStream());
+
+            writer.write("username=" + request.getFromWho() + "&" + "localUser=" + request.getUserTo());
+            writer.flush();
+            String line;
+            BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+            while ((line = reader.readLine()) != null) {
+            }
+
+            reader.close();
+            writer.close();
+
         }
-
-        reader.close();
-        writer.close();
-        
-        FriendsFactory ff = new FriendsFactory();
-        Friends f = ff.makeIt(request.getUserTo(), request.getFromWho(), request.getIpAddress());
-        persistIt.create(f);
         persistIt.remove(request);
         persistIt.shutdown();
     }
@@ -92,10 +113,10 @@ public class FriendHandler {
      */
     public void removeFriend(Friends friend) {
         persistIt.init();
-        
+
         persistIt.remove(friend);
-        
+
         persistIt.shutdown();
-        
+
     }
 }
