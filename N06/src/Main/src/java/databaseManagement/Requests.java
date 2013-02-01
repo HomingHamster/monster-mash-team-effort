@@ -23,6 +23,10 @@ public class Requests {
     String fromWho;
     String ipAddress;
 
+    public String getId(){
+        return id;
+    }
+    
     public String getType() {
         return type;
     }

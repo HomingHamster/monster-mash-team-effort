@@ -78,7 +78,7 @@ public class RegisterInfo {
                 regEmail.toUpperCase())){
             
             log.Register(regUsername, regPassword, regEmail);
-        
+        }
         // This breaks stuff!!
         //UserEmail email = new UserEmail();
         //email.send("felix.farquharson@googlemail.com", "monster-mash-n06@teame4t.co.uk",

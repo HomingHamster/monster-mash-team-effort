@@ -30,8 +30,8 @@ public class PersistManager {
     private List<Monster> userMonsters;
     private List<MyUser> userList;
     private List<Monster> shopList;
-    private List<MyUser> friends;
     private List<Requests> requests;
+    private List<Friends> friends;
 
     public void create(Monster monster) {
         EntityTransaction tx = manager.getTransaction();
@@ -186,12 +186,12 @@ public class PersistManager {
         }
     }
     
-    public boolean remove(Request request) {
+    public boolean remove(Requests request) {
         EntityTransaction tx = manager.getTransaction();
         tx.begin();
         try {
-            //Monster theMonster = manager.find(Request.class, monster.getId());
-           // manager.remove(theMonster);
+            Request theRequest = manager.find(Request.class, request.getId());
+           manager.remove(theRequest);
             tx.commit();
         } catch (Exception ex) {
             tx.rollback();
@@ -308,15 +308,6 @@ public class PersistManager {
         return userList;
     }
 
-    public List<MyUser> searchFriends(MyUser user) {
-        EntityTransaction tx = manager.getTransaction();
-        tx.begin();
-        Query query = manager.createQuery("SELECT * FROM MyUser.friends");
-        tx.commit();
-        userList = (List<MyUser>) query.getResultList();
-        return userList;
-    }
-
     public List<Monster> searchShopMonsters() {
         EntityTransaction tx = manager.getTransaction();
         tx.begin();
@@ -324,6 +315,15 @@ public class PersistManager {
         tx.commit();
         shopList = (List<Monster>) query.getResultList();
         return shopList;
+    }
+    
+    public List<Friends> searchFriends(String theUser){
+        EntityTransaction tx = manager.getTransaction();
+        tx.begin();
+        Query query = manager.createQuery("select f from Friends f where f.myUser='" + theUser +"'");
+        tx.commit();
+        friends = (List<Friends>) query.getResultList();
+        return friends;
     }
     
 
