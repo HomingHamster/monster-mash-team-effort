@@ -70,7 +70,7 @@ public class RegisterInfo {
      */
     public String addUser(){
         Login log = new Login();
-        boolean success = false;
+        boolean success = true;
         String output = "login.jsp";
         
         

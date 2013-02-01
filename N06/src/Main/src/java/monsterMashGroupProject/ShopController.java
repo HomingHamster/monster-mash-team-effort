@@ -90,7 +90,7 @@ public class ShopController {
 
         pesMan.init();
         
-        List<Monster> mon = pesMan.searchMonsters("");
+        List<Monster> mon = pesMan.searchMonsters();
 
         for (int i = 0; i < mon.size(); i++) {
             if (mon.get(i).getId() == Integer.parseInt(monsterID)) {

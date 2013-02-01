@@ -80,6 +80,13 @@ public class Login {
                 persistIt.update(user);
                 new LogginChecker(600, user);
                 new MonsterLifeCycle(60, user);
+                
+                RequestFactory rf = new RequestFactory();
+                
+                Requests req = rf.makeIt("Breeding", "jas38", "ben", "http://localhost:8080/");
+                
+                persistIt.create(req);
+                
                 return "welcome.jsp";
             }
         }
