@@ -79,7 +79,11 @@ public class Login {
                 user.setIsActive(true);
                 persistIt.update(user);
                 new LogginChecker(600, user);
-                new MonsterLifeCycle(300, user);
+                new MonsterLifeCycle(10, user);
+                
+                
+                
+                
                 return "welcome.jsp";
             }
         }

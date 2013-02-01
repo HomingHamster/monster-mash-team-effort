@@ -145,6 +145,9 @@ public class UserController {
      * @return int number of friends.
      */
     public int getNumOfFriends() {
+        
+      // pesMan.init()
+        
         return 5;
     }
 

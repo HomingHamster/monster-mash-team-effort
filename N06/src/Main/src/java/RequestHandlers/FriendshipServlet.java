@@ -61,15 +61,13 @@ public class FriendshipServlet extends HttpServlet {
         PersistManager persistIt = new PersistManager();
         persistIt.init();
 
-
         RequestFactory factory;
         factory = new RequestFactory();
-
-
-        Requests addRequest = factory.makeIt("friend", fromUser, requestedUser, url);
+        
+        Requests addRequest = factory.makeIt("friend",  requestedUser,fromUser, url);
         persistIt.create(addRequest);
 
-      response.sendRedirect("welcome.jsp");
+        response.sendRedirect("welcome.jsp");
 
     }
 }

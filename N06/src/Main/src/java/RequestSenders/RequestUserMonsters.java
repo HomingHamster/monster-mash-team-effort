@@ -28,7 +28,7 @@ public class RequestUserMonsters {
 
     public static void getUserMonstersRequest(String username) throws Exception {
         Gson gson = new Gson();         //Gson object for deserialization of the response
-        URL url = new URL("http://193.60.15.159:8080/MMG6Main/GetUserMonstersServlet");
+        URL url = new URL("http://localhost:8080/Main/GetUserMonstersServlet");
         URLConnection conn = url.openConnection();
         conn.setDoOutput(true);
         OutputStreamWriter writer = new OutputStreamWriter(conn.getOutputStream());
