@@ -7,6 +7,7 @@ package monsterMashGroupProject;
 import databaseManagement.Monster;
 import databaseManagement.MyUser;
 import databaseManagement.PersistManager;
+import databaseManagement.Requests;
 import java.util.List;
 
 /**
@@ -153,5 +154,24 @@ public class UserController {
     public String getPicSrc(String monName) {
         String temp = "http://bbrks.me/221/monsterid.php?seed=" + monName;
         return temp;
+    }
+    
+    public Requests getRequest(int i){
+        
+        pesMan.init();
+     
+        List<Requests> requests = pesMan.searchRequets(theUsr.getUsername());
+        
+        
+        return requests.get(i);
+    }
+    public int getSizeOfRequests(){
+        
+        pesMan.init();
+     
+        List<Requests> requests = pesMan.searchRequets(theUsr.getUsername());
+        
+        return requests.size();
+        
     }
 }

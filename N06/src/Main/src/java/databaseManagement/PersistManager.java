@@ -31,6 +31,7 @@ public class PersistManager {
     private List<MyUser> userList;
     private List<Monster> shopList;
     private List<MyUser> friends;
+    private List<Requests> requests;
 
     public void create(Monster monster) {
         EntityTransaction tx = manager.getTransaction();
@@ -198,6 +199,27 @@ public class PersistManager {
         monsterList = (List<Monster>) query.getResultList();
         return monsterList;
     }
+    
+    public List<Requests> searchRequets(){
+        
+        EntityTransaction tx = manager.getTransaction();
+        tx.begin();
+        Query query = manager.createQuery("select r from Requests r");
+        tx.commit();
+         requests = (List<Requests>) query.getResultList();
+        return requests;
+    }
+    
+    public List<Requests> searchRequets(String username){
+        
+        EntityTransaction tx = manager.getTransaction();
+        tx.begin();
+        Query query = manager.createQuery("select r from Requests r where r.userTo='" + username + "'");
+        tx.commit();
+         requests = (List<Requests>) query.getResultList();
+        return requests;
+    }
+
 
     public List<Monster> searchGraveYard(String username) {
         EntityTransaction tx = manager.getTransaction();
