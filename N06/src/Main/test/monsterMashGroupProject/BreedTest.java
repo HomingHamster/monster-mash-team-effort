@@ -25,8 +25,8 @@ public class BreedTest {
     
     @Before
     public void setUp() {
-        m = MonsterFactory.makeIt("Gary", 40, 40, 40, 40, "Doesn't matter");
-        f = MonsterFactory.makeIt("Crabbies", 80, 80, 80, 80, "Don't care");
+       // m = MonsterFactory.makeIt("Gary", 40, 40, 40, 40, "Doesn't matter");
+        //f = MonsterFactory.makeIt("Crabbies", 80, 80, 80, 80, "Don't care");
         instance = new Breed();
     }
 
