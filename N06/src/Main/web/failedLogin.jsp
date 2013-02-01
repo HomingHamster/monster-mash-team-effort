@@ -1,11 +1,10 @@
 <jsp:include page="includes/header.jsp"/>
 <!-- Body Content -->
-	<h2>OMG! You did somthing wrong!</h2>
-	<p>Try the following:</p>
+    <h2>Whoops!</h2>
+	<p class="lead">Something bad happened...</p>
 	<ul>
-		<li>Keep the username plain text and between 4 and 20 characters.</li>
-		<li>Keep the password plain text (upper and lower) and between 8 and 20 characters</li>
-		<li>Check the email is valid</li>
+		<li>Keep the username and password between 3 and 20 characters.</li>
+		<li>The username may already be taken!</li>
 	</ul>
 	
 	<div class="well">

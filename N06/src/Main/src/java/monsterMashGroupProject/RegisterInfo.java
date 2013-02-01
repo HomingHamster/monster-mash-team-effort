@@ -4,6 +4,9 @@
  */
 package monsterMashGroupProject;
 
+import databaseManagement.MyUser;
+import databaseManagement.PersistManager;
+import java.util.List;
 import java.util.regex.*;
 
 /**
@@ -74,26 +77,27 @@ public class RegisterInfo {
         //UNCOMMENT WHEN YOU WANT USER VALIDATION
         //slows things down and i don't know why.
         
-        //PersistManager pert = new PersistManager();
-        //pert.init();
-        //List<MyUser> curUsers = pert.searchUsers();
-        
-        //for (int i = 0; i < curUsers.size(); i++){
-        //    if (curUsers.get(i).getUsername().toUpperCase()
-        //            .equals(regUsername.toUpperCase())){
-        //        success = false;
-        //    }
-        //}
+        PersistManager pert = new PersistManager();
+        pert.init();
+        List<MyUser> curUsers = pert.searchUsers();
         
         if (
-        // success && // IMPORTANT when above uncommented.
-        Pattern.matches("^\\w{4,20}+$", regUsername) &&
-        Pattern.matches("^\\w{8,40}$", regPassword) &&
-        Pattern.matches(
-                "\\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}\\b", 
-                regEmail.toUpperCase())){
+        success && // IMPORTANT when above uncommented.
+        Pattern.matches("^[\\w]{3,20}$", regUsername) &&
+        Pattern.matches("^[\\w]{3,20}$", regPassword))
+        //Pattern.matches("\\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}\\b", regEmail.toUpperCase())){
+//        Pattern.matches("^[\\w+]+@[\\w+]\\.\\w{2,4}$", regEmail.toUpperCase()))
+                {
             
             log.Register(regUsername, regPassword, regEmail);
+            success = true;
+        }
+        
+        for (int i = 0; i < curUsers.size(); i++){
+            if (curUsers.get(i).getUsername().toUpperCase()
+                    .equals(regUsername.toUpperCase())){
+                success = false;
+            }
         }
         
         // This breaks stuff!!
