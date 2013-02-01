@@ -84,26 +84,18 @@ public class FriendHandler {
     }
 
     /**
-     * Allows the user to reject a sendRequest, sendRequest is removed from
-     * sendRequest list, requester is not alerted.
-     *
-     * @param requester
-     * @param recipient
-     */
-    public void rejectRequest(MyUser requester, MyUser recipient) {
-        persistIt.init();
-        
-    }
-
-    /**
      * Allows the user to remove a friend. The friend is removed from the users
      * friends list, the user is also removed from the friends friends list.
      *
      * @param user
      * @param friend
      */
-    public void removeFriend(MyUser user, MyUser friend) {
+    public void removeFriend(Friends friend) {
         persistIt.init();
+        
+        persistIt.remove(friend);
+        
+        persistIt.shutdown();
         
     }
 }
