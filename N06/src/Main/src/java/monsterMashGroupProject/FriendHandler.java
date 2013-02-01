@@ -38,7 +38,6 @@ public class FriendHandler {
 
             persistIt.shutdown();
 
-            return "index.jsp";
 
         } else {
             URL url = new URL(server + "FriendshipServlet");
