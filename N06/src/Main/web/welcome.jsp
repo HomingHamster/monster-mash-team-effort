@@ -15,7 +15,18 @@
         </tr>
     </thead>
     <tbody>
-      
+        <% for (int i = 0; i < usercontroller.getSizeOfRequests(); i++) {%>
+        <tr>
+            <td><%= usercontroller.getRequest(i).getType() %></td>
+            <td><%= usercontroller.getRequest(i).getFromWho() %></td>
+            <td><form name="first" METHOD=POST ACTION="processRequest.jsp">
+                    <input type="hidden" name="reqId" value= <%= usercontroller.getRequest(i).getId() %> />
+                    <input type="submit" class="btn btn-primary" name="acceptbtn" value="Accept" />
+                    <input type="submit" class="btn btn-danger" name="declinebtn" value="Decline" />
+                </form>
+            </td>
+        </tr>
+        <%}%>
     </tbody>
 </table>
 <jsp:include page="includes/sidebarclose.jsp" />
