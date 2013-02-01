@@ -12,6 +12,8 @@ import jsonDeSerializers.FightResponse;
 import monsterMashGroupProject.Fight;
 import com.google.gson.*;
 import databaseManagement.PersistManager;
+import databaseManagement.RequestFactory;
+import databaseManagement.Requests;
 import java.util.List;
 
 /**
@@ -50,42 +52,58 @@ public class FightServlet extends HttpServlet {
         Gson gson = new Gson();
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
+        
         String enemyAge = request.getParameter("age");
         String enemyAggression = request.getParameter("aggr");
         String enemyStrength = request.getParameter("str");
         String monsterName = request.getParameter("name");
+        String toWho = request.getParameter("remoteUser");
+        String fromWho = request.getParameter("thisUser");
+        String url = request.getRemoteAddr();
         int eAge = Integer.parseInt(enemyAge);
         int eStr = Integer.parseInt(enemyStrength);
         int eAggr = Integer.parseInt(enemyAggression);
+        
         Fight fight = new Fight();
         Monster enemy = new Monster();
+        
         enemy.setAge(eAge);
         enemy.setStrength(eStr);
         enemy.setAggression(eAggr);
+        
         PersistManager persistIt = new PersistManager();
         persistIt.init();
-        List<Monster> monsters = persistIt.searchMonsters();
-        for (int i = 0; i < monsters.size(); i++) {
-            if (monsters.get(i).getName().equals(monsterName)) {
-                Monster myMonster = new Monster();
-                myMonster.setAge(monsters.get(i).getAge());
-                myMonster.setStrength(monsters.get(i).getStrength());
-                myMonster.setAggression(monsters.get(i).getAggression());
-                if (fight.determineWinner(myMonster, enemy).equals(myMonster)) {
-                    //Local(challenged) monster wins
-                    FightResponse fightResponse = new FightResponse(monsters.get(i).getWorth(), 1);
-                    out.print(gson.toJson(fightResponse));
-                    //Send money/whatever
-                } else {
-                    FightResponse fightResponse = new FightResponse(monsters.get(i).getWorth(), 0);
-                    out.print(gson.toJson(fightResponse));
-                 
-                    persistIt.remove(monsters.get(i));
-                    //Kill local monster
-                }
-                
-            }
-        }
+        
+        RequestFactory rf = new RequestFactory();
+        System.out.println("*********************************"+toWho);
+        System.out.println("************************************"+fromWho);
+        Requests addReq = rf.makeIt("fight", toWho, fromWho, url);
+      
+        persistIt.create(addReq);
+        persistIt.update(addReq);
+        
+//        List<Monster> monsters = persistIt.searchMonsters();
+//        for (int i = 0; i < monsters.size(); i++) {
+//            if (monsters.get(i).getName().equals(monsterName)) {
+//                Monster myMonster = new Monster();
+//                myMonster.setAge(monsters.get(i).getAge());
+//                myMonster.setStrength(monsters.get(i).getStrength());
+//                myMonster.setAggression(monsters.get(i).getAggression());
+//                if (fight.determineWinner(myMonster, enemy).equals(myMonster)) {
+//                    //Local(challenged) monster wins
+//                    FightResponse fightResponse = new FightResponse(monsters.get(i).getWorth(), 1);
+//                    out.print(gson.toJson(fightResponse));
+//                    //Send money/whatever
+//                } else {
+//                    FightResponse fightResponse = new FightResponse(monsters.get(i).getWorth(), 0);
+//                    out.print(gson.toJson(fightResponse));
+//                 
+//                    persistIt.remove(monsters.get(i));
+//                    //Kill local monster
+//                }
+//                
+//            }
+//        }
 //        Monster myMonster = new Monster();
 //        myMonster.setAge(55);
 //        myMonster.setStrength(222);

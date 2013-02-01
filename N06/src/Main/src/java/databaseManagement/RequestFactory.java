@@ -12,7 +12,7 @@ import javax.security.auth.message.callback.PrivateKeyCallback.Request;
  */
 public class RequestFactory {
 
-    public static Requests makeIt(String type,
+    public Requests makeIt(String type,
             String userTo,
             String fromWho,
             String ipAddress) {

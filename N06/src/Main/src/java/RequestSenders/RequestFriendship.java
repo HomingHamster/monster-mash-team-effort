@@ -18,7 +18,7 @@ import com.google.gson.*;
 public class RequestFriendship {
 
     public static void main(String[] args) throws Exception {
-        request("sd", "http://193.60.15.159:8080/MMG6Main/");
+        request("sd", "dd", "http://localhost:8080/Main/");
         //If accepted
         //Add to friends list
         //if rejected
@@ -28,7 +28,7 @@ public class RequestFriendship {
 
     }
 
-    public static void request(String username, String server) throws Exception {
+    public static void request(String username,String myName,  String server) throws Exception {
         //Personal message?
 
         URL url = new URL(server + "FriendshipServlet");
@@ -36,20 +36,17 @@ public class RequestFriendship {
         conn.setDoOutput(true);
         OutputStreamWriter writer = new OutputStreamWriter(conn.getOutputStream());
 
-        writer.write("username=" + username);
+        writer.write("username=" + username +"&"+"localUser="+myName);
         writer.flush();
         String line;
         BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
         while ((line = reader.readLine()) != null) {
-            // System.out.println(line);
-            if (line.equals("Accepted")) {
-                System.out.println("Friend request accepted");
-            }
+      
         }
       
 
-
+ reader.close();
         writer.close();
-        reader.close();
+       
     }
 }

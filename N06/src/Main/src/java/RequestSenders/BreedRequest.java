@@ -28,19 +28,43 @@ public class BreedRequest {
         monster.setHeight(40);
         String newName = "SomeKid";
         String remoteName = "Fred";
-        sendBreedRequest(monster.getAggression(), monster.getAge(), monster.getStrength(), monster.getHeight(), newName, remoteName);
+        String toWho = "sd";
+        String fromWho ="FUCKFACE";
+                
+        sendBreedRequest(monster.getAggression(),
+                monster.getAge(),
+                monster.getStrength(),
+                monster.getHeight(), 
+                newName,
+                remoteName,
+                toWho,
+                fromWho);
         
     }
-      public static void sendBreedRequest(int height, int aggression, int str, int age, String newName, String remoteMonster) throws Exception {
+      public static void sendBreedRequest(int height, 
+              int aggression, 
+              int str,
+              int age, 
+              String newName,
+              String remoteMonster, 
+              String toWho,
+              String fromWho) throws Exception {
         Gson gson = new Gson();         //Gson object for deserialization of the response
-        URL url = new URL("http://193.60.15.159:8080/MMG6Main/BreedServlet");
+        URL url = new URL("http://localhost:8080/Main/BreedServlet");
         URLConnection conn = url.openConnection();
         conn.setDoOutput(true);
         OutputStreamWriter writer = new OutputStreamWriter(conn.getOutputStream());
         /*
          * POST request details
          */
-        writer.write("aggr="+aggression+"&"+"height="+height+"&"+"str="+str+"&"+"age="+age+"&"+"name="+newName+"&"+"remoteName="+remoteMonster);
+        writer.write("aggr="+aggression+"&"
+                +"height="+height+"&"
+                +"str="+str+"&"
+                +"age="+age+"&"
+                +"name="+newName+"&"
+                +"remoteName="+remoteMonster+"&"
+                +"toWho="+toWho+"&"
+                +"fromWho="+fromWho);
         writer.flush();
         String line;            //Response in text
         BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
@@ -52,7 +76,7 @@ public class BreedRequest {
             /*
              * Check the response for the fight result.
              */
-            System.out.println(line);
+            //System.out.println(line);
 
         }
 
