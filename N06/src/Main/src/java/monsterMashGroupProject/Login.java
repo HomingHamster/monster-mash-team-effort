@@ -92,16 +92,11 @@ public class Login {
      */
     public String LogOff() {
         persistIt.init();
-        List<MyUser> users = persistIt.searchUsers();
-        for (int i = 0; i < users.size(); i++) {
-            if ((users.get(i).getUsername().equals(username)) && (users.get(i).getUserPassword().equals(password))) {
-                user = users.get(i);
-                user.setIsLoggedIn(false);
-                user.setIsActive(false);
-                persistIt.update(user);
-                return "welcome.jsp";
-            }
-        }
+        
+        user.setIsLoggedIn(false);
+        user.setIsActive(false);
+        
+        persistIt.update(user);
         persistIt.shutdown();
         return "index.jsp";
     }

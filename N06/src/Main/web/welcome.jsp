@@ -5,6 +5,7 @@
 <!-- Body Content -->
 <h2>Welcome <%= usercontroller.setTheUsr(user)%></h2>
 <p class="lead">Attention</p>
+Money: <%=usercontroller.getTheUsr().getVirtualMoney() %>
 <table class="table table-striped table-bordered">
     <thead>
         <tr>
