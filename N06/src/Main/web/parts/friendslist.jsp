@@ -34,9 +34,9 @@
         <h3 id="myModalLabel">Add Friend</h3>
     </div>
     <div class="modal-body" style="height:300px;">
-        <form action="">
+        <form action="SendFriend.jsp">
             <!-- Populate from user database -->
-            <input type="text" name="friendusername" data-provide="typeahead"	data-source='[
+            <input type="text" name="friendUsername" data-provide="typeahead"	data-source='[
                    "Fred",
                    "Joe",
                    "George",
@@ -50,10 +50,11 @@
                    ]' />
             <h3 id="myModalLabel">Select Server</h3>
             <select name="servers">
-                <option value="http://193.60.15.159:8080/Main/"> Local Server </option>
+                <option value="http://localhost:8080/"> Local Server </option>
                 <option  value="192.168.1.1">Server One</option>
                 <option  value="192.168.1.1">Server Three</option>
             </select>
+            <input type="submit" class="btn btn-primary" value="Add Friend"/>
         </form>
         <p class="muted">Search for a username above. The text area should list suggestions as you type.
     </div>

@@ -35,13 +35,37 @@ public class RequestController {
             }
         }
         
-        if ((acceptbtn.equals("Accept")&&(request.getType().equals("FriendRequest")))){
-            try {
-                friendHand.acceptFriendRequest(request);
-            } catch (IOException ex) {
-                Logger.getLogger(RequestController.class.getName()).log(Level.SEVERE, null, ex);
+        if (acceptbtn!=null) {
+                        
+            if (request.getType().equals("FriendRequest")) {
+                try {
+                    friendHand.acceptFriendRequest(request);
+                } catch (IOException ex) {
+                    Logger.getLogger(RequestController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            } else if (request.getType().equals("BreedingRequest")) {
+                //TODO: BreedHandler
+            } else if (request.getType().equals("FightRequest")) {
+                
+            } else if (request.getType().equals("TradeRequest")) {
+                
+            } else {
+                // shouldn't happen
             }
+            
+        } else {
+            
+            this.rejectRequest(request);
+            
         }
+        
+//        if ((acceptbtn.equals("Accept")&&(request.getType().equals("FriendRequest")))){
+//            try {
+//                friendHand.acceptFriendRequest(request);
+//            } catch (IOException ex) {
+//                Logger.getLogger(RequestController.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+//        }
         
         return "welcome.jsp";
     }
@@ -54,7 +78,7 @@ public class RequestController {
      * @param requester
      * @param recipient
      */
-    public void rejectRequest(Requests request) {
+    private void rejectRequest(Requests request) {
         persistIt.init();
         
         persistIt.remove(request);
