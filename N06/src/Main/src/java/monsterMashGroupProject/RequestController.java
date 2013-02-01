@@ -6,6 +6,10 @@ package monsterMashGroupProject;
 
 import databaseManagement.PersistManager;
 import databaseManagement.Requests;
+import java.io.IOException;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -15,10 +19,28 @@ public class RequestController {
     
     PersistManager persistIt = new PersistManager();
     
+    Requests request;
+    
     public String controller(String requestID, String choice){
         
-        if ((choice.equals("FriendRequest"))&&(requestID.equals("acceptbtn"))){
-            
+        FriendHandler friendHand = new FriendHandler();
+        
+        persistIt.init();
+        
+        List<Requests> requestList = persistIt.searchRequets();
+        
+        for(int i = 0; i < requestList.size(); i++){
+            if(requestList.get(i).getId().equals(requestID)){
+                this.request = requestList.get(i);
+            }
+        }
+        
+        if ((choice.equals("acceptbtn")&&(request.getType().equals("FriendRequest")))){
+            try {
+                friendHand.acceptFriendRequest(request);
+            } catch (IOException ex) {
+                Logger.getLogger(RequestController.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         
         return "welcome.jsp";
