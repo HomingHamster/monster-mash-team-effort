@@ -55,6 +55,17 @@ public class PersistManager {
             tx.rollback();
         }
     }
+    
+    public void create(Friends friend){
+        EntityTransaction tx = manager.getTransaction();
+        tx.begin();
+        try {
+            manager.persist(friend);
+            tx.commit();
+        } catch (Exception ex) {
+            tx.rollback();
+        }
+    }
 
     public void create(MyUser user) {
         EntityTransaction tx = manager.getTransaction();
@@ -103,6 +114,25 @@ public class PersistManager {
         } finally {
             return false;
         }
+    }
+    
+    public boolean update(Friends friend){
+        
+        EntityTransaction tx = manager.getTransaction();
+        tx.begin();
+        try {
+        Friends theFriend = manager.find(Friends.class, friend.getId());
+        theFriend.setFriendUsername(friend.getFriendUsername());
+        theFriend.setMyUser(friend.getMyUser());
+        theFriend.setUrl(friend.getUrl());
+        
+        tx.commit();
+                } catch (Exception ex) {
+            tx.rollback();
+        } finally {
+            return false;
+        }
+        
     }
     
     public boolean update(Requests request){
@@ -162,6 +192,20 @@ public class PersistManager {
         try {
             //Monster theMonster = manager.find(Request.class, monster.getId());
            // manager.remove(theMonster);
+            tx.commit();
+        } catch (Exception ex) {
+            tx.rollback();
+        } finally {
+            return false;
+        }
+    }
+    
+    public boolean remove(Friends friend){
+        EntityTransaction tx = manager.getTransaction();
+        tx.begin();
+        try {
+            Friends theFriend= manager.find(Friends.class, friend.getId());
+            manager.remove(theFriend);
             tx.commit();
         } catch (Exception ex) {
             tx.rollback();

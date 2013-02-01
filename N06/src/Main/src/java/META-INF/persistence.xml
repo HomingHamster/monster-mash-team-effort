@@ -5,6 +5,11 @@
     <jta-data-source>MMDB5</jta-data-source>
     <class>databaseManagement.MyUser</class>
     <class>databaseManagement.Monster</class>
+<<<<<<< HEAD
+=======
+    <class>databaseManagement.Requests</class>
+    <class>databaseManagement.Friends</class>
+>>>>>>> Friends
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
 
