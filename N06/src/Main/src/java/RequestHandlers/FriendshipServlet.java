@@ -4,13 +4,12 @@
  */
 package RequestHandlers;
 
-import databaseManagement.MyUser;
 import databaseManagement.PersistManager;
 import databaseManagement.RequestFactory;
 import databaseManagement.Requests;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -54,28 +53,23 @@ public class FriendshipServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        String requestedUser = request.getParameter("username");
+        String requestedUser = request.getParameter("friendUsername");
         System.out.println(requestedUser);
-        String fromUser = request.getParameter("localUser");
+        String fromUser = request.getParameter("sessionUser");
         System.out.println(fromUser);
-        String url = request.getRemoteAddr();
+        String url = request.getParameter("servers");
         PersistManager persistIt = new PersistManager();
         persistIt.init();
 
 
         RequestFactory factory;
         factory = new RequestFactory();
-        
 
-        List<MyUser> users = persistIt.searchUsers();
-        for (int i = 0; i < users.size(); i++) {
-            if (users.get(i).getUsername().toString().equals(requestedUser)) {
 
-                Requests addRequest = factory.makeIt("friend", fromUser, requestedUser, url);
-                persistIt.create(addRequest);
-                persistIt.update(addRequest);
+        Requests addRequest = factory.makeIt("friend", fromUser, requestedUser, url);
+        persistIt.create(addRequest);
 
-            }
-        }
+      response.sendRedirect("welcome.jsp");
+
     }
 }
