@@ -5,6 +5,7 @@
 package monsterMashGroupProject;
 
 import databaseManagement.Monster;
+import databaseManagement.PersistManager;
 import java.util.Random;
 
 /**
@@ -22,11 +23,17 @@ public class Fight {
      * @return 
      */
     public Monster determineWinner(Monster m1, Monster m2) {
+        
+        PersistManager pesistIt = new PersistManager();
         int m1Prob = randomizeProbabilities(compareAttributesRetM1(m1, m2));
         int randomPick = rand.nextInt(100);
+        
+        pesistIt.init();
         if (m1Prob >= randomPick) {
+            pesistIt.remove(m2);
             return m1;
         } else {
+            pesistIt.remove(m1);
             return m2;
         }
     }
