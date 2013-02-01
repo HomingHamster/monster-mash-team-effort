@@ -6,9 +6,9 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<jsp:useBean id="usercontroller" class="monsterMashGroupProject.UserController" scope="session"/>
+<jsp:useBean id="buymon" class="monsterMashGroupProject.ShopController" scope="session"/>
 <HTML>
-    <HEAD><META http-equiv="Refresh" content="0; url= <%= usercontroller.buyMonster(request.getParameter("monsterid"), request.getParameter("userNam"))%>"/></HEAD>
+    <HEAD><META http-equiv="Refresh" content="0; url= <%= buymon.buyMonster(request.getParameter("monsterid"), request.getParameter("userNam"))%>"/></HEAD>
     <BODY>
         <jsp:include page="includes/header.jsp" />
 		<!-- Body Content -->
