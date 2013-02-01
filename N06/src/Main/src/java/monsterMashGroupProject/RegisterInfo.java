@@ -81,6 +81,15 @@ public class RegisterInfo {
         pert.init();
         List<MyUser> curUsers = pert.searchUsers();
         
+        for (int i = 0; i < curUsers.size(); i++){
+            if (curUsers.get(i).getUsername().toUpperCase()
+                    .equals(regUsername.toUpperCase())){
+                success = false;
+            } else {
+                success = true;
+            }
+        }
+        
         if (
         success && // IMPORTANT when above uncommented.
         Pattern.matches("^[\\w]{3,20}$", regUsername) &&
@@ -91,13 +100,8 @@ public class RegisterInfo {
             
             log.Register(regUsername, regPassword, regEmail);
             success = true;
-        }
-        
-        for (int i = 0; i < curUsers.size(); i++){
-            if (curUsers.get(i).getUsername().toUpperCase()
-                    .equals(regUsername.toUpperCase())){
-                success = false;
-            }
+        } else {
+            success = false;
         }
         
         // This breaks stuff!!
