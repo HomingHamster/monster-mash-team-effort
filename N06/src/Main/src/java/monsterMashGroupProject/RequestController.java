@@ -16,6 +16,11 @@ public class RequestController {
     PersistManager persistIt = new PersistManager();
     
     public String controller(String requestID, String choice){
+        
+        if ((choice.equals("FriendRequest"))&&(requestID.equals("acceptbtn"))){
+            
+        }
+        
         return "welcome.jsp";
     }
     
