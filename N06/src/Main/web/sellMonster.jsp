@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <jsp:useBean id="sellMon" class="monsterMashGroupProject.ShopController" scope="session"/>
 <HTML>
-    <HEAD><META http-equiv="Refresh" content="0; url= <%= sellMon.sellMonster(request.getParameter("monsterid"))%>"/></HEAD>
+    <HEAD><META http-equiv="Refresh" content="0; url= <%= sellMon.sellMonster(request.getParameter("monsterid"),request.getParameter("userNam"))%>"/></HEAD>
     <BODY>
         <jsp:include page="includes/header.jsp" />
 		<!-- Body Content -->

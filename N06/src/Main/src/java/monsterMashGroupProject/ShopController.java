@@ -84,7 +84,7 @@ public class ShopController {
      * @param usr
      * @return String page to redirect to.
      */
-    public String sellMonster(String monsterID){
+    public String sellMonster(String monsterID, String usr){
         
         Shop shp = new Shop();
 
@@ -97,7 +97,15 @@ public class ShopController {
                 monster = mon.get(i);
             }
         }
-        shp.SellMonster(monster);
+        
+        List<MyUser> users = pesMan.searchUsers();
+        for (int i = 0; i < users.size(); i++) {
+            if ((users.get(i).getUsername().equals(usr))) {
+                user = users.get(i);
+            }
+        }
+        
+        shp.SellMonster(monster,user);
         
         pesMan.shutdown();
         

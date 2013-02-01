@@ -44,7 +44,7 @@ public class Shop {
      * @param monster
      * @param user 
      */ 
-    public void SellMonster(Monster monster) {
+    public void SellMonster(Monster monster, MyUser user) {
                 persistIt.init();
         List<Monster> monsters = persistIt.searchMonsters();
         boolean found = false;
@@ -57,10 +57,10 @@ public class Shop {
         if (found == true) {
             monster.setOwner("");
             persistIt.update(monster);
-                        //user.setVirtualMoney((
-                    //user.getVirtualMoney()+monster
-                    //.getWorth()));
-            //persistIt.update(user);
+                        user.setVirtualMoney((
+                    user.getVirtualMoney()+monster
+                    .getWorth()));
+            persistIt.update(user);
         }
         else {
             System.out.println("Error");
