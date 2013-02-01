@@ -34,7 +34,7 @@
         <h3 id="myModalLabel">Add Friend</h3>
     </div>
     <div class="modal-body" style="height:300px;">
-        <form action="SendFriend.jsp">
+          <form action="FriendshipServlet" method="post">
             <!-- Populate from user database -->
             <input type="text" name="friendUsername" data-provide="typeahead"	data-source='[
                    "Fred",
@@ -54,6 +54,7 @@
                 <option  value="192.168.1.1">Server One</option>
                 <option  value="192.168.1.1">Server Three</option>
             </select>
+            <input type="hidden" name="sessionUser" value=<%= usercontroller.getTheUsr().getUsername() %> >
             <input type="submit" class="btn btn-primary" value="Add Friend"/>
         </form>
         <p class="muted">Search for a username above. The text area should list suggestions as you type.

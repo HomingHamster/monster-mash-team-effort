@@ -28,9 +28,9 @@ public class RequestController {
         persistIt.init();
         
         List<Requests> requestList = persistIt.searchRequets();
-        
+        int converted = Integer.parseInt(requestID);
         for(int i = 0; i < requestList.size(); i++){
-            if(requestList.get(i).getId().equals(requestID)){
+            if(requestList.get(i).getId()==converted){
                 this.request = requestList.get(i);
             }
         }

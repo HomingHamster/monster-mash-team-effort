@@ -17,13 +17,13 @@ public class Requests {
     
     @Id
     @GeneratedValue
-    String id;        
+    int id;        
     String type;
     String userTo;
     String fromWho;
     String ipAddress;
 
-    public String getId(){
+    public int getId(){
         return id;
     }
     
