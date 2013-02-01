@@ -6,6 +6,7 @@
     <class>databaseManagement.MyUser</class>
     <class>databaseManagement.Monster</class>
     <class>databaseManagement.Requests</class>
+    <class>databaseManagement.Friends</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="hibernate.hbm2ddl.auto" value="update"/>

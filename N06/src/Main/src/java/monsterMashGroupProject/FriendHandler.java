@@ -27,6 +27,7 @@ public class FriendHandler {
         RequestFactory reqFac = new RequestFactory();
 
         persistIt.init();
+        
         if (server.equals("http://localhost:8080/")) {
 
             Requests requestOther = reqFac.makeIt("FriendRequest", myName, username, server);
@@ -37,8 +38,10 @@ public class FriendHandler {
             persistIt.create(requestOther);
 
             persistIt.shutdown();
+            
+            return "index.jsp";
 
-
+            
         } else {
             URL url = new URL(server + "FriendshipServlet");
             URLConnection conn = url.openConnection();
