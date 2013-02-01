@@ -70,7 +70,23 @@ public class RegisterInfo {
         boolean success = false;
         String output = "login.jsp";
         
+        
+        //UNCOMMENT WHEN YOU WANT USER VALIDATION
+        //slows things down and i don't know why.
+        
+        //PersistManager pert = new PersistManager();
+        //pert.init();
+        //List<MyUser> curUsers = pert.searchUsers();
+        
+        //for (int i = 0; i < curUsers.size(); i++){
+        //    if (curUsers.get(i).getUsername().toUpperCase()
+        //            .equals(regUsername.toUpperCase())){
+        //        success = false;
+        //    }
+        //}
+        
         if (
+        // success && // IMPORTANT when above uncommented.
         Pattern.matches("^\\w{4,20}+$", regUsername) &&
         Pattern.matches("^\\w{8,40}$", regPassword) &&
         Pattern.matches(
@@ -79,6 +95,7 @@ public class RegisterInfo {
             
             log.Register(regUsername, regPassword, regEmail);
         }
+        
         // This breaks stuff!!
         //UserEmail email = new UserEmail();
         //email.send("felix.farquharson@googlemail.com", "monster-mash-n06@teame4t.co.uk",
