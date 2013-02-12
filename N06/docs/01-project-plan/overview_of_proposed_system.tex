@@ -5,10 +5,30 @@
 \begin{document}
 \section{Overview of Proposed System}
 
-\subsection{Choice of platform}
-We have decided to use the Glassfish Open Source version as our platform. 
-We did not consider the Oricle Glassfish Server because it would cost to
-use it for the project.
+\subsection{Design Choices}
+We were tasked to make a website, there are a few decisions that had to be made relating to the design of the website that are listed here.
+
+\subsubsection{Using the web as a platform}
+Using the web as a platform for this app means that the pages will be accessable by a large number of people, this means that the potential audience is larger because it is not limited to one machine like a Windows PC. The data should be centralised for this game to work, and this is ideal because it can be stored on a central machine or server.
+
+The web is fairly easy to develop for, there are a number of frameworks and platforms out there to use, this means that development can be faster and more instantly accessable by users. Designing websites for the web can be tricky and requires a good design sense and some exerience. We should choose a method that allows us to keep the same design consistant throughout the site and that allows us to keep it up to date easily; web design trends change quickly.
+
+\subsubsection{High Level}
+We chose to use tools that were high level, at a small performance cost. There are a number of reasons for doing this. Firstly because it allows developers to develop at a higher speed, which means less time until there is a working solution. It means less time working out bugs in the code because higher level tools can be more intuative and often easier to debug. Using high level tools can be good for security if the platform has been tested thourhgly because it takes the burden away from the developer; most of the issues have already been dealt with.
+
+As well as being easy to learn for the developers at this stage it is also useful for anyone who has to maintain the code afterward, less time is needed to figure out what something does and it's therefore easier to fix. The only real downside is that there is a performance sacrifice at some stages, it was judged on all tools that we used that the performance cost is worth the time spent less on development.
+
+We chose to use the bootstrap library for creating a consistant design we also used jquery to help make functional javascript more quickly. In java we are going to use DERBY server and client in order to reduce the amount of SQL that we have to write to use the database.
+
+\subsubsection{User centric design}
+The application will work by presenting the user with a number of options when the user selects an option a new option will be presented. The user is always at the center of what is going on so we are going to make sure that they are presented all of the actions they would expect and that what the user is expecting to do should come first.
+
+\subsubsection{Accessable Aesthetics}
+The ui needs to be clear, the links will all be obviously clickable and everything needs to be where the user would expect it to be. The UI needs to work on many platforms, we anticipate 20\% of our traffic will be from mobile devices so we need to make sure we have a responsive design to suit it. As well as mobile browsers we need to cosider the difference between a lot of modern browsers and we need to make sure that we support them all and that the design is consistiant between all of the modern browsers. We are using the bootstrap library to help with some of these issues. 
+
+\subsection{Choice of web platform}
+We wanted our platform to be well documented and have materials to help beginners to pick up the platform. We have decided to use the Glassfish Open Source version as our platform. It needed to be able to produce website such that multiple people could develop for it. We wanted to be able to deploy the website to a server somewhere and a platform that is well supported in production enviroments and choosing a platform to support this was important to us.
+We did not consider the Oricle Glassfish Server because it would cost to use it for the project.
 
 We considered the following:
 \begin{itemize}
