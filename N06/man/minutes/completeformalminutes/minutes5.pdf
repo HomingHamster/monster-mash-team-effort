@@ -1,0 +1,62 @@
+\documentclass{article}
+\usepackage{fullpage}
+\begin{document} 
+\noindent
+If you see anything that is incorrect or any information that is missing, please send an email to sam39@aber.ac.uk and a redraft will be created.
+\newline
+\newline
+\large \underline {Minutes of Meeting 5 }
+\newline
+\newline
+ Project: Fifth Monster Mash - Group Project 06
+\newline
+Meeting: Project Meeting.
+\newline
+Attendees: All project members present except Chris Arom (Unavailable – Apology given)
+\newline
+Place and date of meeting: Room 502, Tuesday 6th November 2012.
+\newline
+Circulation list: All project members present except 
+\newline
+Author: Samuel Mills
+\newline
+Date of Minutes: Tuesday 6th November 2012.
+\newline
+Version: 1.0
+\newline
+\newline
+\large \underline {Matters Arrising}
+\newline
+\newline
+Last week we discussed group standards between our group and other groups. Chris attended standards meeting. Also project manager encouraged members to start filling in test documents which has already started (Review Tuesday 13th November 2012)
+\newline
+\newline
+\large \underline {New Business}
+\newline
+\newline
+The meeting started off with the discussion of the GUI. The group discussed that we still haven’t agreed on a main GUI design between the two submitted, but the details that need to be decided are purely graphical (All main functions, structure and buttons are the same). As this is the case it was brought up that this shouldn’t be holding back design. We discussed getting Chris Arom’s views on GUI but he was absent from the meeting. We need to design final GUI and prepare for review. If it’s not critical (can still progress with rest of project) we could schedule it for a late date. Project leader assigned Chris Arom for final design.
+\newline
+\newline
+Discussed standards meeting which Chris Arom attended, however not all information was given as Chris Arom was not able to pass on details from the meeting. It was mentioned that they were planning to use a single global database and talked about some ideas about global servers and each group adding individual servlets. We talked about whether it is wise to depend on other projects as they could fail, which would cause us to fail. James Slater and Dan Mcguckin discussed designing classes. We need Chris to report on design detail and what the future plan is. ACTION: {\em cki}
+\newline
+\newline
+Discussed new roles which Gantt chart shows, regarding what each individual is expected to do. Design Team – Chris, Dan and James. Discussed class diagrams etc and how we are going to carry this out. Felix mentioned LaTeX styled program called Metauml which allows you to code diagrams, this was just an idea. Dan mentioned UMLet. This needs to be looked into. {\em ACTION: Design Team}
+\newline
+\newline
+Dan Mcguckin raised a question regarding super users and users. Project manager discussed super login compared to user login. Dan raised he hadn’t included super user into user case diagram. We talked about admin design (would it involve grayed out options or a separate admin page completely). Project manager brought up how blackboard functions. It has a toggle button which enables editing and normal view which is not ideal as admin usually wants to see that they are in control, not necessarily edit.
+\newline
+\newline
+We moved onto discussing fixtures. When testing login, if the user can’t login to the game, this can’t be determined as a login or authorization problem. We need to look into how to test authorization and login separately. Discussed creating a test database and how each test could have its own database.
+\newline
+\newline
+Overall, testing is on course, design team is making progress. Discussed demonstration and it was mentioned that we need to discuss in the future how much we will be able to show for the demonstration
+\newline
+\newline
+Next meeting could be on Thursday 8th November 2012 (This will be setup if needed, monitor Facebook for updates) but the next definite meeting will be on Tuesday 13th of November. (Room 502, 1.00PM)
+\newline
+\newline
+\large \underline {AOB}
+\newline
+\newline
+ None
+\end{document}

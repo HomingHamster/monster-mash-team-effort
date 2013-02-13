@@ -1,0 +1,56 @@
+\documentclass{article}
+\usepackage{fullpage}
+\begin{document} 
+\noindent
+If you see anything that is incorrect or any information that is missing, please send an email to sam39@aber.ac.uk and a redraft will be created.
+\newline
+\newline
+\large \underline {Minutes of Meeting 4}
+\newline
+\newline
+ Project: Monster Mash - Group Project 06
+\newline
+Meeting: Fourth Project Meeting.
+\newline
+Attendees: All project members present.
+\newline
+Place and date of meeting: Room 502, Tuesday 30th October 2012.
+\newline
+Circulation list: All project members, plus project manager.
+\newline
+Author: Samuel Mills
+\newline
+Date of Minutes: Tuesday 30th October 2012.
+\newline
+Version: 1.0
+\newline
+\newline
+\large \underline {Matters Arrising}
+\newline
+\newline
+Last week we discussed each group member’s individual tasks which have now been completed and the final document has been submitted.
+\newline
+\newline
+\large \underline {New Business}
+\newline
+\newline
+We started this week’s meeting by looking at both GUI designs which Ben Brooks and Aiman Arafat had developed. The group agreed we are going to put both GUI designs in the project plan document and then explain that we are going to take ideas from both GUI’s and develop them to create a main GUI for the game.
+\newline
+\newline
+The group then discussed group standards and how we would have to agree with other groups regarding factors such as will two players have to be online to request/accept or decline a fight or can it be done if one player is offline. James Slater then brought up the standard meeting which is at 2pm tomorrow in C55. Chris Arom agreed to attend. ACTION: {\em cki}
+\newline
+\newline
+Project manager encouraged members of the group assigned to testing (Felix and Chris) to start filling in test documents. James Slater explained that he and the group manager had changed a few of the roles around and he will discuss further on Thursday. UML was brought up and we discussed that the beginnings of a model are already in place. DIA discussed.
+\newline
+\newline
+Chris discussed how he has setup a login. J2EE authorization was explained by Project Manager in detail and the group was encouraged to look into it more.
+\newline
+\newline
+The next unofficial group meeting will take place on Thursday 1st November 2012 (2.00PM-3.00PM) in the Delphinium. The next official meeting will take place on Tuesday 6th November 2012.
+\newline
+\newline
+\large \underline {AOB}
+\newline
+\newline
+ None
+\end{document}
