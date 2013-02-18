@@ -1,0 +1,428 @@
+\documentclass[titlepage]{article}
+\usepackage[hmargin=2cm,vmargin=2.5cm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{graphicx}
+\fancyhf{}
+\pagestyle{fancy}
+\fancyhead[R]{\textit{Group 06 Design Specification/1.2(Release)}}
+\renewcommand{\headrulewidth}{0mm}
+\fancyfoot[L]{\textit{UW Aberystwyth/Computer Science}}
+\renewcommand{\footrulewidth}{0mm}
+\usepackage{lastpage}
+\fancyfoot[R]{\textit{page \thepage\ of \pageref{LastPage}}}
+\title{Group 06 - Design Specification}
+\date{3rd December 2012 \linebreak Amy Rebecca James, James Slater, Dan Mcguckin, Samuel Mills, Felix Farquharson, \linebreak Ben Brooks, Christopher Krzysztof Ilkow, Aiman Arafat \linebreak Project Coordinator: Nigel Hardy \linebreak Version: 1.2 \linebreak Status: Release \linebreak Computer Science Department, University of Wales, Aberystwyth \linebreak \copyright   CS22120 Group 06 Aberystwyth University}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Introduction}
+\subsection{Purpose of the Document}
+The main purpose of this document is to identify and describe the information in the design specification document produced by CS22120 Group 06. Each major section of the design will be individually described in detail and the document will explain the design theory behind each individual feature. It will also act as a tool for the group to look back on to keep track of current and future developments.
+\subsection{Scope}
+The design specification shows the specific features in relation to the Monster Mash game. This document explains the definitions of each component within the design and explains the details of each feature. It is important that this document is read by all members of the project group, especially the Design team.
+\subsection{Objectives}
+The main objective of this document is to reinforce the production of a design specification. It has to be complete, up to date and an accurate interpretation of the user’s requirements. Another objective is to provide an explanation of the design elements necessary for the implementation and development phases. These will generally include the outline structure, decomposition description, dependency description, interface description and a final detailed design.
+
+
+\section{Outline Structure}
+{\bf1 Homepage (Logged Out)} \newline
+\indent 1.1 Login link \newline
+\indent 1.2 Homepage link \newline
+\newline
+{\bf 2 Homepage (Logged In)}\newline
+\indent 2.1 Homepage \newline
+\indent 2.2 Fight (Logged In) \newline
+\indent \indent 2.1.1 Choose two Monsters
+\newline
+\indent \indent 2.2.2 Battle Screen
+\newline
+\newline
+{\bf 3 Shop (Logged In)}\newline
+\indent 3.1 Buy \newline
+\indent \indent 3.1.1 Choose a monster and click buy.
+\newline
+\indent 3.2 Sell \newline
+\indent \indent 3.2.1 Choose a monster and click sell.
+\newline
+\newline
+{\bf 4 Farm (Logged In)}\newline
+\indent 4.1 Breed - Choose a monster and click buy. \newline
+\newline
+{\bf 5 About Page (Logged In)}\newline
+\newline
+{\bf 6 Logout (Logged In)}\newline
+\indent 6.1 Homepage (Logged Out) \newline
+\newline
+\newpage
+
+
+\section{Decomposition Description}
+\subsection{Applications in System}
+In our Monster Mash design, there will be one single application. This handles everything from serving JSPs that a user can see in their browser, to the database connections, inter-server connections and data processing.
+
+\section{Significant classes in each package}
+\subsection{Significant classes in the Model package}
+\subsubsection{User}
+The User class contains fields to hold the user's data for attributes such as Name, Password, Money, Friends, etc. Each user can have between 1 and 6 monsters which can be purchased and sold to the farm. You can also set the user's default battle monster from the changeBattleMonster method in this class. A user is created using the UserFactory class.
+\subsubsection{Monster}
+This class contains all of the monster's stats. For example, height, age, strength, sex, etc. A monster is created using the MonsterFactory class.
+\subsubsection{PersistManager}
+PersistManager is the class which can create, update or delete a user or monster. It is also used to search for users or monsters and to start or stop the main application. It is also this class which talks to the User database, Monster database and Shop database.
+\subsection{Significant classes in the Controller package}
+\subsubsection{Login}
+Login contains methods that will allow a user to login or register themselves as a user.
+\subsubsection{Shop}
+Shop contains methods that let a user buy or sell monsters.
+\subsubsection{FriendsList}
+FriendsList contains methods for managing a user's friends. E.g. addFriend, removeFriend, getFriend, etc.
+\subsubsection{Worth}
+Calculates monster worth based on attributes and age. Also assesses monster age.
+\subsubsection{Breed}
+This breeds two monsters and creates an offspring.
+\subsubsection{makeAttribute Function}
+Creates new attributes for the new monster based on parents stats.
+\subsubsection{generalAssess}
+Assesses a monster
+\subsubsection{passToPM}
+Adds new monster to database.
+\subsubsection {determineWinner}
+Selects winning monster.
+\subsubsection {randomizeProbabilities}
+Adds some randomness to a battle between two monsters.
+\subsection {compareAttributesRetM1}
+Compares monsters attributes and returns a percentage of likelihood for monster one to win. (100-m1 is m2 likelihood)
+\subsubsection{BuyMonster}
+Purchases the monster, takes monster from shop and adds it to user's farm and updates user's vMoney.
+\subsubsection{SellMonster}
+Sells the monster, takes the monster from the user's Farm, adds it to Shop and updates the vMoney.
+\subsubsection{Logging Checker}
+Checks how long it has been since user made an action, after a given amount of time it will log the user off
+if they are not active.
+\subsubsection{MonsterListCycle}
+Ages a users primary monster whilst a user is logged on.
+\subsubsection{SimulateFight}
+SimulateFight has methods to calculate a winner of a fight between two monsters and calculates the prize amount of a fight, which is given to the winner.
+\subsection{Mapping from requirements to classes}
+\begin{tabular}{| l | l |}
+\hline
+Requirement & Classes Providing Requirement \\
+\hline
+FR1 (Server-based authentication) & Login, CreateMonsterAndUser, PersistManager, User and UserFactory \\
+\hline
+FR2 (Server friends list) & FriendsList and PersistManager \\
+\hline
+FR3 (Server monster list) & CreateMonsterAndUser, PersistManager, User and Monster \\
+\hline
+FR4 (Server monster mash management) & SimulateFight, FriendsList, PersistManager, User and Monster \\
+\hline
+FR5 (Server-server communication) & PersistManager \\
+\hline
+FR6 (Client options) & Login, Shop, FriendsList, Breed, SimulateFight and PersistManager \\
+\hline
+FR7 (Startup of software in browser) & Login and PersistManager \\
+\hline
+FR8 (Game display in browser) & FriendsList, Breed, SimulateFight and PersistManager \\
+\hline
+FR9 (Friend matching) & FriendsList, PersistManager \\
+\hline
+FR10 (Fight notifications) & SimulateFight and PersistManager \\
+\hline
+FR11 (Friends rich list) & FriendsList \\
+\hline
+\end{tabular}
+\newpage
+
+\section{Dependency Description}
+\subsection {Outline}
+The following section of the document will explain how the parts of the
+system integrate together and how they are dependent on each other. All parts of the system will be heavily dependent on the database, as all
+user details will be stored in it, such as their login details, monsters,
+V-Money and a list of friends.
+\subsection{User}
+In order for the user to play the game and access its internal components,
+it is a requirement for the user to be logged in. Users will not be able to create a monster, add friends or sell/buy monsters until they are logged in.
+If this is the case, an error would be returned to the user and the user would be asked to register their username
+and password to the database, which would then allow access to the application itself.
+\subsection{Login/Register}
+Login and register methods will be entirely dependent on the database
+classes, where the task is to ensure that the details are entered and
+retrieved correctly allowing user authentication. 
+\subsection {Shop}
+Buying a monster will not work when the user's V-Money is below the purchase
+price required. Breed class is dependent on two monsters, when less than two monsters are
+supplied, the class will return an error to the user and would not proceed further. SimulateFight class also needs two monsters as a minimal requirement for
+it to be executed, otherwise an error is produced to the user and the user can't proceed further.
+\subsection {Database}
+PersistManager is a class that will communicate with the database itself, from which it is going to retrieve the data. The Persist Manager is dependent on the User and Monster classes. The database is set up using Java Persistence API using the open source Hibernate Library. It runs using JavaDB or
+derby. This changed from HyperSQL due to connection problems. The database tables are created using persistable
+'entity' classes through a persistence.xml file. The PersistManager class handles interactions between
+the database and the server. The database is reliant on the PersistManager and vice versa.
+\newpage
+
+\section {Interface Description}
+
+\subsection{Model Package}
+The Model package contains the classes that deal with data representation. It will also contain all connections to the database, and methods of using all of the data types the group may need to use in the controller class at a later time.
+
+\subsubsection{PersistManager Class}
+Public class that handles transferring the data currently active in the application to persistent data in a database and it also handles retrieving the data from the database. There are 6 public functions, that are listed below. It uses the Monster class and it works by translating a Monster instance into a set of database friendly fields. It is used by many of the classes in the Controller package, so that they can retain information and process it at a later time.
+
+\paragraph{init Function}
+A public function that when called with initialize the class and instantiates the Persistence class to deal with the database. It takes no arguments and returns no data.
+
+\paragraph{create Function}
+A public function that will create all of the fields in the database for a Monster instance. Takes a Monster instance as an argument.
+
+\paragraph{update Function}
+A public function to update an entry for a Monster or a user in the database, takes a Monster instance or a User instance and returns no data.
+
+\paragraph{search (monster) Function}
+A public function for searching the database to find a list of a user's Monster instances. Takes a User instance and returns an array of Monster instances.
+
+\paragraph{search (user) Function}
+A public function for finding a user in the database. This function takes nothing and returns a User instance and returns nothing.
+
+\paragraph{remove(monster) Function}
+A public function to remove the representations of the Monster instances from the database. Takes a Monster instance and returns nothing.
+
+\paragraph{remove (user) Function}
+A public function to remove the representations of the User instances from the database. Takes a User instance and returns nothing.
+
+\paragraph{isReal Function}
+A public function to check if the user is stored in the database. Takes two Strings, a username and a password. Returns a boolean.
+
+\paragraph{shutdown Function}
+A public function for closing a connection to the database. This function requires nothing and returns nothing.
+
+\paragraph {DropTable Function}
+This function destroys the table i.e. clears it, method is there but is deprecated. 
+
+\paragraph {searchGraveYard}
+This method collects dead monsters, this method however is not integrated in the final program.
+
+\subsubsection{User Class}
+A public class to represent a user, it does not inherit from any classes. There are no public variables because everything is dealt with by the PersistManager class.
+
+\paragraph{ChangeBattleMonster Function}
+A public function to change which a user's Monster is set for use in a battle situation. Takes a Monster instance to set as the users new battle Monster.
+
+\subsubsection{UserFactory Class}
+A public class designed to create new User instances when called from somewhere. It has one public function to create the User.
+
+\subsubsection{Requests Class}
+A public class that contains all request attributes to be persistent into the database for request handling.
+
+\paragraph{make it Function}
+This public function will create a User instance, that will later be stored by the PersistManager. Likely called by the Login Class from the Controller package. It requires the following arguments:
+\begin{itemize}
+\item{name: String - The name of the new user.}
+\item{password: String - The password of the new user.}
+\item{vMoney: int - The amount of money the new user has.}
+\item{type: Type - The user's type, ie. regular user or superuser. }
+\end{itemize}
+This function will return a User instance.
+
+\subsubsection{Monster Class}
+The Monster class only has public getters and setters, it represents each monster and contains everything that is necessary to represent a monster. The PersistManager uses the Monster class when it converts each monster into a database friendly form.
+
+\subsubsection{MonsterFactory Class}
+A public class to create Monster instances that will later be stored by the PersistManager as part of a User instance. It has one public function.
+
+\paragraph{make it Function}
+This public function will create a Monster instance. It may be called from the UserFactory class when a new user is created to make their first Monster. It might also be called from anywhere else that needs to create a new Monster instance, such as the Breed (servlet) class. It needs to be called with the following arguments:
+\begin{itemize}
+\item{name: String - The name of the new monster.}
+\item{height: int - The new monster's height.}
+\item{age: int - The new monster's age (in days I expect).}
+\item{strength: int - The new monster's strength.}
+\item{health: int - The new monster's health.}
+\item{sex: Boolean - The new monster's sex as an isMale boolean.}
+\item{aggression: int - The aggression of the new monster.}
+\item{dob: int - The new monster's Date of Birth.}
+\item{battleMonster: Boolean - States if the new monster is the monster used for battle.}
+\end{itemize}
+This function returns a Monster instance.
+
+\subsection{Controller Package}
+The Controller package contains all the classes that deal with the logic behind the back end of the application. It contains all the servlets and uses the Model to represent data for it.
+
+\subsubsection{CreateMonsterAndUser Class}
+A public class used by the Login (servlet) Class to handle creating a user and the user's first monster. It will rely on the MonsterFactory and UserFactory in the Model. There are two public functions.
+
+\paragraph{CreateMonsterAndUser (Constructor) Function}
+This function will set up the class, by creating a User and with it, its first Monster. It takes no arguments and returns no data.
+
+\paragraph{CreateMonster Function}
+A public function to create a Monster instance, it takes no arguments and returns a Monster instance. Presumably used by the constructor.
+
+\subsubsection{Login (Servlet) Class}
+The public class login handles the authentication of the users. It is a servlet class and is used over http. There are a number of public functions to deal with users.
+
+\paragraph{checkPass Function}
+A public function for checking a password is correct and valid. Takes a String and returns a Boolean value that reflects whether the password is correct.
+
+\paragraph{checkUserName Function}
+A public function for checking if a username is correct. It takes a string and returns a boolean value that reflects if the username is correct.
+
+\paragraph{register Function}
+A public function to register a new user into the system. It needs to be passed by two variables; username and password both as strings. It returns nothing.
+
+\paragraph{Get Function}
+A public function so that this class can be used by Glassfish to deal with web requests. Takes no arguments, returns nothing.
+
+\paragraph{Post Function}
+A public function so that this class can be used by Glassfish to deal with web requests. Takes no arguments, returns nothing.
+
+\subsubsection{Shop (Servlet) Class}
+This servlet class handles all of the information required to deal with the shop, it allows users to buy and sell Monsters and to find out prices for other listed items.
+
+\paragraph{calcWorth Function}
+A public function that calculates the value of a monster so that it can be displayed in the Shop. Uses a local variable of Monsters in the Shop to find the monsters and returns an integer that represents the price.
+
+\paragraph{buy Function}
+A public function that allows the user to buy the selected monster from the shop if they can afford it. It takes no arguments and returns nothing.
+
+\paragraph{sell Function}
+Public function that allows the user to sell the selected monster from the user's monster list for the calculated worth of the monster. It takes no arguments and returns nothing.
+
+\paragraph{viewVMoney Function}
+A public function for finding out how much money the user has, because this is needed for display in the shop. There are no arguments and nothing is returned.
+
+\paragraph{addMonster Function}
+A public function that adds a monster to the shop, it takes no arguments and returns nothing.
+
+\paragraph{Get Function}
+A public function so that this class can be used by Glassfish to deal with web requests. Takes no arguments, returns nothing.
+
+\paragraph{Post Function}
+A public function so that this class can be used by Glassfish to deal with web requests. Takes no arguments, returns nothing.
+
+\subsubsection{FriendsList (Servlet) Class}
+A public class to deal with the Friends List and all the information required, it also allows users to add, view, and remove from their friends list.
+
+\paragraph{addFriend Function}
+Public function that allows the user to send a friend request. If request is accepted then the friend ID will be added to friends array.
+
+\paragraph{removeFriend Function}
+Public function that asks the user to confirm the removal of the specified friend ID, if confirmed, the specified friend ID will be removed from the friend array.
+
+\paragraph{requestFight Function}
+Public function that allows the user to pick a friend from the friend list and to start a battle against the friend's preset battle monster.
+
+\paragraph{getFriend Function}
+A public function that allows the user to pull out a friends profile. Takes no arguments and returns nothing.
+
+\paragraph{findUserMonsters Function}
+A public function to find all of another user's monsters. This function takes no arguments and returns nothing.
+
+\paragraph{updateList Function}
+A public function to update a user's friend list from the server. Takes no arguments and returns nothing.
+
+\paragraph{Get Function}
+A public function so that this class can be used by Glassfish to deal with web requests. Takes no arguments, returns nothing.
+
+\paragraph{Post Function}
+A public function so that this class can be used by Glassfish to deal with web requests. Takes no arguments, returns nothing.
+
+\paragraph{Get Function}
+A public function so that this class can be used by Glassfish to deal with web requests. Takes no arguments, returns nothing.
+
+\paragraph{Post Function}
+A public function so that this class can be used by Glassfish to deal with web requests. Takes no arguments, returns nothing.
+
+\subsubsection{Breed (Servlet) Class}
+A public (servlet) class to handle how you might breed monsters in the game. It allows you to perform all relevant checks to the data. There are a few public functions made available. There are no public variables. The only important things are the two parent Monsters, that are passed in as parameters to the createChild function. 
+
+\paragraph{calcCost Function}
+This is a public function to work out what it would cost to buy a particular monster, takes a Monster instance and returns an int that is the price to buy the given monster.
+
+\paragraph{createChild Function}
+A public function that allows the user to breed a monster, takes two Monster instances and returns a Monster instance that is a child of the two given monsters.
+
+\paragraph{Get Function}
+A public function so that this class can be used by Glassfish to deal with web requests. Takes no arguments, returns nothing.
+
+\paragraph{Post Function}
+A public function so that this class can be used by Glassfish to deal with web requests. Takes no arguments, returns nothing.
+
+\subsubsection{SimulateFight (Servlet) Class}
+A public (servlet) class that represents two monsters battling in the application. There is only one public function available and no public variables.
+
+\paragraph{calcWinner Function}
+A public function to work out which Monster is going to perform better in a battle. Takes two Monster instances, returns the winning Monster instance.
+
+\paragraph{isPrized Function}
+A public function to work out if a match is prized, takes nothing as an argument, but returns a boolean.
+
+\paragraph{prizeAmount Function}
+A public function to return the amount that is given as a prize, takes nothing as an argument and returns an int that represents the prize money.
+
+\paragraph{Get Function}
+A public function so that this class can be used by Glassfish to deal with web requests. Takes no arguments, returns nothing.
+
+\paragraph{Post Function}
+A public function so that this class can be used by Glassfish to deal with web requests. Takes no arguments, returns nothing.
+\newpage
+
+
+\begin{minipage}{\textwidth}
+
+\section{Detailed Design}
+\subsection {Monster Mash Class Diagram}
+
+\begin{center}
+\includegraphics[angle=90, height=21.5cm, width=19cm]{M:/Latex/mmc.png}
+\label{fig:mmclass}
+\end{center}
+
+\end{minipage}
+
+
+\newpage
+
+\begin{minipage}{\textwidth}
+
+
+\subsection {Monster Mash Sequence Diagram}
+
+\begin{center}
+\includegraphics[angle=90, height=21.5cm, width=19cm]{M:/Latex/seq.pdf}
+\label{fig:mmseq}
+\end{center}
+
+\end{minipage}
+\newpage
+\section{References}
+1] Software Engineering Group Project Plan Design Specification Standards. C. J. Price, N. W. Hardy. SE.QA.05a. 1.6
+\newline
+2] Project Plan - CS221 Project Group 6. Version 1.0
+\newline
+3] Test specification - CS221 Project Group 6. Version 1.0
+\newline
+4] Software Engineering Group Projects General Documentation Standards. C. J. Price, N. W. Hardy. SE.QA.03. Version 1.5
+\newline
+5] Software Engineering Group Projects Monster Mash Game Requirements Specification. B. P . Tiddeman. SE.CS.RS. Version 1.2
+\newline
+\newline
+{\Large \bf 9 Document History}
+\begin{table*}[h]
+\caption{Document History}
+\begin{tabular}{c|c|c|c|c}
+\hline\hline
+Version & CCF No.\ & Date \ & Changes made to document\ & Changed by: \\ [0.5ex]
+\hline
+1.0 & N/A & 06/12/2012 & Created Design Specification & sam39 \\
+\hline
+1.1 & N/A & 12/02/2013 & Made required changes & sam39 \\
+\hline
+1.2 & N/A & 13/02/2013 & Few sentence changes on some functions & sam39 \\
+ & & & \\ [1ex]
+\hline
+\end{tabular}
+\label{table:nonlin}
+\end{table*}
+\end{document}

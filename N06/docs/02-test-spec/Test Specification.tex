@@ -1,0 +1,242 @@
+\documentclass[titlepage]{article}
+\usepackage[hmargin=2cm,vmargin=2.5cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{rotating}
+\fancyhf{}
+\pagestyle{fancy}
+\fancyhead[R]{\textit{Group 06 Test Specification/1.4(Release)}}
+\renewcommand{\headrulewidth}{0mm}
+\fancyfoot[L]{\textit{UW Aberystwyth/Computer Science}}
+\renewcommand{\footrulewidth}{0mm}
+\rfoot{\thepage}
+\title{Group 06 - Test Specification}
+\date{15th October 2012 \linebreak Amy Rebecca James, Samuel Mills, Felix Farquharson, \linebreak Ben Brooks, Aiman Arafat, James Slater, Ben Brooks, Dan McGuckin, Christopher Krzysztof Ilkow \linebreak Project Coordinator: Nigel Hardy \linebreak Config Ref: SE.QA.06 \linebreak Version: 1.4 \linebreak Status: Release \linebreak Computer Science Department, University of Wales, Aberystwyth \linebreak \copyright Aberystwyth University 2013}
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents 
+\newpage 
+\section{Introduction} 
+\subsection{Purpose of the Document}
+The purpose of this document will be to establish any defects or flaws which may exist within our Monster Mash application, and whether the features of the application are going to be functional and operable for the user. Our testing document will explore all features and actions that can be carried out within the application and identify possible problems or errors which the user could experience. 
+\subsection{Scope}
+The testing specification is split up into separate tables which represent each feature or action of the game and identifies the test content, input, output and pass criteria of each test. These features include:
+\begin{itemize}
+\item Login/Edit Account Details Tests
+\item Homepage/Friends List Tests
+\item Battle Screen Test
+\item Farm Test
+\item Shop Test
+\end{itemize}
+It is important that this document is read by all members of the project group, especially the Design and Testing team.
+\subsection{Objectives}
+The objectives of this document are:
+\begin{itemize}
+\item To identify any errors, liabilities and flaws that a user may encounter when interacting with the Monster Mash application. 
+\item To show these weaknesses and defects in the format of tables where the features of the Monster Mash game are thoroughly tested and certified to ensure they operate successfully. 
+\item To show the test content, input, output, pass criteria and general comments of each test.
+\end{itemize}  
+\newpage
+\section{Test Tables} 
+\subsection{Login/Edit Account Tests} 
+To test that our Login works we will have already have saved two users into our database to allow us to carry out extensive testing on the Login and account features. They will each have a username and password and we will run various tests on these users to test that the interface and server handles the information entered as we would expect.
+\subsection{Created Users Details}
+John - Username: John87 Password: computer
+\\
+Gareth - Username: Gaz19 Password: monster
+\newpage
+\section{Creating an account}
+To test our registration system works we will create a user. If this test successful the username and password of the created user will be stored in the database and user will be able to Login.\\
+\\
+{\centering
+\begin{tabular}{|p{1cm}|p{1cm}|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}
+\hline
+Test Ref & Req being tested & Test Content & Input & Output & Pass Criteria\\ 
+\hline
+SE-N06-001 & FR7 & Creating User Account & The user will enter desired username and password. & The details should be saved and added to the database. & The user can use these details to access the Monster Mash application.\\ 
+\hline 
+SE-N06-002 & FR7 & Creating an account with characters other than A-Z, a-z, 0-9 or an underscore in the user name. & User should create a user name containing an exclamation mark for example. & An error message should appear saying that the user name cannot be created and it should explain the reason for this error to the user. & The user name will only be created if it contains valid and accepted characters. \\
+\hline
+SE-N06-003 & FR7 & Testing that the account has been created successfully. & The user will enter their Login details and click the Login button. & User should be taken to the application homepage. & The user should be logged in and be able to start playing the Monster Mash application.\\
+\hline
+SE-N06-004 & FR7 & Creating an account using a username that has already been taken. & User attempts to create an account using a username that is already taken. &  An error message should appear saying that the user name cannot be created and it should explain the reason for this error to the user. & The user should not be able create an account.  \\
+\hline
+SE-N06-005 & FR7 & Creating an account with an email address that is already registered to a user. & The user will attempt to create an account using an email address already registered. & An error message should appear alerting the user. & The user should not be able to create an account.\\
+\hline
+SE-N06-006 & FR7 & Case sensitive login. & User will attempt to login using a capital or lower case letters incorrectly. &An error message should appear saying that the user name cannot be logged in and it should explain the reason for this error to the user. & The user should not be allowed to log in.\\
+\hline 
+\end{tabular}}
+\newpage
+\subsection {Testing User Login Information}
+The following test table will investigate how the program handles incorrect Login details. Although the table only accounts for one, each test will be carried out on both of the users stored in the database already (John and Gareth). \\
+\\
+{\centering
+\begin{tabular}{|p{1cm}|p{1cm}|p{3cm}|p{2cm}|p{2cm}|p{3cm}|}
+\hline
+Test Ref & Req being tested & Test Content & Input & Output & Pass Criteria \\ 
+\hline
+SE-N06-007 & FR7 & Login using correct details. & User will enter correct login details and click Login button. & The correct details will be accepted by the server. & User will be taken to Homepage and able to access the features of the Monster Mash application. \\
+\hline
+SE-N06-008 & FR7 & Login using incorrect password but correct username & User will enter correct username with incorrect password and click the login button. & An error message will appear informing the user that the details entered are incorrect. & The user won't be logged into their account until the correct details are entered. \\
+\hline
+SE-N06-009 & FR7 & Ensure that both the username and password have been entered into the login fields. & User will attempt to login with one of the fields left empty. & An error message alerting user of the problem should appear. & User shouldn't be allowed to log in until both fields and filled in correctly.\\
+\hline 
+\end{tabular}}
+\newpage
+\section{Homepage/Friend List Tests} 
+The following tests are designed to assess the option available to each user from the Homepage and from their Friends Lists. For the tests below it is assumed that there is already a database of users available for testing.\\
+\\
+\begin{tabular}{|p{1cm}|p{1cm}|p{3cm}|p{3cm}|p{2cm}|p{3cm}|}
+\hline
+Test Ref & Req being tested & Test Content & Input & Output & Pass Criteria \\ 
+\hline
+SE-N06-010 & FR2 & Locate all available links to the user and interact with them and test their functionality.. & All of the link locations within the application. &  The link goes to the correct page. & If the link is navigating to the correct  
+location and the page is active and functioning. \\
+\hline
+SE-N06-011 & FR1 & Test if the user can logout successfully. & Select the logout link. & The page template/source. & The page should identify the fact the user is logged 
+out and is unavailable to interact with the application. \\
+\hline
+SE-N06-012 & FR2 & Test that the graphical user interface and graphics show correctly to the user. & The homepage should be displayed correctly as intended to the user. & Pages should be displayed correctly. & The graphics and images should be consistent with the original design.\\ 
+\hline 
+\end{tabular}
+\newpage
+\begin{tabular}{|p{1cm}|p{1cm}|p{3cm}|p{3cm}|p{2cm}|p{3cm}|}
+\hline
+Test Ref & Req being tested & Test Content & Input & Output & Pass Criteria \\ 
+\hline
+SE-N06-013 & FR11 & Check that the friends list displays correctly to the user when it is not sorted by any custom settings. & The page containing the friends list should be loaded and there should be no specific sorts or filters specified. & The output page source for this page with no friends, lots of friends, and with the maximum amount of friends. & The pages should return standards compliant HTML with no errors encountered. 
+The sorts should be correct and a visual inspection should be carried out also.\\
+\hline
+SE-N06-014 & FR11 & Check the friends list displays correctly when it is sorted by recent activity. & The page containing the friends list should be loaded and there should be only recent activity showed. & The output page source for this page with no friends, lots of friends, and with the maximum amount of friends. & The pages should return standards compliant HTML with no errors encountered. The sorts should be correct and a visual inspection should also be carried out.\\
+\hline
+SE-N06-015 & FR9 & Check the add new friend function works correctly. & A friend should be added using the friends list form. & The updated friends list containing all the friends, or the database. & The friends list after the friend has been added should now contain the newly added friend.\\
+\hline
+SE-N06-016 & FR6 & Check the delete friend function. & One of the friends selected should be deleted using the friends list delete function. & The friends list. & The friends list should not contain the deleted friend.\\
+\hline
+\end{tabular}
+\newpage
+\section{Battle Screen Tests} 
+\begin{tabular}{|p{1cm}|p{1cm}|p{3cm}|p{3cm}|p{2cm}|p{3cm}|}
+\hline
+Test Ref & Req being tested & Test Content & Input & Output & Pass Criteria\\ 
+\hline
+SE-N06-017 & FR10 & Check that a battle has finished and allows the user to select a friend to start another battle. & The user clicks on Start another battle button from the battle screen. & The monster battle screen swaps into friend list allowing the user to choose one to fight against only if previously selected battle has taken place. & Allows the user to user to select another friend to battle against after finishing current battle. \\
+\hline
+SE-N06-018 &  & Check that Monster Farm button has been pressed. & User clicks on Monster Farm button from the battle screen. & The monster battle screen swaps into  the Monster Farm screen and allows the user to check stats or change the current monster to fight with. & Takes the user to the Monster Farm screen and allows the user to choose monster or check the stats. \\
+\hline
+SE-N06-019 & FR8 & Check that Start The Fight buttons has been pressed from the battle screen and starts the battle. & User clicks on Start The Fight button from the battle screen. & The battle screen shows both monsters, the result of the battle and any earnings or rewards. & Generates the battle, show victorious monster, earn rewards. \\
+\hline
+\end{tabular}
+\newpage
+\subsection{Battle Screen Tests Continued}
+\begin{tabular}{|p{1cm}|p{1cm}|p{3cm}|p{3cm}|p{2cm}|p{3cm}|}
+\hline
+Test Ref & Req being tested & Test Content & Input & Output & Pass Criteria \\ 
+\hline
+SE-N06-020 & FR8 & Check that the Friend button has been pressed from the side of the battle screen and displays a message. & User clicks on Friend button from battle screen. & An error message is displayed to the user.  User cannot leave the battle screen. & Display error message.\\
+\hline
+SE-N06-021 & FR8 & Check that Shop button has been pressed from the battle screen. & User clicks on Shop button from battle screen. & An error message is displayed to the user.  User cannot leave the battle screen. & Display error message.\\
+\hline
+SE-N06-022 & FR9 & Check that Add friend button has been pressed from the battle screen. & User clicks on Add Friend button from battle screen. & An error message is displayed to the user.  User cannot leave the battle screen. & Display error message.\\
+\hline
+\end{tabular}
+\newpage
+\section{Farm Tests} 
+These tests are designed to test the Monster Farm of the Monster Mash application. They test various aspects such as viewing monsters, their stats and picking a primary battle monster.\\
+\\
+\begin{tabular}{|p{1cm}|p{1cm}|p{3cm}|p{2cm}|p{2cm}|p{3cm}|}
+\hline
+Test Ref & Req being tested & Test Content & Input & Output & Pass Criteria \\ 
+\hline
+SE-N06-023 & FR1 & Obtain your monster's statistics & Go to the "Monster Farm" page" & A list of your monsters with associated statistics should be displayed & The page correctly displays your monsters and their statistics. \\ 
+\hline
+SE-N06-024 & FR2 & Choose your primary battle monster (i.e. the monster you use to fight). & Click on the check box/button next to the monster you wish to make primary battle monster. & That monster should now be selected to be your primary battle monster.& The chosen monster is now your primary battle monster.\\ 
+\hline 
+SE-N06-025 & FR3 & Exit the Monster Farm & Click on the available navigational links which take you to a particular screen. & You should exit the Monster Farm and be taken to the location you chose. & The page changes to the location your chosen location. \\ 
+\hline 
+\end{tabular}
+\section{Breeding Tests}
+\begin{tabular}{|p{1cm}|p{1cm}|p{3cm}|p{3cm}|p{2cm}|p{3cm}|}
+\hline
+Test Ref & Req being tested & Test Content & Input & Output & Pass Criteria \\ 
+\hline
+SE-N06-026 & FR6 & Monster statistics are different for offspring. & User should breed a monster. & A new monster should appear in the Monster Farm. & The new monster should have completely different statistics to the parents. \\
+\hline
+SE-N06-027 & FR6 & Breeding with two different monsters. & User should select two different monsters to breed with. & A new monster should be created. & A new monster should be listed in the Monster Farm. \\
+\hline
+SE-N06-028 & FR6 & Breeding with two instances of the same monster. & User should select the same monster twice to breed with. & An error message should appear and not allow this. & User should be asked to enter two different monsters.\\
+\hline
+SE-N06-029 & FR6 & Ensuring the user has enough money to breed a monster. & User selects a monster to breed with. & If the user has insufficient funds, an error message should appear. & User should not be allowed to breed with a monster.\\
+\hline
+SE-N06-030 & FR6 & The user must enter unique name for each monster. & User enters the a name for monster already in use. & An error message should appear. & User should not be allowed to have a monster with the same name.\\
+\hline
+\end{tabular}
+\newpage
+\section{Shop Tests} 
+The following tests will be featuring the Shop aspect of the Monster Mash application. The Shop will only be accessible to registered users. Users will then be presented with a menu which has the following options; Monster Farm, Shop and a Friends list. Within the Shop category the user will be presented with a variety of options. 
+The main purpose of the shop is to allow the user to Buy and Sell monsters using V-Money that they have gained from battles. Users can Buy monsters from the Shop which will then be added to their Monster Farm and the price in which the monster is worth will be deducted from the users V-Money total. The user will also be able to Sell monsters which they own and the price in which the monsters are worth is calculated by taking into account the monsters statistics. If the user sells a monster, the monster will be removed from the users Monster Farm and the correct amount of currency added to the users V-Money total. It is worth mentioning that tests will be carried out using a preloaded database of monsters to avoid the user having no monsters to Buy/Sell. The final feature of the Shop will be the display of the users V-Money which will show how much currency the user has to spend within the Shop.
+\\
+\\
+\begin{sideways}
+\begin{tabular}{|p{1cm}|p{1cm}|p{3cm}|p{3cm}|p{2cm}|p{3cm}|p{4cm}|p{2cm}|}
+\hline
+Test Ref & Req being tested & Test Content & Input & Output & Pass Criteria \\ 
+\hline
+SE-N06-031 & FR8 & Check that the Shop GUI is displayed when the user clicks Shop from the homepage. & User clicks Shop button from the homepage. & The shop GUI should now be displayed to the user, including a list of monsters which the user can Buy and Sell and the ability to View V-Money. & Shop GUI is correctly displayed. \\
+\hline 
+SE-N06-032 & FR5 & Check that the Sell function works correctly. & User selects what monster they chose to sell in the Shop GUI and presses the Sell button. & The monster should have been removed from the users Monster Farm and the amount of V-Money that the monster is worth based on statistics should be added to the users V-Money Total. & The correct amount of V-Money has been added to the users V-Money total and the Monster sold has been removed from the users Monster Farm. \\
+\hline
+SE-N06-033 & FR8 & Check that the view V-Money function works correctly. & Within the Shop GUI, the user should be able to view V-Money on the GUI this and shows how much currency the user has. & The user should be displayed their correct amount of V-Money in the GUI. & The user is successfully displayed their total V-Money amount. \\
+\hline
+\end{tabular}
+\end{sideways}
+\subsection{Shop Test Tables Continued}
+\begin{sideways}
+\begin{tabular}{|p{1cm}|p{1cm}|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}
+\hline
+Test Ref & Req being tested & Test Content & Input & Output & Pass Criteria  \\ 
+\hline
+SE-N06-034 & FR6 & Check that an error message is displayed if the user attempts to purchase a Monster from the Shop but they don't have enough V-Money. & User views the monsters available from the Shop list, selects the Monster desired and presses the Buy button and an error is displayed due to insufficient funds to purchase that monster. & An error message should be displayed informing the user they have Insufficient funds to purchase the monster desired. & An error message is successfully displayed to the user informing them they have insufficient funds to purchase the monster they desire.\\
+\hline
+SE-N06-035 & FR6 & Check that the Ok button works on the error message regarding the user having Insufficient Funds when trying to purchase a monster so they can return to the Shop GUI. & The user clicks the Ok button to acknowledge the error message and then returns to the Shop GUI. & Once the user has selected the Ok button, they should be returned to the Shop GUI. & The user presses Ok and they are successfully returned to the Shop GUI.\\
+\hline
+SE-N06-036 & FR6 & Check that the preloaded monsters from the database within the Shop are purchasable. & The user selects one of the preloaded monsters from the database and selects Buy. & The user should be able to purchase the monsters from the preloaded database. The correct V-Money from their total should have been removed and the newly acquired monster should now be in the users Monster Farm. & The monster from the preloaded database should now be in the users Monster Farm. \\
+\hline
+\end{tabular}
+\end{sideways}
+\newpage
+\subsection{Shop Test Tables Continued}
+\begin{tabular}{|p{1cm}|p{1cm}|p{2cm}|p{3cm}|p{3cm}|p{3cm}|}
+\hline
+Test Ref & Req being tested & Test Content & Input & Output & Pass Criteria \\ 
+\hline
+SE-N06-037 & FR6 & Check that the preloaded database of Monsters within the Monster Farm are sellable. & The user selects one of the preloaded monsters from the database in the Monster Farm and selects Sell. & The user should be able to sell the monsters from the preloaded database (Monster Farm). The correct V-Money should have been added and to their total and the Monster selected to sell should have been removed from the users Monster Farm. & The monster from the preloaded database has been removed from the users monster farm and the users V-Money total should be correct.\\
+\hline
+\end{tabular}
+\newpage
+\section{References}
+\begin{enumerate}
+\item \textit{Software Engineering Group Projects Test Procedure Standards.. C.J.Price and N.W.Hardy. SE.QA.06.Release.}
+\end{enumerate}
+\section{Document History}
+\begin{tabular}{| l | l | l | l | l |} 
+\hline 
+Version & CCF No. & Date & Changes made to Document & Changed by \\ 
+\hline 
+1.0 & N/A & 2012-11-12 & Initial creation & beb12 \\ 
+\hline 
+1.1 & N/A & 2012-11-15 & Adding test tables & arj18 \\
+\hline
+1.2 & N/A & 2013-01-28 & Making changes from hand in feedback & arj18 \\
+\hline
+1.3 & N/A & 2013-02-11 & Making outcomes of tests from coding week. & arj18 \\
+\hline
+1.4 & N/A & 2013-02-13 & Rearranged some tables. & sam39 \\
+\hline
+\end{tabular} 
+\end{document}
